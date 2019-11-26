@@ -1,0 +1,16 @@
+<%= form_tag skivents_path, method: :get, class: "inline-form d-flex my-3" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a resort"
+  %>
+  <%= submit_tag "Search", class: "btn-login-search" %>
+<% end %>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
