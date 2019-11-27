@@ -1,0 +1,16 @@
+.level_content_container {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+}
+
+.level-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.background {
+  background-color: white;
+  height: 100vh;
+}

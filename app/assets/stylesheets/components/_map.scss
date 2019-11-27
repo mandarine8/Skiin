@@ -1,3 +1,7 @@
+#map {
+  width: 90% !important;
+}
+
 .mapboxgl-popup {
   max-width: 200px;
 }
@@ -5,4 +9,12 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+canvas.mapboxgl-canvas {
+  width: 660px !important;
+}
+
+.mapboxgl-ctrl {
+  transform: translate(-50px, 0) !important;
 }
