@@ -1,0 +1,28 @@
+.resort-carousel {
+  .carousel{
+    position: relative;
+  }
+
+  .header-container{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 16%;
+    display: flex;
+    justify-content: center;
+
+    h3{
+      z-index: 1;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  .carousel-item {
+    width: 100%;
+    height: 520px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
