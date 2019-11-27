@@ -2,6 +2,7 @@ class SkiventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @navbar_transparent = true
     @resorts = Resort.geocoded
 
     @markers = @resorts.map do |resort|
