@@ -12,7 +12,7 @@ class SkiventsController < ApplicationController
       }
     end
     if params[:query].present?
-      @skivents = Skivent.search_by_name(params[:query])
+      @skivents = Skivent.search_by_title(params[:query])
     else
       @skivents = Skivent.all
     end

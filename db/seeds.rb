@@ -47,7 +47,11 @@ level: "Intermediate",
 number_of_place: 3, car: true, description: "If you like the perfect balance
 between skiing and chilling, this trip is for you .", resort: r4, user: u4)
 
-User.all.each do |user|
+user_to_book = User.all.filter do |user|
+  user.id % 2 == 0
+end
+
+user_to_book.each do |user|
   Skivent.all.each { |skivent| Booking.create! user: user, skivent: skivent, status: "pending"}
 end
 
