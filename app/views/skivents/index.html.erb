@@ -11,15 +11,6 @@
     <%= submit_tag "Search", class: "btn-login-search" %>
   <% end %>
 
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-
-
 <div class="background">
 
   <div class="content mx-4">
@@ -63,13 +54,14 @@
         </div>
       </div>
 
-        <div class="map-card col-lg-4 col-sm-12"
-          id="map"
-          style="width: 100%;
-          height: 600px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-        ></div>
+      <div
+        class="map-card col-lg-4 col-sm-12"
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
     </div>
   </div>
 </div>
