@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-absolute navbar-expand-sm navbar-light navbar <%= @navbar_transparent ? 'background-transparent' : '' %>">
   <%= link_to "/", class: "navbar-brand" do %>
     <h3>Ski in</h3>
     <% end %>
@@ -15,11 +15,18 @@
           <%= link_to "Home", "#", class: "nav-link" %>
         </li> -->
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <img
+            src=" <%= current_user.picture ? current_user.picture : 'test'  %> "
+            alt="picture of me"
+            class="avatar dropdown-toggle"
+            id="navbarDropdown"
+            data-toggle="dropdown"
+            aria-haspopup= "true"
+            aria-expanded= "false">
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Dashboard", "#", class: "dropdown-item" %>
             <%= link_to "Messages", "#", class: "dropdown-item" %>
             <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

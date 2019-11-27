@@ -1,0 +1,25 @@
+#VideoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.home-page-form{
+}
+
+
+// @media (min-aspect-ratio: 16/9) {
+//   #VideoBackground {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
+// @media (max-aspect-ratio: 16/9 ) {
+//     #VideoBackground {
+//     width: auto;
+//     height: 100%;
+//   }
+// }

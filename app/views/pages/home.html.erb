@@ -1,4 +1,17 @@
 
+<div class="fullscreen-container">
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <video id="VideoBackground" poster="https://res.cloudinary.com/mandarine8/image/upload/v1574890386/o8fxl4kkhix3yvmnj898.jpg" autoplay muted loop>
+    <source src="https://res.cloudinary.com/mandarine8/video/upload/v1574890189/ocsqjst8mb2r6vyqepz7.mp4" type="video/mp4">
+  </video>
+
+  <%= form_tag skivents_path, method: :get, class: "inline-form d-flex my-3 home-page-form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Enter a city or a resort name"
+      %>
+    <%= submit_tag "Search", class: "btn-login-search" %>
+  <% end %>
+
+</div>
