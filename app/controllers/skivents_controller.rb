@@ -1,12 +1,22 @@
 class SkiventsController < ApplicationController
-  skip_before_action :authentificate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @resorts = Resort.geocoded
+
+    @markers = @resorts.map do |resort|
+      {
+        lat: resort.latitude,
+        lng: resort.longitude,
+        infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
+      }
+    end
     if params[:query].present?
       @skivents = Skivent.search_by_name(params[:query])
     else
       @skivents = Skivent.all
     end
+
   end
 
   def show
