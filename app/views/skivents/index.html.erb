@@ -93,6 +93,14 @@
               </div>
               <!-- end of description event -->
 
+    <div class="row">
+      <div class="card-grid col-lg-6 col-sm-12 position-sticky">
+        <div class="row " >
+          <% @skivents.each do | skivent | %>
+            <div class="col-sm-12 col-lg-6 mb-3">
+
+              <%= render 'skivents/card', skivent: skivent %>
+
             </div>
 
             <!-- description profil -->
@@ -103,10 +111,15 @@
               <h3>About <%= skivent.user.name %></h3>
               <p> <%= skivent.user.description %></p>
             </div>
+
             <!-- end of description profil -->
 
           </div>
           <!-- end of container externe -->
+
+          <% end %>
+        </div>
+
 
         </div>
         <!-- end of modal-body -->
@@ -121,5 +134,4 @@
 
     </div>
   </div>
-
 <% end %>
