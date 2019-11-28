@@ -88,3 +88,6 @@ user_to_book.each do |user|
 end
 
 puts "Seeds Completed"
+
+
+

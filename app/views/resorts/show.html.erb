@@ -37,11 +37,13 @@
       <!-- Affichage du descriptif de la station  -->
       <div class="card w-100">
         <div class="card-body">
-          <h5 class="card-title">Description</h5>
+          <h4 class="card-title">Description</h4>
+          <p class="card-text">Description of the resort. Some lines about the station</p>
           <h6 class="card-subtitle mb-2 text-muted">Informations about the resort</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Icones et descriptif</p>
           <h6 class="card-subtitle mb-2 text-muted">Weather for the 5 next days</h6>
-          <a href="#" class="card-link">See the website</a>
+          <p class="card-text">Icones et descriptif</p>
+          <button type="button" class="btn btn-outline-primary">See the website</button>
         </div>
       </div>
     </div>
@@ -51,6 +53,65 @@
         <% @skivents.each do |skivent| %>
           <div class="col-6">
             <%= render "skivents/card", skivent: skivent %>
+
+            <!-- Modal -->
+            <div class="modal fade" id="skivent-<%= skivent.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-skiin" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <!-- corps -->
+                  <div class="modal-body">
+
+                    <!-- container externe -->
+                    <div class="content row">
+                      <div class="card-skievent-details col-sm-12 col-md-7">
+                        <!-- container externe -->
+                        <div class="card-pictos">
+                          <!-- event infos -->
+                          <div class="card-skivent-info">
+                            <h3>Event information</h3>
+                            <p> PICTOS</p>
+                          </div>
+
+                          <!-- resort infos -->
+                          <div class="card-skivent-info">
+                            <h3>About <%= skivent.resort.name %> </h3>
+                            <p> PICTOS</p>
+                          </div>
+                        </div>
+
+                        <!-- description event -->
+                        <div class="card-skivent-description">
+                          <h3>Event description</h3>
+                          <p> <%= skivent.description %></p>
+                        </div>
+                      </div>
+
+                      <!-- description profil -->
+                      <div class="card-skivent-host col-sm-12 col-md-5">
+                        <h3>Event posted by:</h3>
+                        <%= link_to image_tag(skivent.user.picture, class: "avatar"), skivents_path %>
+                        <%= skivent.user.name %>
+                        <h3>About <%= skivent.user.name %></h3>
+                        <p> <%= skivent.user.description %></p>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary">Book now!</button>
+                    <button type="button" class="btn btn-primary">Contact the host</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>

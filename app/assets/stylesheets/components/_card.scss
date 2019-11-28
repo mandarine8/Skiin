@@ -3,6 +3,14 @@
     max-width: 100%;
   }
 }
+
+.card-title{
+  cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+      color: $skiin-yellow;
+    }
+  
 .card-car {
 
 }
