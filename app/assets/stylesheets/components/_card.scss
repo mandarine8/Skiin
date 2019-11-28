@@ -16,6 +16,14 @@
   display: flex;
 }
 
+
+.card-title{
+  cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+      color: $skiin-yellow;
+    }
+  
 .img-skivent {
   max-width: 50%;
   object-fit: cover;
