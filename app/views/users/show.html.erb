@@ -1,11 +1,16 @@
 
-<div class="background">
+<div class="background-show margin-top container pl-5 pr-5">
   <div class="row flex-nowrap">
 
-      <div class="col-10 col-lg-5 m-4">
+      <div class="card-profile col-lg-5">
         <div class="card-user-name">
-          <img class="img-circle avatar-bordered" src="<%= @user.picture %>" width="100px">
-          <h4> <%= @user.name %> </h4>
+          <img class="avatar-show img-circle avatar-bordered" src="<%= @user.picture %>" width="100px">
+          <div class="card-name-picto">
+            <h4> <%= @user.name %> </h4>
+            <% [1,2,3,4,5].sample.times do %>
+            <i class="picto-snow far fa-snowflake"></i>
+            <% end %>
+          </div>
         </div>
         <!-- end of .card-user-name -->
 
@@ -33,11 +38,59 @@
               >
           </div>
 
-          <h5> Drinving Information </h5>
-          <h5> Hobbies </h5>
+          <div class="drinving_hobbies d-flex">
+
+            <div class="card-driving">
+              <h5> Drinving Information </h5>
+              <div class="card-car col-8">
+                <div class="input-group mb-3 d-flex">
+                  <div class="car input-group-prepend d-flex">
+                    <div class="input-group-text d-flex">
+                      <input type="checkbox" aria-label="Checkbox for following text input">
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="I have a car">
+                  <div class="card-number_of_place d-flex">
+                    <% @skivents.each do |skivent| %>
+                    <div class="number_of_place d-flex">
+                    <p>Number of place(s) available</p>
+                    <%= skivent.number_of_place %>
+                    <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-no-car d-flex">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="I don't have a car">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-hobbies-content">
+              <h5> My Hobbies </h5>
+                <% @skivents.each do |skivent| %>
+                <div class="card-hobbies d-flex">
+                  <% skivent.user.hobbies.split(", ").each do |hobbie| %>
+                  <span class="card-hobbie d-flex mr-2">
+                    <div class="p-2"> <%= hobbie %> </div>
+                    <div class="card-hobbies-cross p-2">
+                      <i class="fas fa-times"></i>
+                    </div>
+                  </span>
+                  <% end %>
+                  <% end %>
+                </div>
+            </div>
+          </div>
+           <!-- end of .card-user-infos -->
         </div>
-         <!-- end of .card-user-infos -->
-      </div>
+          </div>
        <!-- end of .col-12.col-lg-5 -->
        <div class="col-12 col-lg-7 mt-4">
 
@@ -51,7 +104,7 @@
 
         <div class="tab-content" id="nav-tabContent">
 
-          <div class="tab-pane fade show active" id="nav-my-skivents" role="tabpanel" aria-labelledby="nav-my-skivents-tab">
+          <div class="card-skivent-user-show tab-pane fade show active" id="nav-my-skivents" role="tabpanel" aria-labelledby="nav-my-skivents-tab">
 
             <% @skivents.each do | skivent | %>
               <div class="card-skivent m-3 ">
