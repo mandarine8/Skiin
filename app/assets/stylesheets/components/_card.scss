@@ -1,6 +1,9 @@
 .card-skivent {
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 5px;
   img {
     max-width: 100%;
+    border-radius: 5px;
   }
 }
 .card-skivent-user-show {
@@ -17,7 +20,7 @@
 }
 
 
-.card-title{
+.card-skivent .card-title{
   cursor: pointer;
     &:hover{
       text-decoration: underline;

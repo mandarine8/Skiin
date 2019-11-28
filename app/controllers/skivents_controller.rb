@@ -17,19 +17,23 @@ class SkiventsController < ApplicationController
         {
           lat: resort.latitude,
           lng: resort.longitude,
+          name: resort.name,
+          skivents: resort.skivents.size,
           infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
         }
       end
     # loop if there is no query
     else
-    @markers = @resorts.map do |resort|
-      {
-        lat: resort.latitude,
-        lng: resort.longitude,
-        infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
-      }
-    end
-      @skivents = Skivent.all
+      @markers = @resorts.map do |resort|
+        {
+          lat: resort.latitude,
+          lng: resort.longitude,
+          name: resort.name,
+          skivents: resort.skivents.size,
+          infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
+        }
+      end
+    @skivents = Skivent.all
     end
 
   end
