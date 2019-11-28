@@ -6,13 +6,30 @@
     border-radius: 5px;
   }
 }
+.card-skivent-user-show {
+  width: 80%;
+  display: flex;
+}
+
+.card-skivent-infos {
+  margin-left: 8px;
+}
+
+.card-picture-skivent-user-show {
+  display: flex;
+}
+
 
 .card-skivent .card-title{
   cursor: pointer;
-  &:hover{
-    text-decoration: underline;
-    color: $skiin-yellow;
-  }
+    &:hover{
+      text-decoration: underline;
+      color: $skiin-yellow;
+    }
+  
+.img-skivent {
+  max-width: 50%;
+  object-fit: cover;
 }
 
 .card-hobbie {
