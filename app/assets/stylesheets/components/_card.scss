@@ -10,4 +10,57 @@
       text-decoration: underline;
       color: $skiin-yellow;
     }
+  
+.card-car {
+
+}
+
+.card-hobbie {
+  border-radius: 5px;
+  border: 2px white solid;
+}
+
+.card-hobbies-content {
+  margin-top: 20px;
+}
+
+.card-hobbies-cross {
+  background-color: white;
+  color: $skiin-darkblue;
+}
+
+.card-profile {
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  padding-left: 36px;
+  padding-right: 36px;
+  // height: 100vh;
+}
+
+.card-user-name {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card-name-picto {
+  flex-direction: column;
+  margin: 20px;
+}
+
+.card-user-description {
+  margin-top: 20px;
+}
+
+.card-user-info {
+  margin-top: 20px;
+}
+
+.card-driving {
+  margin-top: 20px;
+}
+
+.card-hobbies {
+  margin-top: 20px;
 }
