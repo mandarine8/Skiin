@@ -1,17 +1,11 @@
 class ResortsController < ApplicationController
 
   def show
+    @navbar_transparent = true
     @resort = Resort.find(params[:id])
     @skivents = @resort.skivents
     @resorts = Resort.geocoded
-
-    @markers = @resorts.map do |resort|
-      {
-        lat: resort.latitude,
-        lng: resort.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { resort: resort })
-      }
-    end
+    @previous_url = request.referrer
   end
 
 end
