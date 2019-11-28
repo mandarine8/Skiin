@@ -93,13 +93,6 @@
               </div>
               <!-- end of description event -->
 
-    <div class="row">
-      <div class="card-grid col-lg-6 col-sm-12 position-sticky">
-        <div class="row " >
-          <% @skivents.each do | skivent | %>
-            <div class="col-sm-12 col-lg-6 mb-3">
-
-              <%= render 'skivents/card', skivent: skivent %>
 
             </div>
 
@@ -117,18 +110,17 @@
           </div>
           <!-- end of container externe -->
 
-          <% end %>
         </div>
 
-
-        </div>
-        <!-- end of modal-body -->
 
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-secondary">Book now!</button>
           <button type="button" class="btn btn-primary">Contact the host</button>
         </div>
+        </div>
+        <!-- end of modal-body -->
+
 
       </div>
 
