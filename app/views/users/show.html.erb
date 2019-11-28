@@ -58,10 +58,10 @@
                   <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="I have a car">
                   <div class="card-number_of_place d-flex">
                     <% @skivents.each do |skivent| %>
-                      <div class="number_of_place d-flex">
+                      <!-- <div class="number_of_place d-flex">
                         <p>Number of place(s) available</p>
                         <%= skivent.number_of_place %>
-                      </div>
+                      </div> -->
                     <% end %>
                   </div>
                 </div>
@@ -135,7 +135,7 @@
                 </div>
               <% end %>
             </div>
-            <%= link_to "Add an event", skivents_path, class:"btn btn-secondary" %>
+            <%= link_to "Add an event", new_skivent_path, class:"btn btn-secondary" %>
           </div>
 
           <div class="card-skivent-user-show tab-pane fade" id="nav-booked-skivents" role="tabpanel" aria-labelledby="nav-booked-skivents-tab">
