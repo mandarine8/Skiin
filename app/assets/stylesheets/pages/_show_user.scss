@@ -10,7 +10,19 @@
   justify-content: space-between;
 }
 
-.background {
+.background-show {
   background-color: white;
-  height: 100vh;
+  color: white;
+  // height: 100vh;
+  // display: flex;
+  // justify-content: center;
+}
+
+.card-name-picto {
+  flex-direction: column;
+  margin: 24px;
+}
+
+.tab-content {
+  color: $skiin-darkblue;
 }
