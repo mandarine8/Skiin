@@ -22,12 +22,12 @@
       <div class="row">
         <div class="card-grid col-lg-6 col-sm-12 position-sticky">
           <div class="row " >
+
             <% @skivents.each do | skivent | %>
               <div class="col-sm-12 col-lg-6 mb-3">
-
                 <%= render 'skivents/card', skivent: skivent %>
-
               </div>
+
             <% end %>
           </div>
         </div>
@@ -50,6 +50,7 @@
   <div class="modal fade" id="skivent-<%= skivent.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-skiin" role="document">
       <div class="modal-content">
+
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -62,35 +63,35 @@
 
           <!-- container externe -->
           <div class="content row">
+
             <div class="card-skievent-details col-sm-12 col-md-7">
-              <!-- container externe -->
+
+              <!-- card-pictos -->
               <div class="card-pictos">
+
                 <!-- event infos -->
                 <div class="card-skivent-info">
                   <h3>Event information</h3>
                   <p> PICTOS</p>
                 </div>
+                <!-- end of event infos -->
 
                 <!-- resort infos -->
                 <div class="card-skivent-info">
                   <h3>About <%= skivent.resort.name %> </h3>
                   <p> PICTOS</p>
                 </div>
+                <!-- end of resort infos -->
+
               </div>
+              <!-- end of card-pictos -->
 
               <!-- description event -->
               <div class="card-skivent-description">
                 <h3>Event description</h3>
                 <p> <%= skivent.description %></p>
               </div>
-              
-    <div class="row">
-      <div class="card-grid col-lg-6 col-sm-12 position-sticky">
-        <div class="row " >
-          <% @skivents.each do | skivent | %>
-            <div class="col-sm-12 col-lg-6 mb-3">
-
-              <%= render 'skivents/card', skivent: skivent %>
+              <!-- end of description event -->
 
             </div>
 
@@ -102,22 +103,21 @@
               <h3>About <%= skivent.user.name %></h3>
               <p> <%= skivent.user.description %></p>
             </div>
+            <!-- end of description profil -->
+
           </div>
+          <!-- end of container externe -->
 
         </div>
+        <!-- end of modal-body -->
+
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-secondary">Book now!</button>
           <button type="button" class="btn btn-primary">Contact the host</button>
         </div>
-      </div>
 
-        <div class="map-card col-lg-6 col-sm-12"
-          id="map"
-          style="height: 600px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-        ></div>
+      </div>
 
     </div>
   </div>
