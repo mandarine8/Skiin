@@ -11,7 +11,8 @@ $font-size-base: 1rem;
 
 // Colors
 $body-color: $gray;
-$primary:    $blue;
+$primary:    $skiin-yellow;
+$secondary:  $skiin-darkblue;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
@@ -23,3 +24,9 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1440px
+)
