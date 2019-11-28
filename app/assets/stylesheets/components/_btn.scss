@@ -1,0 +1,45 @@
+.btn-yellow {
+    background-color: #F5C54A;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0 6px;
+    justify-content: center;
+    display: flex;
+    width: 250px;
+    color: #fff;
+    display: inline-flex;
+    height: 40px;
+    letter-spacing: .01rem;
+    line-height: 1.4;
+    max-width: 100%;
+    min-width: 80px;
+    transition: background-color .1s linear,border-color .1s linear,color .1s linear;
+    vertical-align: middle;
+    align-items: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.btn-white {
+    background-color: transparent;
+    border-color:  #F5C54A;
+    border: 2px solid #F5C54A;
+    color: #F5C54A;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0 6px;
+    width: 250px;
+    justify-content: center;
+    display: inline-flex;
+    height: 40px;
+    letter-spacing: .01rem;
+    line-height: 1.4;
+    max-width: 100%;
+    min-width: 80px;
+    align-items: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
