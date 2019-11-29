@@ -1,53 +1,129 @@
 
 <div class="container margin-top">
 
+  <div class="background">
 
-  <%= form_tag skivents_path, method: :get, class: "inline-form d-flex my-3" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a resort"
-    %>
-    <%= submit_tag "Search", class: "btn-login-search" %>
-  <% end %>
+    <div class="container-fluid m-3">
+      <div class="row">
 
-<div class="background">
-
-  <div class="container-fluid m-3">
-    <div class="row">
-
-      <div class="search col col-8">
-        <%= form_tag skivents_path, method: :get, class: "inline-form d-flex my-3" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a resort"
-          %>
-          <%= submit_tag "Search", class: "btn-login-search" %>
-        <% end %>
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="card-grid col-lg-6 col-sm-12 position-sticky">
-        <div class="row " >
-          <% @skivents.each do | skivent | %>
-            <div class="col-sm-12 col-lg-6 mb-3">
-
-              <%= render 'skivents/card', skivent: skivent %>
-
-            </div>
+        <div class="search col col-8">
+          <%= form_tag skivents_path, method: :get, class: "inline-form d-flex my-3" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a resort"
+            %>
+            <%= submit_tag "Search", class: "btn-login-search" %>
           <% end %>
         </div>
+
       </div>
 
-        <div class="map-card col-lg-6 col-sm-12"
-          id="map"
-          style="height: 600px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-        ></div>
+      <div class="row">
+        <div class="card-grid col-lg-6 col-sm-12 position-sticky">
+          <div class="row " >
+
+            <% @skivents.each do | skivent | %>
+              <div class="col-sm-12 col-lg-6 mb-3">
+                <%= render 'skivents/card', skivent: skivent %>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+
+          <div class="map-card col-lg-6 col-sm-12"
+            id="map"
+            style="height: 600px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+      </div>
     </div>
   </div>
 </div>
+
+
+<% @skivents.each do |skivent| %>
+
+  <!-- Modal -->
+  <div class="modal fade" id="skivent-<%= skivent.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-skiin" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!-- corps -->
+        <div class="modal-body">
+
+          <!-- container externe -->
+          <div class="content row">
+
+            <div class="card-skievent-details col-sm-12 col-md-7">
+
+              <!-- card-pictos -->
+              <div class="card-pictos">
+
+                <!-- event infos -->
+                <div class="card-skivent-info">
+                  <h3>Event information</h3>
+                  <p> PICTOS</p>
+                </div>
+                <!-- end of event infos -->
+
+                <!-- resort infos -->
+                <div class="card-skivent-info">
+                  <h3>About <%= skivent.resort.name %> </h3>
+                  <p> PICTOS</p>
+                </div>
+                <!-- end of resort infos -->
+
+              </div>
+              <!-- end of card-pictos -->
+
+              <!-- description event -->
+              <div class="card-skivent-description">
+                <h3>Event description</h3>
+                <p> <%= skivent.description %></p>
+              </div>
+              <!-- end of description event -->
+
+
+            </div>
+
+            <!-- description profil -->
+            <div class="card-skivent-host col-sm-12 col-md-5">
+              <h3>Event posted by:</h3>
+              <%= link_to image_tag(skivent.user.picture, class: "avatar"), skivents_path %>
+              <%= skivent.user.name %>
+              <h3>About <%= skivent.user.name %></h3>
+              <p> <%= skivent.user.description %></p>
+            </div>
+
+            <!-- end of description profil -->
+
+          </div>
+          <!-- end of container externe -->
+
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary">Book now!</button>
+          <button type="button" class="btn btn-primary">Contact the host</button>
+        </div>
+        </div>
+        <!-- end of modal-body -->
+
+
+      </div>
+
+    </div>
+  </div>
+<% end %>

@@ -20,9 +20,15 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
 
+
     markers.forEach((marker) => {
+      const el = document.createElement('div');
+      el.className = 'mapbox-marker';
+      el.dataset.skivents = marker.skivents
+      el.dataset.resort = marker.name
+
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-      new mapboxgl.Marker()
+      new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);

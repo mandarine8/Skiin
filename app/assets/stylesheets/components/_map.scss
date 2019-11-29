@@ -8,7 +8,9 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: bold;
+  font-weight: 25px;
 }
 
 canvas.mapboxgl-canvas {
@@ -17,4 +19,21 @@ canvas.mapboxgl-canvas {
 
 .mapboxgl-ctrl {
   transform: translate(-50px, 0) !important;
+}
+
+.mapbox-marker {
+  background: $skiin-lightblue;
+  color: $skiin-darkblue;
+  width: 120px;
+  height: 30px;
+  &::before {
+    content: attr(data-skivents);
+    color: $skiin-darkblue;
+    font-size: 24px;
+  }
+    &::after {
+    content: attr(data-resort);
+    color: $skiin-darkblue;
+    font-size: 24px;
+  }
 }

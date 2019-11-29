@@ -4,18 +4,36 @@ class SkiventsController < ApplicationController
   def index
     @navbar_transparent = true
     @resorts = Resort.geocoded
-
-    @markers = @resorts.map do |resort|
-      {
-        lat: resort.latitude,
-        lng: resort.longitude,
-        infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
-      }
-    end
+    # loop if there is a query
     if params[:query].present?
       @skivents = Skivent.search_by_title(params[:query])
+      @filtered_resorts = []
+      # push all resorts from queried skivents
+      @skivents.each do |skivent|
+        @filtered_resorts.push(skivent.resort)
+      end
+      # create markers only for selected resorts
+      @markers = @filtered_resorts.uniq.map do |resort|
+        {
+          lat: resort.latitude,
+          lng: resort.longitude,
+          name: resort.name,
+          skivents: resort.skivents.size,
+          infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
+        }
+      end
+    # loop if there is no query
     else
-      @skivents = Skivent.all
+      @markers = @resorts.map do |resort|
+        {
+          lat: resort.latitude,
+          lng: resort.longitude,
+          name: resort.name,
+          skivents: resort.skivents.size,
+          infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
+        }
+      end
+    @skivents = Skivent.all
     end
 
   end
