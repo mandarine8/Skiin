@@ -3,10 +3,18 @@
 @import "my_show";
 @import "other_user_show";
 //@import "show_user";
+
 @import "new_skivent";
-
-
 
 // .background-show {
 //   color: white;
 // }
+.modal {
+    color: $skiin-darkgray;
+  h4 {
+    color: $skiin-darkblue;
+  }
+  h5 {
+    color: $skiin-darkblue;
+  }
+}

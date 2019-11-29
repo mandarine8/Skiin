@@ -33,7 +33,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-5">
       <!-- Affichage du descriptif de la station  -->
       <div class="card card-resort w-100">
         <div class="card-body">
@@ -51,7 +51,7 @@
       <!-- Affichage des skivents de la station  -->
       <div class="row">
         <% @skivents.each do |skivent| %>
-          <div class="col-6">
+          <div class="col-7">
             <%= render "skivents/card", skivent: skivent %>
 
             <!-- Modal -->

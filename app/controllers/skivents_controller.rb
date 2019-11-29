@@ -76,6 +76,14 @@ class SkiventsController < ApplicationController
     redirect_to skivents_path
   end
 
+  def book
+    skivent = Skivent.find(params[:id])
+    booking = Booking.new(skivent: skivent, user: current_user, status: "pending")
+    booking.save
+
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def skivent_params

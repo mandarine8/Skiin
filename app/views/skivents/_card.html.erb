@@ -8,16 +8,26 @@
 
     <h5 class="card-title" data-toggle="modal" data-target="#skivent-<%= skivent.id %>"><%= skivent.title %></h5>
     <p class="card-text"><%= skivent.description %></p>
-    <img src="<%= skivent.user.picture %>" alt="" class="avatar">
-    <%= link_to skivent.user.name %>
 
-    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
 
-    <div class="card-skivent-host">
-      <% skivent.bookings.each do |booking| %>
-      <img src="<%= booking.user.picture %>" alt="" class="avatar">
-      <% end %>
+    <div class="card-avatars">
+
+      <div class="card-avatars-booked">
+        <img src="<%= skivent.user.picture %>" alt="" class="avatar">
+        <%= link_to skivent.user.name, "#" %>
+      </div>
+
+
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+      <div class="card-skivent-host">
+        <% skivent.bookings.each do |booking| %>
+        <img src="<%= booking.user.picture %>" alt="" class="avatar">
+        <% end %>
+      </div>
     </div>
+
+
 
   </div>
 </div>
