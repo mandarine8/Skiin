@@ -25,6 +25,8 @@
 
 .tab-content {
   color: $skiin-darkblue;
+  height: 70vh; /* or any value */
+  overflow-y: auto;
 }
 
 

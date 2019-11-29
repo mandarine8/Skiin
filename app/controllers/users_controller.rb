@@ -3,7 +3,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @skivents = @user.skivents.last(3)
+    @requested_bookings = @user.bookings
     @booked_skivents = @user.booked_skivents.last(3)
+    @incoming_bookings = []
+    @skivents.each do |skivent|
+      skivent.bookings.each do |booking|
+        @incoming_bookings << booking
+      end
+    end
     if @user == current_user
       render :my_show
     else

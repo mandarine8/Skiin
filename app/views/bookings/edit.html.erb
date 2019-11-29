@@ -1,0 +1,10 @@
+<div class="margin-top">
+
+<h1>edit your booking for <%= @booking.skivent.title %></h1>
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :status, collection: ["accepted", "pending", "declined"] %>
+  <%= f.submit %>
+<% end %>
+</div>
+

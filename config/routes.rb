@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :book, to: "skivents#book"
     end
   end
+  resources :bookings, only: [:edit, :update]
   resources :resorts, only: [:show]
   resources :users, only: [:show, :update]
 end
