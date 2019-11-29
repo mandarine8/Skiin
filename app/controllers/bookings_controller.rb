@@ -9,6 +9,21 @@ class BookingsController < ApplicationController
       redirect_to booking_path(@booking)
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if params[:booking][:status] == "accepted"
+      @booking.update!(status: "accepted")
+    else params[:booking][:status] == "declined"
+      @booking.update!(status: "declined")
+    end
+    redirect_to user_path(@booking.skivent.user)
+  end
+
+
   private
 
   def booking_params

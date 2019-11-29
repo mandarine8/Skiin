@@ -1,4 +1,5 @@
 <div class="margin-top">
+  
     <div class="row flex-nowrap">
         <%= render "users/user_info_card"%>
         <% @user.skivents.each do |skivent| %>
@@ -8,4 +9,5 @@
                 <%= render "skivents/skivent_modal", skivent: skivent %>
             <% end %>
     </div>
+
 </div>
