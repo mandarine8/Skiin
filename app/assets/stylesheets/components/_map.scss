@@ -37,3 +37,9 @@ canvas.mapboxgl-canvas {
     font-size: 24px;
   }
 }
+
+.map-card {
+  height: 100vh;
+  position: sticky !important;
+  top: 0;
+}
