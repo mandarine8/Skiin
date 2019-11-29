@@ -2,8 +2,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @skivents = @user.skivents.last(3).to_a
-    @booked_skivents = @user.booked_skivents.last(3).to_a
+    @skivents = @user.skivents.last(3)
+    @booked_skivents = @user.booked_skivents.last(3)
+    if @user == current_user
+      render :my_show
+    else
+      render :other_user_show
+    end
   end
 
 
