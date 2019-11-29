@@ -35,7 +35,6 @@ class SkiventsController < ApplicationController
       end
     @skivents = Skivent.all
     end
-
   end
 
   def show
