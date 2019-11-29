@@ -31,7 +31,7 @@ r1 = Resort.create!(
   longitude: -74.5874801,
   description: "Tremblant welcomes you with newly updated mountain facilities and a European-style pedestrian village with world-class lodging and amenities, restaurants, boutiques and things to do.",
   pictures: ["tremblant-village.jpg", "tremblant-ski.jpg", "tremblant-gondola.jpg"]
-  url: 'https://www.tremblant.ca/',
+  url: 'https://www.tremblant.ca/'
 )
 
 r2 = Resort.create!(
