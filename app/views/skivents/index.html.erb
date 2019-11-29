@@ -36,6 +36,13 @@
 
         <div class="col-12 col-lg-6">
 
+          <div class=""
+            id="map"
+            style="height: 600px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          >
+          </div>
 
         </div>
 
@@ -43,13 +50,6 @@
     </div>
   </div>
 </div>
-  <div class=""
-    id="map"
-    style="height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  >
-  </div>
 
 
 <% @skivents.each do |skivent| %>
