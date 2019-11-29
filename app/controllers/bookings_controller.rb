@@ -1,11 +1,12 @@
 class BookingsController < ApplicationController
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    skivent = Skivent.find(params[:skivent_id])
-    @booking.skivent = skivent
+    @booking = Booking.new(
+      skivent: Skivent.find(params[:skivent_id]),
+      user: current_user,
+      status: "pending"
+    )
     @booking.save!
-    redirect_to booking_path(@booking)
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -25,6 +26,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :user_id, :skivent_id)
+    params.require(:booking).permit(:skivent_id)
   end
 end
