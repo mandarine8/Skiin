@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :skivents do
     resources :bookings, only: [:create]
-end
+
+    member do
+      get :book, to: "skivents#book"
+    end
+  end
   resources :resorts, only: [:show]
   resources :users, only: [:show, :update]
 end
