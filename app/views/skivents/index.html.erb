@@ -52,7 +52,7 @@
       <div class="modal-content">
 
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h5>
+          <div class="modal-title" id="exampleModalLabel"> <h3> <%= skivent.title %></h3></div>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -71,14 +71,14 @@
 
                 <!-- event infos -->
                 <div class="card-skivent-info">
-                  <h3>Event information</h3>
+                  <h4>Event information</h4>
                   <p> PICTOS</p>
                 </div>
                 <!-- end of event infos -->
 
                 <!-- resort infos -->
                 <div class="card-skivent-info">
-                  <h3>About <%= skivent.resort.name %> </h3>
+                  <h4>About <%= skivent.resort.name %> </h4>
                   <p> PICTOS</p>
                 </div>
                 <!-- end of resort infos -->
@@ -88,7 +88,7 @@
 
               <!-- description event -->
               <div class="card-skivent-description">
-                <h3>Event description</h3>
+                <h4>Event description</h4>
                 <p> <%= skivent.description %></p>
               </div>
               <!-- end of description event -->
@@ -97,11 +97,14 @@
             </div>
 
             <!-- description profil -->
-            <div class="card-skivent-host col-sm-12 col-md-5">
-              <h3>Event posted by:</h3>
-              <%= link_to image_tag(skivent.user.picture, class: "avatar"), skivents_path %>
+            <div class="card-skivent-host col-sm-12 col-md-5 ">
+              <h4>Event posted by:</h4>
+              <%= link_to image_tag(skivent.user.picture, class: "avatar mt-3 mr-2"), skivents_path %>
               <%= skivent.user.name %>
-              <h3>About <%= skivent.user.name %></h3>
+              <div class="mt-4">
+              <h4>About <%= skivent.user.name %></h4>
+
+              </div>
               <p> <%= skivent.user.description %></p>
             </div>
 
