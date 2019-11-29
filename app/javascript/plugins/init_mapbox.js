@@ -22,13 +22,13 @@ const initMapbox = () => {
 
 
     markers.forEach((marker) => {
-      const el = document.createElement('div');
-      el.className = 'mapbox-marker';
-      el.dataset.skivents = marker.skivents
-      el.dataset.resort = marker.name
+      // const el = document.createElement('div');
+      // el.className = 'mapbox-marker';
+      // el.dataset.skivents = marker.skivents
+      // el.dataset.resort = marker.name
 
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-      new mapboxgl.Marker(el)
+      new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
