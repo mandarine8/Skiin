@@ -1,0 +1,50 @@
+
+    <div class="col-10 col-lg-5 background-content ">
+        <div class="content-name">
+            <div class="card-user-name">
+                <img class="img-circle avatar-big" src="<%= @user.picture %>" width="100px">
+                <h4> <%= @user.name %> </h4>
+            </div>
+        </div>
+        <!-- end of .card-user-name -->
+        <div class="content-description">
+            <div class="card-user-description">
+                <h3> Who I am </h3>
+                <p><%= @user.description %></p>
+            </div>
+        </div>
+         <!-- end of .card-user-description -->
+        <div class="content-info">
+            <div class="card-user-info">
+                <h3> My Skiin info</h3>
+                <h5> Ski Level </h5>
+                <div class="level_content_container">
+                    <div class="level-content">
+                        <p>Beginner</p>
+                        <p>Intermediate</p>
+                        <p>Expert</p>
+                    </div>
+                    <input
+                        type="range"
+                        min="1"
+                        max="3"
+                        step="1"
+                    >
+                </div>
+            </div class="content-hobby">
+
+            <h5> Drinving Information </h5>
+            <h5> Hobbies </h5>
+        </div>
+         <!-- end of .card-user-infos -->
+            <div class="content_btn mb-4">
+            <% unless @user == current_user %>
+                <div class="d-flex justify-content-center" style="height:300px; align-items: center;">
+                    <%= link_to "contact me", skivents_path, class:"btn-yellow" %>
+                </div>
+            <% end %>
+                    <div class="d-flex justify-content-center" style="height:300px; align-items: center; margin:50px;">
+                        <%= link_to "Back to the skivents", skivents_path, class:"btn-white" %>
+                    </div>
+                </div>   
+        </div>
