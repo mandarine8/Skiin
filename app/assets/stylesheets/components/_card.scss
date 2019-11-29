@@ -5,6 +5,15 @@
     max-width: 100%;
   }
 }
+
+.card-title {
+  color: $skiin-darkblue;
+}
+
+.card-text {
+  color: $skiin-mediumgray;
+}
+
 .card-skivent-user-show {
   width: 80%;
   display: flex;
@@ -32,6 +41,23 @@
   object-fit: cover;
 }
 
+.card-skivent-host {
+  img {
+    position: relative;
+    margin-left: -18px;
+  }
+}
+
+.card-avatars {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-avatars-booked a {
+  display: block;
+  color: $skiin-mediumgray;
+}
+
 .card-hobbie {
   border-radius: 5px;
   border: 2px white solid;
@@ -44,6 +70,9 @@
 .card-hobbies-cross {
   background-color: white;
   color: $skiin-darkblue;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .card-profile {
