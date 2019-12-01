@@ -218,6 +218,61 @@ s10 = Skivent.create!(
   user: u2
 )
 
+s22 = Skivent.create!(
+  title: "Sports day in Mont Orford",
+  date: Date.new(2019,12,21),
+  level: "expert",
+  number_of_place: 1,
+  car: true,
+  description: "Sports day, few breaks but the opportunity to enjoy the outdoors.",
+  resort: r6,
+  user: u3
+)
+
+s23 = Skivent.create!(
+  title: "A slalom in Sutton",
+  date: Date.new(2019,12,22),
+  level: "expert",
+  number_of_place: 3,
+  car: true,
+  description: "Who wants to join me and organize a slalom? We will have so much fun! ",
+  resort: r5,
+  user: u1
+)
+
+s24 = Skivent.create!(
+  title: "Skiing and taking pictures in Mont-Tremblant",
+  date: Date.new(2019,12,8),
+  level: "intermediate",
+  number_of_place: 3,
+  car: false,
+  description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
+  resort: r1,
+  user: u2
+)
+
+s25 = Skivent.create!(
+  title: "Improving my ski level in Bromont",
+  date: Date.new(2019,12,7),
+  level: "beginner",
+  number_of_place: 2,
+  car: true,
+  description: "I haven't been skiing since a long time, I want this feeling back! Join me if you want to ski and laugh!",
+  resort: r1,
+  user: u5
+)
+
+s26 = Skivent.create!(
+  title: "Snowboarding in Saint-Sauveur ",
+  date: Date.new(2019,12,12),
+  level: "Intermediate",
+  number_of_place: 2,
+  car: false,
+  description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
+  resort: r4,
+  user: u5
+)
+
 puts "Looping looping"
 
 user_to_book = User.all.filter do |user|
