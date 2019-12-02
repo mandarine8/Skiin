@@ -3,6 +3,7 @@ class Skivent < ApplicationRecord
   belongs_to :user
   has_many :favorites
   has_many :bookings
+  has_many :ratings
   include PgSearch::Model
   pg_search_scope :search_by_title,
     against: [:title],

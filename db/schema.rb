@@ -11,7 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2019_12_02_164012) do
+
+ActiveRecord::Schema.define(version: 2019_12_02_190448) do
 
 
   # These are extensions that must be enabled in order to support this database
@@ -27,11 +28,24 @@ ActiveRecord::Schema.define(version: 2019_12_02_164012) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "skivent_id"
     t.index ["skivent_id"], name: "index_favorites_on_skivent_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.integer "rating"
+    t.string "review"
+    t.bigint "skivent_id"
+    t.index ["skivent_id"], name: "index_ratings_on_skivent_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+
   end
 
   create_table "resorts", force: :cascade do |t|
@@ -41,10 +55,10 @@ ActiveRecord::Schema.define(version: 2019_12_02_164012) do
     t.integer "number_of_slopes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "pictures", array: true
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.string "pictures", array: true
     t.string "url"
     t.integer "price"
   end
@@ -78,14 +92,20 @@ ActiveRecord::Schema.define(version: 2019_12_02_164012) do
     t.string "name"
     t.string "hobbies"
     t.boolean "car"
+    t.string "rating"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bookings", "skivents"
   add_foreign_key "bookings", "users"
+
   add_foreign_key "favorites", "skivents"
   add_foreign_key "favorites", "users"
+
+  add_foreign_key "ratings", "skivents"
+  add_foreign_key "ratings", "users"
+
   add_foreign_key "skivents", "resorts"
   add_foreign_key "skivents", "users"
 end

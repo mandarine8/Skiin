@@ -4,6 +4,19 @@
     <%= render "users/other_user_info_card"%>
     <div class="col-sm-12 col-lg-6 mb-3">
       <div class="skivents-cards-grid">
+        <div class="rating">
+          <p>
+            <% ((@user.rating.reduce(0) { |sum, val| val.note + sum } / @user.rating.count) rescue 0).times do %>
+              <i class="picto-snow far fa-snowflake"></i>
+            <% end %>
+          </p>
+          <% if @user != current_user %>
+          <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+            rate <%= @user.name %>
+          </button>
+
+          <% end %>
+        </div>
         <% @user.skivents.each do |skivent| %>
           <%= render 'skivents/card', skivent: skivent %>
           <%= render "skivents/skivent_modal", skivent: skivent %>

@@ -9,7 +9,7 @@
           <img class="avatar-show img-circle avatar-bordered" src="<%= @user.picture %>" width="100px">
           <div class="card-name-picto">
             <h4> <%= @user.name %> </h4>
-            <% [1,2,3,4,5].sample.times do %>
+            <% @average_rating.times do %>
             <i class="picto-snow far fa-snowflake"></i>
             <% end %>
           </div>
@@ -154,9 +154,17 @@
                     </div>
                     <img src="<%= booked_skivent.user.picture %>" alt="" class="avatar-bordered">
                     <%= link_to booked_skivent.user.name %>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= booked_skivent.id %> ">
+                      add a review
+                    </button>
                   </div>
                 </div>
               </div>
+            <% end %>
+            <!-- Modals for the booked skivents -->
+            <% @booked_skivents.each do |booked_skivent| %>
+              <%= render "users/ratings_modal", booked_skivent: booked_skivent %>
             <% end %>
           </div>
 
@@ -203,26 +211,6 @@
               <% end %>
             </div>
           </div>
-      </div>
-
-  <!-- closing divs DO NOT DELETE -->
+       </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- render _dashboard_currentuser si current user
-ou alors
-render _userprofile -->
-
