@@ -275,13 +275,13 @@ s26 = Skivent.create!(
 
 puts "Looping looping"
 
-user_to_book = User.all.filter do |user|
-  user.id % 2 == 0
-end
+# user_to_book = User.all.filter do |user|
+#   user.id % 2 == 0
+# end
 
-user_to_book.each do |user|
-  Skivent.all.each { |skivent| Booking.create! user: user, skivent: skivent, status: "pending"}
-end
+# user_to_book.each do |user|
+#   Skivent.all.each { |skivent| Booking.create! user: user, skivent: skivent, status: "pending"}
+# end
 
 puts "Seeds Completed"
 
