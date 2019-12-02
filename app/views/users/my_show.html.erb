@@ -6,12 +6,22 @@
       <div class="card-profile col-lg-5 position-sticky sticky-top">
         <!-- user avatar -->
         <div class="card-user-name">
+          <div class="rating">
+            <p>
+              <% ((@user.rating.reduce(0) { |sum, val| val.note + sum } / @user.rating.count) rescue 0).times do %>
+                <i class="picto-snow far fa-snowflake"></i>
+              <% end %>
+            </p>
+              <% if @user != current_user %>
+            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+              rate <%= @user.name %>
+            </button>
+            <% end %>
+          </div>
+
           <img class="avatar-show img-circle avatar-bordered" src="<%= @user.picture %>" width="100px">
           <div class="card-name-picto">
             <h4> <%= @user.name %> </h4>
-            <% [1,2,3,4,5].sample.times do %>
-            <i class="picto-snow far fa-snowflake"></i>
-            <% end %>
           </div>
         </div>
 
@@ -154,9 +164,17 @@
                     </div>
                     <img src="<%= booked_skivent.user.picture %>" alt="" class="avatar-bordered">
                     <%= link_to booked_skivent.user.name %>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= booked_skivent.id %> ">
+                      add a review
+                    </button>
                   </div>
                 </div>
               </div>
+            <% end %>
+            <!-- Modals for the booked skivents -->
+            <% @booked_skivents.each do |booked_skivent| %>
+              <%= render "users/ratings_modal", booked_skivent: booked_skivent %>
             <% end %>
           </div>
 
@@ -203,26 +221,6 @@
               <% end %>
             </div>
           </div>
-      </div>
-
-  <!-- closing divs DO NOT DELETE -->
+       </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- render _dashboard_currentuser si current user
-ou alors
-render _userprofile -->
-

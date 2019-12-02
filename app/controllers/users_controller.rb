@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @rating = Rating.new
     @user = User.find(params[:id])
     @skivents = @user.skivents.last(3)
     @requested_bookings = @user.bookings
