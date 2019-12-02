@@ -1,5 +1,5 @@
 .btn-yellow {
-    background-color: #F5C54A;
+    background-color: $skiin-yellow;
     border: 2px solid transparent;
     border-radius: 4px;
     cursor: pointer;
@@ -8,7 +8,7 @@
     justify-content: center;
     display: flex;
     width: 250px;
-    color: #fff;
+    color: white;
     display: inline-flex;
     height: 40px;
     letter-spacing: .01rem;
@@ -19,13 +19,19 @@
     vertical-align: middle;
     align-items: center;
     font-family:Arial, Helvetica, sans-serif;
+    &:hover {
+        color: $skiin-yellow;
+        background-color: white;
+        text-decoration: none;
+        border: 2px solid $skiin-yellow;
+    }
 }
 
 .btn-white {
     background-color: white;
-    border-color:  #F5C54A;
-    border: 2px solid #F5C54A;
-    color: #F5C54A;
+    border-color:  $skiin-yellow;
+    border: 2px solid $skiin-yellow;
+    color: $skiin-yellow;
     border-radius: 4px;
     cursor: pointer;
     margin: 0;
@@ -40,6 +46,11 @@
     min-width: 80px;
     align-items: center;
     font-family:Arial, Helvetica, sans-serif;
+    &:hover {
+        color: white;
+        background-color: $skiin-yellow;
+        text-decoration: none;
+    }
 }
 
 

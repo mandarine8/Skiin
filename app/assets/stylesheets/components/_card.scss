@@ -102,10 +102,16 @@
   // height: 100vh;
 }
 
-.card-user-name {
+.card-user-name-rating {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  .avatar-big {
+    margin-right: 20px;
+  }
+  i {
+    color:$skiin-yellow;
+  }
 }
 .card-color {
   color: black;
@@ -131,3 +137,5 @@
 .card-hobbies {
   margin-top: 20px;
 }
+
+
