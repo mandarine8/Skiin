@@ -55,13 +55,9 @@
                       <input type="checkbox" aria-label="Checkbox for following text input">
                     </div>
                   </div>
-                  <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="I have a car">
                   <div class="card-number_of_place d-flex">
-                    <% @skivents.each do |skivent| %>
-                      <!-- <div class="number_of_place d-flex">
-                        <p>Number of place(s) available</p>
-                        <%= skivent.number_of_place %>
-                      </div> -->
+                    <% if @user.car == true %>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="I have a car">
                     <% end %>
                   </div>
                 </div>
@@ -112,17 +108,17 @@
         <!-- Tab Nav -->
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-my-skivents-tab" data-toggle="tab" href="#nav-my-skivents" role="tab" aria-controls="nav-my-skivents" aria-selected="true">my skivents</a>
-            <a class="nav-item nav-link" id="nav-booked-skivents-tab" data-toggle="tab" href="#nav-booked-skivents" role="tab" aria-controls="nav-booked-skivents" aria-selected="false">my past skivents</a>
-            <a class="nav-item nav-link" id="nav-requested_skivents-tab" data-toggle="tab" href="#nav-requested_skivents" role="tab" aria-controls="nav-requested_skivents" aria-selected="true">requested skivents</a>
-            <a class="nav-item nav-link" id="nav-my_incoming_bookings-tab" data-toggle="tab" href="#nav-my_incoming_bookings" role="tab" aria-controls="nav-my_incoming_bookings" aria-selected="true">my incoming bookings</a>
+            <a class="nav-item nav-link active" id="nav-My-skivents-tab" data-toggle="tab" href="#nav-My-skivents" role="tab" aria-controls="nav-My-skivents" aria-selected="true">My skivents</a>
+            <a class="nav-item nav-link" id="nav-booked-skivents-tab" data-toggle="tab" href="#nav-booked-skivents" role="tab" aria-controls="nav-booked-skivents" aria-selected="false">My past skivents</a>
+            <a class="nav-item nav-link" id="nav-requested_skivents-tab" data-toggle="tab" href="#nav-requested_skivents" role="tab" aria-controls="nav-requested_skivents" aria-selected="true">Requested skivents</a>
+            <a class="nav-item nav-link" id="nav-my_incoming_bookings-tab" data-toggle="tab" href="#nav-my_incoming_bookings" role="tab" aria-controls="nav-my_incoming_bookings" aria-selected="true">My incoming bookings</a>
           </div>
         </nav>
 
         <!-- tab content -->
         <div class="tab-content" id="nav-tabContent">
           <!-- 1st -->
-          <div class="card-skivent-user-show tab-pane fade show active" id="nav-my-skivents" role="tabpanel" aria-labelledby="nav-my-skivents-tab">
+          <div class="card-skivent-user-show tab-pane fade show active" id="nav-My-skivents" role="tabpanel" aria-labelledby="nav-My-skivents-tab">
             <div>
               <% @skivents.each do | skivent | %>
               <% next if skivent.user.nil? %>
@@ -178,7 +174,7 @@
                     <strong> <%= booking.skivent.title %></strong>
                     <h2 class="card-skivent-host"></h2>
                     <p><%= booking.skivent.description %></p>
-                    <img src=<%= booking.user.picture %> alt="" class="avatar-bordered">
+                    <img src=<%= link_to booking.user.picture %> alt="" class="avatar-bordered">
                     <%= link_to booking.user.name, user_path(booking.user) %>
                     <div>
                       <%= booking.status %>
@@ -201,11 +197,8 @@
                     <strong> <%= booking.skivent.title %></strong>
                     <h2 class="card-skivent-host"></h2>
                     <p><%= booking.skivent.description %></p>
-                    <img src=<%= booking.skivent.user.picture %> alt="" class="avatar-bordered">
+                    <img src=<%= link_to booking.skivent.user.picture %> alt="" class="avatar-bordered">
                     <%= link_to booking.skivent.user.name %>
-                    <div>
-                      <%= booking.status %>
-                    </div>
                   </div>
                 </div>
               <% end %>
