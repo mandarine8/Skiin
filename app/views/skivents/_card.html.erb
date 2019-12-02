@@ -6,32 +6,37 @@
 
     <!-- Button trigger modal -->
 
+    <% if current_user.saved_skivents.include?(skivent) %>
+      <%= link_to favorite_path(current_user.favorites.find_by(skivent_id: skivent.id)), method: :delete do %>
+        <i class="fas fa-heart card-heart red"></i>
+      <% end %>
+    <% else %>
+      <%= link_to favorites_path(skivent_id: skivent.id), method: :post do %>
+        <i class="far fa-heart card-heart red"></i>
+      <% end %>
+    <% end %>
+
     <p class="resort-name"><%= link_to skivent.resort.name, resort_path(skivent.resort) %></p>
+    <p class="skivent-date"><%= skivent.date %></p>
 
     <h5 class="card-title" data-toggle="modal" data-target="#skivent-<%= skivent.id %>"><%= skivent.title %></h5>
-    <p class="skivent-date"><%= skivent.date %></p>
-    <p class="card-text"><%= skivent.description %></p>
-
+    <!-- <p class="card-text"><%= skivent.description %></p> -->
 
     <div class="card-avatars">
-
       <div class="card-avatars-booked">
-        <img src="<%= skivent.user.picture %>" alt="" class="avatar">
-        <%= link_to skivent.user.name, "#" %>
+        <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
+        <p class="avatar-name"><%= skivent.user.name %></p>
       </div>
-
 
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
 
       <div class="card-skivent-host">
         <% skivent.bookings.each do |booking| %>
-        <img src="<%= booking.user.picture %>" alt="" class="avatar">
+          <%= link_to image_tag(booking.user.picture, class: "avatar"), user_path(booking.user) %>
         <% end %>
+
       </div>
 
     </div>
-
-
-
   </div>
 </div>

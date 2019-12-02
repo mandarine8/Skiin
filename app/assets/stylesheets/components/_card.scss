@@ -69,6 +69,16 @@
 .card-avatars {
   display: flex;
   justify-content: space-between;
+  .avatar-name {
+    display: none;
+  }
+  &:hover .avatar-name{
+    display:block;
+  }
+}
+.card-avatars-booked {
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-avatars-booked a {
@@ -102,10 +112,19 @@
   // height: 100vh;
 }
 
-.card-user-name {
+.card-user-name-rating {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  .avatar-big {
+    margin-right: 20px;
+  }
+  i {
+    color:$skiin-yellow;
+  }
+}
+.card-color {
+  color: black;
 }
 
 .card-name-picto {
@@ -128,3 +147,20 @@
 .card-hobbies {
   margin-top: 20px;
 }
+
+.red {
+  color: rgb(210, 61, 51);
+}
+
+.card-heart{
+    position: absolute;
+    right: 16px;
+    top: 15px;
+}
+
+.skivent-date{
+  position: absolute;
+    right: 16px;
+    top: 160px;
+}
+
