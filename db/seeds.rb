@@ -335,7 +335,7 @@ s21 = Skivent.create!(
   level: "expert",
   number_of_place: 1,
   car: true,
-  description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. "
+  description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. ",
   resort: r2,
   user: u5
 )
@@ -378,7 +378,7 @@ b6 = Booking.create!(
 )
 
 b7 = Booking.create!(
-  user: u8,
+  user: u5,
   skivent: s9,
   status: "accepted"
 )
