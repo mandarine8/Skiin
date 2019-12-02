@@ -335,7 +335,7 @@ s21 = Skivent.create!(
   level: "expert",
   number_of_place: 1,
   car: true,
-  description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. "!
+  description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. "
   resort: r2,
   user: u5
 )
