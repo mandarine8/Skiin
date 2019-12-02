@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 2019_12_01_195645) do
     t.integer "number_of_slopes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "pictures", array: true
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.string "pictures", array: true
     t.string "url"
     t.integer "price"
   end

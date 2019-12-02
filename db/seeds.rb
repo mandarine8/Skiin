@@ -218,7 +218,6 @@ s10 = Skivent.create!(
   user: u2
 )
 
-<<<<<<< HEAD
 s22 = Skivent.create!(
   title: "Sports day in Mont Orford",
   date: Date.new(2019,12,21),
