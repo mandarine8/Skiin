@@ -240,16 +240,16 @@ s23 = Skivent.create!(
   user: u1
 )
 
-s24 = Skivent.create!(
-  title: "Skiing and taking pictures in Mont-Tremblant",
-  date: Date.new(2019,12,8),
-  level: "intermediate",
-  number_of_place: 3,
-  car: false,
-  description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
-  resort: r1,
-  user: u2
-)
+# s24 = Skivent.create!(
+#   title: "Skiing and taking pictures in Mont-Tremblant",
+#   date: Date.new(2019,12,8),
+#   level: "intermediate",
+#   number_of_place: 3,
+#   car: false,
+#   description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
+#   resort: r1,
+#   user: u2
+# )
 
 s25 = Skivent.create!(
   title: "Improving my ski level in Bromont",
@@ -262,16 +262,16 @@ s25 = Skivent.create!(
   user: u5
 )
 
-s26 = Skivent.create!(
-  title: "Snowboarding in Saint-Sauveur ",
-  date: Date.new(2019,12,12),
-  level: "Intermediate",
-  number_of_place: 2,
-  car: false,
-  description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
-  resort: r4,
-  user: u5
-)
+# s26 = Skivent.create!(
+#   title: "Snowboarding in Saint-Sauveur ",
+#   date: Date.new(2019,12,12),
+#   level: "Intermediate",
+#   number_of_place: 0,
+#   car: false,
+#   description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
+#   resort: r4,
+#   user: u5
+# )
 
 puts "Looping looping"
 
@@ -421,16 +421,16 @@ s22 = Skivent.create!(
   user: u1
  )
 
-s24 = Skivent.create!(
-  title: "Skiing and taking pictures in Mont-Tremblant",
-  date: Date.new(2019,12,8),
-  level: "intermediate",
-  number_of_place: 3,
-  car: false,
-  description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
-  resort: r1,
-  user: u2
-)
+# s24 = Skivent.create!(
+#   title: "Skiing and taking pictures in Mont-Tremblant",
+#   date: Date.new(2019,12,8),
+#   level: "intermediate",
+#   number_of_place: 3,
+#   car: false,
+#   description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
+#   resort: r1,
+#   user: u2
+# )
 
 
 s25 = Skivent.create!(
@@ -444,16 +444,16 @@ s25 = Skivent.create!(
   user: u5
  )
 
- s26 = Skivent.create!(
-  title: "Snowboarding in Saint-Sauveur ",
-  date: Date.new(2019,12,12),
-  level: "Intermediate",
-  number_of_place: 2,
-  car: false,
-  description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers",
-  resort: r4,
-  user: u5
-)
+#  s26 = Skivent.create!(
+#   title: "Snowboarding in Saint-Sauveur ",
+#   date: Date.new(2019,12,12),
+#   level: "Intermediate",
+#   number_of_place: 2,
+#   car: false,
+#   description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers",
+#   resort: r4,
+#   user: u5
+# )
 
 puts "Booking booking"
 
