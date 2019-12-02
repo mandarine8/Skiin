@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :bookings, only: [:edit, :update]
   resources :resorts, only: [:show]
   resources :users, only: [:show, :update]
+  resources :favorites, only: [:index, :create, :destroy]
 end

@@ -413,6 +413,39 @@ b12 = Booking.create!(
   status: "accepted"
 )
 
+puts "Creating favorites <3"
+
+f1 = Favorite.create!(
+  user: u2,
+  skivent: s1,
+)
+
+f2 = Favorite.create!(
+  user: u1,
+  skivent: s9,
+)
+
+f3 = Favorite.create!(
+  user: u4,
+  skivent: s15,
+)
+
+f4 = Favorite.create!(
+  user: u6,
+  skivent: s8,
+)
+
+f5 = Favorite.create!(
+  user: u2,
+  skivent: s5,
+)
+
+f6 = Favorite.create!(
+  user: u5,
+  skivent: s9,
+)
+
+
 puts "Seeds Completed"
 
 

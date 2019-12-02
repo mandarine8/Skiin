@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :skivents
-  has_many :booked_skivents, through: :bookings, source: :skivent
+  has_many :booked_skivents, through: :bookings
+  has_many :favorites
+
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true

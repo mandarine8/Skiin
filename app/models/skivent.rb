@@ -1,10 +1,11 @@
 class Skivent < ApplicationRecord
   belongs_to :resort
   belongs_to :user
+  has_many :favorites
   has_many :bookings
   include PgSearch::Model
   pg_search_scope :search_by_title,
-    against: [ :title],
+    against: [:title],
     using: {
       tsearch: { prefix: true }
     }
