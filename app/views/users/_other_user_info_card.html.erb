@@ -34,11 +34,12 @@
             </div class="content-hobby">
                 <h5> Driving Information </h5>
                         <% if @user.car == true %>
-                        <%= "Yes" %>
-                        <% else "no" %>
+                        <%= "I have a car" %>
+                        <% else %>
+                        <%="I don't have a car"%>
                         <% end %>
-                 <h5> Hobbies </h5>
-                     <p><%= @user.hobbies %></p>
+                <h5> Hobbies </h5>
+                    <p><%= @user.hobbies %></p>
         </div>
          <!-- end of .card-user-infos -->
             <div class="content_btn mb-4">
