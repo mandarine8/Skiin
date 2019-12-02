@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_12_02_190448) do
 
   # These are extensions that must be enabled in order to support this database
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_190448) do
     t.float "longitude"
     t.string "pictures", array: true
     t.string "url"
+    t.integer "price"
   end
 
   create_table "skivents", force: :cascade do |t|
