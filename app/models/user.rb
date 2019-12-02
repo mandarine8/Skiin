@@ -4,10 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :bookings
   has_many :skivents
+  has_many :bookings
   has_many :booked_skivents, through: :bookings, source: :skivent
+
+  has_many :favorites
+  has_many :saved_skivents, through: :favorites, source: :skivent
   has_many :received_ratings, through: :skivents, source: :ratings
+
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
