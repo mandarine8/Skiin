@@ -21,7 +21,7 @@
             <% i=0 %>
             <% @skivents.each do | skivent | %>
               <div class="col-sm-12 col-lg-6 pr-4 pb-4" style='padding: 0'>
-                <%= render 'skivents/card', skivent: skivent %>
+                <%= render 'skivents/card', {skivent: skivent, query: params[:query] || ""} %>
               </div>
             <% end %>
           </div>
