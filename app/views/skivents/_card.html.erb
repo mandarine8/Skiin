@@ -7,7 +7,7 @@
     <!-- Button trigger modal -->
 
     <% if current_user.saved_skivents.include?(skivent) %>
-      <%= link_to favorite_path(current_user.favorites.find_by(skivent_id: skivent.id)), method: :delete do %>
+      <%= link_to favorite_path(current_user.favorites.find_by(skivent_id: skivent.id)), method: :delete, data: {query: query} do %>
         <i class="fas fa-heart card-heart red"></i>
       <% end %>
     <% else %>
