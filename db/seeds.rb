@@ -218,6 +218,60 @@ s10 = Skivent.create!(
   user: u2
 )
 
+s17 = Skivent.create!(
+  title: "Come with me in Saint-Sauveur resort",
+  date: Date.new(2020,01,16),
+  level: "beginner",
+  number_of_place: 1,
+  car: true,
+  description: "I love skiing but I would love meet someone who want teach me to be more confident when I am skiing ",
+  resort: r4,
+  user: u4
+)
+
+s18 = Skivent.create!(
+  title: "A great day in Mont Orford",
+  date: Date.new(2020,01,16),
+  level: "expert",
+  number_of_place: 2,
+  car: true,
+  description: " I Love Skiing and I Love Surfing of course! Come with me to have a really great day in Mont Orford! ",
+  resort: r6,
+  user: u2
+)
+
+s19 = Skivent.create!(
+  title: "Discover Sutton resort with me",
+  date: Date.new(2020,01,16),
+  level: "intermediate",
+  number_of_place: 1,
+  car: true,
+  description: " I love the feeling of going fast in skiing but I love enjoy life and its pleasures too! ",
+  resort: r5,
+  user: u3
+)
+
+s20 = Skivent.create!(
+  title: "Bromont by night with fun!",
+  date: Date.new(2020,01,16),
+  level: "expert",
+  number_of_place: 1,
+  car: true,
+  description: " I love skiing. It is freedom on all fronts - physical, mental and emotional. I want meet people like me to enjoy this night in Bromont",
+  resort: r3,
+  user: u1
+)
+
+s21 = Skivent.create!(
+  title: "Saint Bruno will not have secrets anymore for you!",
+  date: Date.new(2020,01,16),
+  level: "expert",
+  number_of_place: 1,
+  car: true,
+  description: "Skiing is one of my favorite things to do in this whole world.  You won't regret it if you join me. "!
+  resort: r2,
+  user: u5
+)
 puts "Looping looping"
 
 Booking.create!(
