@@ -375,7 +375,6 @@ s24 = Skivent.create!(
   user: u2
 )
 
-
 s25 = Skivent.create!(
   title: "Improving my ski level in Bromont",
   date: Date.new(2019,12,7),

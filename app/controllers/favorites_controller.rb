@@ -1,4 +1,4 @@
-class FavoritesSkiventsController < ApplicationController
+class FavoritesController < ApplicationController
   def index
     @favorites = current_user.favorites
   end
@@ -9,13 +9,12 @@ class FavoritesSkiventsController < ApplicationController
       user: current_user
     )
     @favorite.save!
-    redirect_to
+    redirect_to skivents_path
   end
 
   def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
-    redirect_to favorites_path
+    redirect_to skivents_path
   end
 end
-

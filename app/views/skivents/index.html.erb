@@ -20,16 +20,9 @@
           <div class="row" >
             <% i=0 %>
             <% @skivents.each do | skivent | %>
-              <% if i%2 == 0 %>
-                <div class="col-sm-12 col-lg-6 pr-4 pb-4" style='padding: 0'>
-                  <%= render 'skivents/card', skivent: skivent %>
-                </div>
-              <% else %>
-                <div class="col-sm-12 col-lg-6 pb-4" style='padding: 0'>
-                  <%= render 'skivents/card', skivent: skivent %>
-                </div>
-              <% end %>
-              <% i+=1 %>
+              <div class="col-sm-12 col-lg-6 pr-4 pb-4" style='padding: 0'>
+                <%= render 'skivents/card', skivent: skivent %>
+              </div>
             <% end %>
           </div>
         </div>
