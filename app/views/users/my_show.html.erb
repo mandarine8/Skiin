@@ -170,8 +170,8 @@
                     <strong> <%= booking.skivent.title %></strong>
                     <h2 class="card-skivent-host"></h2>
                     <p><%= booking.skivent.description %></p>
-                    <img src=<%= booking.skivent.user.picture %> alt="" class="avatar-bordered">
-                    <%= link_to booking.skivent.user.name %>
+                    <img src=<%= booking.user.picture %> alt="" class="avatar-bordered">
+                    <%= link_to booking.user.name, user_path(booking.user) %>
                     <div>
                       <%= booking.status %>
                       <%= link_to "confirm", booking_path(booking, { booking: { status:"accepted"} }), method: :patch %>

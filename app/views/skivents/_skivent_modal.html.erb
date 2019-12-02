@@ -66,10 +66,14 @@
 
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-secondary">Book now!</button>
-          <button type="button" class="btn btn-primary">Contact the host</button>
+          <% if skivent.user != current_user %>
+            <%= link_to "book now", skivent_bookings_path(skivent), method: :post, class: 'btn btn-secondary'  %>
+            <button type="button" class="btn btn-primary">Contact the host</button>
+          <% else %>
+            <p>petit farceur, tu es l'auteur-ice de ce skivent !</p>
+          <% end %>
         </div>
+        
      </div>
      </div>
      </div>

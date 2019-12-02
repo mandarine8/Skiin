@@ -6,7 +6,10 @@
 
     <!-- Button trigger modal -->
 
+    <p class="resort-name"><%= link_to skivent.resort.name, resort_path(skivent.resort) %></p>
+
     <h5 class="card-title" data-toggle="modal" data-target="#skivent-<%= skivent.id %>"><%= skivent.title %></h5>
+    <p class="skivent-date"><%= skivent.date %></p>
     <p class="card-text"><%= skivent.description %></p>
 
 

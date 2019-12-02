@@ -35,7 +35,6 @@ class SkiventsController < ApplicationController
       end
     @skivents = Skivent.all
     end
-
   end
 
   def show
@@ -51,7 +50,7 @@ class SkiventsController < ApplicationController
     @skivent = Skivent.new(skivent_params)
     @skivent.user = current_user
     if @skivent.save!
-      redirect_to skivents_path(@skivent)
+      redirect_to skivents_path
     else
       render :new
     end

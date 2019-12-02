@@ -6,6 +6,24 @@
   }
 }
 
+.resort-name {
+  font-size: 12px;
+  text-transform: uppercase;
+
+  a {
+    background: $skiin-darkblue;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+}
+
+.skivent-date {
+  font-size: 12px;
+  color: $skiin-gray;
+}
+
 .card-title {
   color: $skiin-darkblue;
 }
