@@ -472,7 +472,7 @@ b2 = Booking.create!(
 
 b3 = Booking.create!(
   user: u4,
-  skivent: s9,
+  skivent: s10,
   status: "declined"
 )
 
@@ -501,7 +501,7 @@ b7 = Booking.create!(
 )
 
 b8 = Booking.create!(
-  user: u7,
+  user: u6,
   skivent: s8,
   status: "accepted"
 )
@@ -519,7 +519,7 @@ b10 = Booking.create!(
 )
 
 b11 = Booking.create!(
-  user: u7,
+  user: u6,
   skivent: s13,
   status: "accepted"
 )
@@ -527,6 +527,36 @@ b11 = Booking.create!(
 b12 = Booking.create!(
   user: u3,
   skivent: s18,
+  status: "accepted"
+)
+
+b13 = Booking.create!(
+  user: u5,
+  skivent: s1,
+  status: "accepted"
+)
+
+b14 = Booking.create!(
+  user: u2,
+  skivent: s1,
+  status: "accepted"
+)
+
+b15 = Booking.create!(
+  user: u1,
+  skivent: s5,
+  status: "accepted"
+)
+
+b16 = Booking.create!(
+  user: u2,
+  skivent: s5,
+  status: "accepted"
+)
+
+b17 = Booking.create!(
+  user: u5,
+  skivent: s8,
   status: "accepted"
 )
 
