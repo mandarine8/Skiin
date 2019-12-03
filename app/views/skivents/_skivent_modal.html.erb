@@ -28,9 +28,18 @@
                     </div>
                     <div class="card-name-picto ml-3">
                       <h4> <%= skivent.user.name %> </h4>
-                      <% skivent.user.average_rating.times do %>
-                        <i class="picto-snow far fa-snowflake"></i>
+                      
+                      <% if average_rating %>
+                        <% average_rating.times do %>
+                          <i class="picto-snow far fa-snowflake"></i>
+                        <% end %>
+                      <% else %>
+
+                      <p>no ratings yet</p>
+                        
                       <% end %>
+                      
+
                     </div>
                   </div>
                   <div class="card-description-user">
