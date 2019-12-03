@@ -1,5 +1,15 @@
-<div class="container-new margin-top">
-
-<h1>My favorites</h1>
-
+<div class="container-new margin-top" style="margin-left: 20px">
+    <h2>My favorites skivents</h2>
+    <div class="row">
+        <div class="col-lg-7 col-sm-12">
+            <div class="row" >
+                <% @favorites.each do |favorite|%>
+                    <div class="col-sm-12 col-lg-6 pr-4 pb-4">
+                    <%= render 'skivents/card', {skivent: favorite.skivent, query: params[:query] || ""} %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+     <%= link_to "Back to the skivents", skivents_path, class:"btn-yellow" %>
 </div>
