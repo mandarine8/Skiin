@@ -18,57 +18,60 @@
 
             <div class="card-skievent-details col-sm-12 col-md-7">
 
-            <div class="card-skivent-host col-sm-12 col-md-5">
-              <div class="rating">
-                <p>
-                  <% ((@user.rating.reduce(0) { |sum, val| val.note + sum } / @user.rating.count) rescue 0).times do %>
-                    <i class="picto-snow far fa-snowflake"></i>
+              <div class="card-skivent-host col-sm-12 col-md-5">
+                <div class="rating">
+                  <h4> <%= skivent.user.name %> </h4>
+                  <% skivent.user.average_rating.times do %>
+                  <i class="picto-snow far fa-snowflake"></i>
                   <% end %>
-                </p>
-                  <% if @user != current_user %>
-                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
-                  rating <%= skivent.user.name %>
-                </button>
-                <% end %>
+                  <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
+                  <p> <%= skivent.user.description %></p>
+                </div>
               </div>
 
-              <h3>Event posted by:</h3>
-              <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
-              <%= skivent.user.name %>
-              <h3>About <%= skivent.user.name %></h3>
-              <p> <%= skivent.user.description %></p>
-            </div>
-            </div>
-
-              <!-- card-pictos -->
+                <!-- card-pictos -->
               <div class="card-pictos">
 
                 <!-- event infos -->
                 <div class="card-skivent-info">
-                  <h3>Event information</h3>
-                  <p> PICTOS</p>
+                  <h4>Event information</h4>
+                  <div class="card-car">
+                    <% if skivent.user.car == true %>
+                      <i class="fas fa-car"></i>
+                    <% end %>
+                  </div>
+                  <div class="car-ski-picto">
+                    <i class="fas fa-skiing"></i>
+                  </div>
                 </div>
                 <!-- end of event infos -->
 
                 <!-- resort infos -->
                 <div class="card-skivent-info">
-                  <h3>About <%= skivent.resort.name %> </h3>
-                  <p> PICTOS</p>
+                 <div class="card-picto-price">
+                  <h4>About <%= skivent.resort.name %> </h4>
+                  <% skivent.resort.times.price do %>
+                  <i class="fas fa-dollar-sign"></i>
+                  <% end %>
+                 </div>
+                 <div>
+                  <i class="fas fa-mountain"></i>
+                 </div>
                 </div>
                 <!-- end of resort infos -->
 
+              <!-- description event -->
+                <div class="card-skivent-description">
+                  <h3>Event description</h3>
+                  <p> <%= skivent.description %></p>
+                </div>
+              <!-- end of description event -->
               </div>
               <!-- end of card-pictos -->
 
-              <!-- description event -->
-              <div class="card-skivent-description">
-                <h3>Event description</h3>
-                <p> <%= skivent.description %></p>
-              </div>
-              <!-- end of description event -->
 
 
-              </div>
+            </div>
 
             <!-- description profil -->
 
@@ -76,7 +79,7 @@
 
           <!-- end of container externe -->
 
-        </div>
+          </div>
 
 
         <div class="modal-footer">

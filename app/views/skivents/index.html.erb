@@ -46,5 +46,5 @@
 
 
 <% @skivents.each do |skivent| %>
-  <%= render "skivents/skivent_modal", skivent: skivent %>
+  <%= render "skivents/skivent_modal", skivent: skivent, average_rating: @average_rating %>
 <% end %>
