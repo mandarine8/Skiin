@@ -30,3 +30,10 @@
   height: 100px;
   border-radius: 50%;
 }
+
+.avatar-popup {
+  width: 70px !important;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}

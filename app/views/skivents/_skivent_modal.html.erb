@@ -1,96 +1,105 @@
- <!-- Modal -->
-  <div class="modal fade" id="skivent-<%= skivent.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-skiin" role="document">
-      <div class="modal-content">
+<!-- Modal -->
+<div class="modal fade modal-skivents" id="skivent-<%= skivent.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-skiin" role="document">
+    <div class="modal-content">
 
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+      <div class="modal-header">
+        <div class="">
+          <h3 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h3>
         </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
-        <!-- corps -->
-        <div class="modal-body">
+      <!-- corps -->
+      <div class="modal-body">
 
-          <!-- container externe -->
-          <div class="content row">
+        <!-- container externe -->
+        <div class="content row p-3">
 
-            <div class="card-skievent-details col-sm-12 col-md-7">
-
-              <div class="card-skivent-host col-sm-12 col-md-5">
-                <div class="rating">
-                  <h4> <%= skivent.user.name %> </h4>
-                  <% skivent.user.average_rating.times do %>
-                  <i class="picto-snow far fa-snowflake"></i>
-                  <% end %>
-                  <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
-                  <p> <%= skivent.user.description %></p>
+          <div class="card-skivent-details col-sm-12 col-lg-4 pt-3 pl-5 pr-5 pb-5">
+            <div class="card-skivent-host">
+              <div class="card-user-name-rating d-flex">
+                <div class="d-flex flex-column">
+                  <div class="d-flex align-items-center pb-4">
+                    <div class="card-avatar-popup">
+                      <%= link_to image_tag(skivent.user.picture, class: "avatar-popup"), user_path(skivent.user) %>
+                    </div>
+                    <div class="card-name-picto ml-3">
+                      <h4> <%= skivent.user.name %> </h4>
+                      <% skivent.user.average_rating.times do %>
+                        <i class="picto-snow far fa-snowflake"></i>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="card-description-user">
+                    <h4>Who I am</h4>
+                    <%= skivent.user.description %>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <!-- end of col-lg-6 -->
 
-                <!-- card-pictos -->
-              <div class="card-pictos">
+          <div class="col-sm-12 col-lg-8">
+            <!-- card-pictos -->
+            <div class="card-pictos">
 
-                <!-- event infos -->
-                <div class="card-skivent-info">
-                  <h4>Event information</h4>
-                  <div class="card-car">
+              <!-- event infos -->
+              <div class="card-skivent-info pb-4">
+                <h4>Event information</h4>
+                <div class="d-flex">
+                  <div class="card-car mr-3">
                     <% if skivent.user.car == true %>
                       <i class="fas fa-car"></i>
                     <% end %>
                   </div>
                   <div class="car-ski-picto">
-                    <i class="fas fa-skiing"></i>
+                    <i class="fas fa-skiing" data-toggle="tooltip" data-placement="top" title="<%= skivent.user.level %>"></i>
                   </div>
                 </div>
-                <!-- end of event infos -->
+              </div>
+              <!-- end of event infos -->
 
-                <!-- resort infos -->
-                <div class="card-skivent-info">
-                 <div class="card-picto-price">
-                  <h4>About <%= skivent.resort.name %> </h4>
-                  <% skivent.resort.times.price do %>
-                  <i class="fas fa-dollar-sign"></i>
+              <!-- resort infos -->
+              <div class="card-skivent-info pb-4">
+               <div class="card-picto-price">
+                <h4>About <%= skivent.resort.name %> </h4>
+                <div class="d-flex">
+                  <% skivent.resort.price.times do %>
+                    <i class="fas fa-dollar-sign"></i>
                   <% end %>
-                 </div>
-                 <div>
-                  <i class="fas fa-mountain"></i>
-                 </div>
+                  <i class="fas fa-mountain ml-3" data-toggle="tooltip" data-placement="top m-2" title="Number of slops"><%= skivent.resort.number_of_slopes %></i>
                 </div>
-                <!-- end of resort infos -->
+               </div>
+              </div>
+              <!-- end of resort infos -->
 
               <!-- description event -->
-                <div class="card-skivent-description">
-                  <h3>Event description</h3>
-                  <p> <%= skivent.description %></p>
-                </div>
-              <!-- end of description event -->
+              <div class="card-skivent-description">
+                <h4>Event description</h4>
+                <p> <%= skivent.description %></p>
               </div>
-              <!-- end of card-pictos -->
-
-
-
+            <!-- end of description event -->
             </div>
-
-            <!-- description profil -->
-
-            <!-- end of description profil -->
-
-          <!-- end of container externe -->
-
+            <!-- end of card-pictos -->
           </div>
-
-
-        <div class="modal-footer">
-          <% if skivent.user != current_user %>
-            <%= link_to "book now", skivent_bookings_path(skivent), method: :post, class: 'btn btn-secondary'  %>
-            <button type="button" class="btn btn-primary">Contact the host</button>
-          <% else %>
-            <p>petit farceur, tu es l'auteur-ice de ce skivent !</p>
-          <% end %>
+          <!-- end of col-lg-6 -->
         </div>
+        <!-- enf of row -->
+      </div>
 
-     </div>
+      <div class="modal-footer">
+        <% if skivent.user != current_user %>
+          <%= link_to "book now", skivent_bookings_path(skivent), method: :post, class: 'btn btn-secondary'  %>
+          <button type="button" class="btn btn-primary">Contact the host</button>
+        <% else %>
+          <p>petit farceur, tu es l'auteur-ice de ce skivent !</p>
+        <% end %>
+      </div>
+      <!-- end of nodal footer-->
     </div>
   </div>
+</div>
