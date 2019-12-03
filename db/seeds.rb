@@ -142,7 +142,7 @@ s2 = Skivent.create!(
   level: "intermediate",
   number_of_place: 2,
   car: true,
-  description: "Let's discover this moutain together close to Monteal! Would like to try the new restaurant of the resort for the lunch.",
+  description: "Let's discover this moutain together close to Montreal! Would like to try the new restaurant of the resort for the lunch.",
   resort: r2,
   user: u2
 )
@@ -186,7 +186,7 @@ s6 = Skivent.create!(
   level: "intermediate",
   number_of_place: 2,
   car: true,
-  description: "After work on the slopes, and maybe a beer together. Departure at Laurier Station at 5pm, return at 11pm.",
+  description: "After work on the slopes, and maybe a beer together. Departure at Laurier Station ( Montreal ) at 5pm, return at 11pm.",
   resort: r3,
   user: u1
 )
@@ -296,7 +296,7 @@ s16 = Skivent.create!(
   level: "beginner",
   number_of_place: 3,
   car: true,
-  description: "Not really a great rider, can someone help me improve my style?",
+  description: "Living in Montreal, I am not really a great rider, can someone help me improve my style?",
   resort: r4,
   user: u2
 )
@@ -308,7 +308,7 @@ s17 = Skivent.create!(
   level: "beginner",
   number_of_place: 1,
   car: true,
-  description: "I love skiing but I would love meet someone who want teach me to be more confident when I am skiing ",
+  description: "I love skiing but I would love meet someone around Montreal who want teach me to be more confident when I am skiing ",
   resort: r4,
   user: u4
 )
@@ -341,7 +341,7 @@ s20 = Skivent.create!(
   level: "expert",
   number_of_place: 1,
   car: true,
-  description: " I love skiing. It is freedom on all fronts - physical, mental and emotional. I want meet people like me to enjoy this night in Bromont",
+  description: " I love skiing. It is freedom on all fronts - physical, mental and emotional. I want meet people like me to enjoy this night in Bromont. Back in Montreal at 23pm",
   resort: r3,
   user: u6
 )
@@ -352,7 +352,7 @@ s21 = Skivent.create!(
   level: "expert",
   number_of_place: 1,
   car: true,
-  description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. ",
+  description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. (Near to Montreal) ",
   resort: r2,
   user: u5
 )
@@ -396,7 +396,7 @@ s25 = Skivent.create!(
   level: "beginner",
   number_of_place: 2,
   car: true,
-  description: "I haven't been skiing since a long time, I want this feeling back! Join me if you want to ski and laugh!",
+  description: "I haven't been skiing since a long time (since I live in Montreal actually), I want this feeling back! Join me if you want to ski and laugh!",
   resort: r3,
   user: u7
 )
@@ -407,7 +407,7 @@ s25 = Skivent.create!(
   level: "intermediate",
   number_of_place: 0,
   car: false,
-  description: "I want to discover Saint-Sauveur's slopes! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
+  description: "I want to discover Saint-Sauveur's slopes! Just to let you know, I am a snowborder but I am totally open to have fin with skiers! Departure from Montreal.",
   resort: r4,
   user: u5
   )
