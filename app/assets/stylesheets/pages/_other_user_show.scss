@@ -1,6 +1,7 @@
 
 .background-content {
-  background-color:  rgb(212, 214, 216);
+  background-color: rgb(228, 226, 226);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   color:black;
   padding: 15px;
 
@@ -46,6 +47,21 @@
 .content-hobby {
     margin-bottom: 40px;
 }
+.hobbies-info {
+    margin-top: 10px;
+
+}
+.content-drive {
+        margin-top: -10px;
+}
+
+.level_content_container {
+    margin-top: 24px;
+}
+
+.level-content {
+    margin-bottom: 10px;
+}
 
 .skivents-cards-grid {
   display: grid;
@@ -54,6 +70,10 @@
 }
 
 .picto-arrow {
-    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
   }
+
   
