@@ -19,6 +19,8 @@ class User < ApplicationRecord
 
 
     def average_rating
+    return 0 if self.received_ratings.count == 0
+
     average = []
     self.received_ratings.each do |rating|
       average << rating.rating

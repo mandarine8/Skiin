@@ -133,7 +133,8 @@ s1 = Skivent.create!(
   car: true,
   description: "Join me for a day of skiing at Mont-Tremblant. Come with your picnic and your smile, we will have so much fun!",
   resort: r1,
-  user: u1
+  user: u1,
+  remote_photo_url: "https://images.unsplash.com/photo-1489664729864-ee8499a4ddd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
 )
 
 s2 = Skivent.create!(
@@ -145,7 +146,7 @@ s2 = Skivent.create!(
   description: "Let's discover this moutain together close to Montreal! Would like to try the new restaurant of the resort for the lunch.",
   resort: r2,
   user: u2,
-  remote_photo_url: "", 
+  remote_photo_url: "https://images.unsplash.com/photo-1518001055359-5a2387108626?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80", 
 )
 
 s3 =  Skivent.create!(
@@ -156,7 +157,8 @@ s3 =  Skivent.create!(
   car: true,
   description: "I would like to test the Off-tracks next Sunday. Come with me if you like challenges and adventures close to Montreal!",
   resort: r3,
-  user: u3
+  user: u3,
+  remote_photo_url:"https://images.unsplash.com/photo-1500886607519-5176fca3bc20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
 )
 
 s4 = Skivent.create!(
@@ -167,7 +169,8 @@ s4 = Skivent.create!(
   car: true,
   description: "If you like the perfect balance between skiing and chilling near Montreal, this trip is for you .",
   resort: r4,
-  user: u4
+  user: u4,
+  remote_photo_url:"https://images.unsplash.com/photo-1542222774-b411b47e88d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
 )
 
 s5 = Skivent.create!(
@@ -178,7 +181,8 @@ s5 = Skivent.create!(
   car: true,
   description: "I love the mountain and the snow, but even more wine and cocooning! Come chill with me!",
   resort: r1,
-  user: u7
+  user: u7,
+  remote_photo_url:"https://images.unsplash.com/photo-1542222774-b411b47e88d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
 )
 
 s6 = Skivent.create!(
@@ -189,7 +193,8 @@ s6 = Skivent.create!(
   car: true,
   description: "After work on the slopes, and maybe a beer together. Departure at Laurier Station ( Montreal ) at 5pm, return at 11pm.",
   resort: r3,
-  user: u1
+  user: u1,
+  remote_photo_url:"https://images.unsplash.com/photo-1453049690846-de300c7b59b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
 )
 
 s7 = Skivent.create!(
@@ -200,7 +205,8 @@ s7 = Skivent.create!(
   car: true,
   description: "Bring your cat, we will test the snowboard with them!.",
   resort: r5,
-  user: u5
+  user: u5,
+  remote_photo_url:"https://images.unsplash.com/photo-1529774848151-535301a504f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
 )
 
 s8 = Skivent.create!(
@@ -211,7 +217,8 @@ s8 = Skivent.create!(
   car: true,
   description: "If you are a Ruby dev like me, lets talk about loops and gems on the gondola.",
   resort: r6,
-  user: u7
+  user: u7,
+  remote_photo_url:"https://images.unsplash.com/photo-1517586073558-0acdf831b1a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
 )
 
 s9 = Skivent.create!(
@@ -222,7 +229,8 @@ s9 = Skivent.create!(
   car: true,
   description: "Some ski but more beers! I want to test Trou du Diable, and you?",
   resort: r1,
-  user: u4
+  user: u4,
+  remote_photo_url:"https://images.unsplash.com/photo-1508509529775-b8151a38f9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
 )
 
 s10 = Skivent.create!(
@@ -233,7 +241,8 @@ s10 = Skivent.create!(
   car: true,
   description: "I want to teach ski to my 2years old son. Come with me and your kid, we will take pictures of them during their lesson, and enjoy hot chocolate!",
   resort: r1,
-  user: u2
+  user: u2,
+  remote_photo_url:"https://images.unsplash.com/photo-1521509914299-f45173fd00bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
 )
 
 s11 = Skivent.create!(
@@ -244,7 +253,8 @@ s11 = Skivent.create!(
   car: true,
   description: "I would like to discover the Saint Laurent from the top of the mountain. Heard that the view is amazing and the resort very cool.",
   resort: r7,
-  user: u1
+  user: u1,
+  remote_photo_url:"https://images.unsplash.com/photo-1517598338100-3473a463668e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80",
 )
 
 s12 = Skivent.create!(
@@ -255,7 +265,8 @@ s12 = Skivent.create!(
   car: true,
   description: "I just arrived in Montreal, and I'm alone for for the December 31th. Do you want to join me and party on the slopes?!",
   resort: r3,
-  user: u1
+  user: u1,
+  remote_photo_url:"https://images.unsplash.com/photo-1485839240317-550557b58b49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzMDA0fQ&auto=format&fit=crop&w=1350&q=80",
 )
 
 s13 = Skivent.create!(
@@ -266,7 +277,8 @@ s13 = Skivent.create!(
   car: true,
   description: "My brother is coming in January, and I want show him the country. Some guys joining us?!",
   resort: r5,
-  user: u3
+  user: u3,
+  remote_photo_url:"https://images.unsplash.com/photo-1556986341-57e4079f9643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80",
 )
 
 s14 = Skivent.create!(
@@ -277,7 +289,8 @@ s14 = Skivent.create!(
   car: true,
   description: "Let's create a team of snowboarders!",
   resort: r6,
-  user: u5
+  user: u5,
+  remote_photo_url:"https://images.unsplash.com/photo-1515442597003-a25e0a78dae9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1360&q=80",
 )
 
 s15 = Skivent.create!(
@@ -288,7 +301,8 @@ s15 = Skivent.create!(
   car: true,
   description: "I love Sutton, I know this resort very well and I would like share my tips with someone!",
   resort: r5,
-  user: u7
+  user: u7,
+  remote_photo_url:"https://images.unsplash.com/photo-1482433504097-a3cde62f7882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1320&q=80",
 )
 
 s16 = Skivent.create!(
@@ -299,7 +313,8 @@ s16 = Skivent.create!(
   car: true,
   description: "Living in Montreal, I am not really a great rider, can someone help me improve my style?",
   resort: r4,
-  user: u2
+  user: u2,
+  remote_photo_url:"https://images.unsplash.com/photo-1488410766174-4d3ab8efd321?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80",
 )
 
 
@@ -311,7 +326,8 @@ s17 = Skivent.create!(
   car: true,
   description: "I love skiing but I would love meet someone around Montreal who want teach me to be more confident when I am skiing ",
   resort: r4,
-  user: u4
+  user: u4,
+  remote_photo_url:"https://images.unsplash.com/photo-1516303017691-9f1226cfbe2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1393&q=80",
 )
 
 s18 = Skivent.create!(
@@ -322,7 +338,8 @@ s18 = Skivent.create!(
   car: true,
   description: " I Love Skiing and I Love Surfing of course! Come with me to have a really great day in Mont Orford! ",
   resort: r6,
-  user: u2
+  user: u2,
+  remote_photo_url:"https://images.unsplash.com/photo-1572386891597-4a7c62695965?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
 )
 
 s19 = Skivent.create!(
@@ -333,7 +350,8 @@ s19 = Skivent.create!(
   car: true,
   description: " I love the feeling of going fast in skiing but I love enjoy life and its pleasures too! ",
   resort: r5,
-  user: u3
+  user: u3,
+  remote_photo_url:"https://images.unsplash.com/photo-1482594254723-cc424817c99a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1341&q=80",
 )
 
 s20 = Skivent.create!(
@@ -344,7 +362,8 @@ s20 = Skivent.create!(
   car: true,
   description: " I love skiing. It is freedom on all fronts - physical, mental and emotional. I want meet people like me to enjoy this night in Bromont. Back in Montreal at 23pm",
   resort: r3,
-  user: u6
+  user: u6,
+  remote_photo_url:"https://images.unsplash.com/photo-1494385520671-ba5e3e534c3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
 )
 
 s21 = Skivent.create!(
@@ -355,7 +374,8 @@ s21 = Skivent.create!(
   car: true,
   description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. (Near to Montreal) ",
   resort: r2,
-  user: u5
+  user: u5,
+  remote_photo_url:"https://images.unsplash.com/photo-1549735472-7ecf06a74d5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
 )
 
 s22 = Skivent.create!(
@@ -366,7 +386,8 @@ s22 = Skivent.create!(
   car: true,
   description: "Sports day, few breaks but the opportunity to enjoy the outdoors.",
   resort: r6,
-  user: u3
+  user: u3,
+  remote_photo_url:"https://images.unsplash.com/photo-1518001055359-5a2387108626?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",
 )
 
 s23 = Skivent.create!(
@@ -377,7 +398,8 @@ s23 = Skivent.create!(
   car: true,
   description: "Who wants to join me and organize a slalom? We will have so much fun! ",
   resort: r5,
-  user: u1
+  user: u1,
+  remote_photo_url:"https://images.unsplash.com/photo-1520846032611-bfafebb8be67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80",
 )
 
 s24 = Skivent.create!(
@@ -388,7 +410,8 @@ s24 = Skivent.create!(
   car: false,
   description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
   resort: r1,
-  user: u2
+  user: u2,
+  remote_photo_url:"https://images.unsplash.com/photo-1414609864700-370eff277018?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
  )
 
 s25 = Skivent.create!(
@@ -399,7 +422,8 @@ s25 = Skivent.create!(
   car: true,
   description: "I haven't been skiing since a long time (since I live in Montreal actually), I want this feeling back! Join me if you want to ski and laugh!",
   resort: r3,
-  user: u7
+  user: u7,
+  remote_photo_url:"https://images.unsplash.com/photo-1516045834368-778dbd82f239?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
 )
 
  s26 = Skivent.create!(
@@ -410,7 +434,8 @@ s25 = Skivent.create!(
   car: false,
   description: "I want to discover Saint-Sauveur's slopes! Just to let you know, I am a snowborder but I am totally open to have fin with skiers! Departure from Montreal.",
   resort: r4,
-  user: u5
+  user: u5,
+  remote_photo_url:"https://images.unsplash.com/photo-1565733362858-3c610e8044cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
   )
 
 
