@@ -1,9 +1,9 @@
 .card-skivent {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   border-radius: 5px;
-  img {
-    max-width: 100%;
-  }
+  // img {
+  //   max-width: 100%;
+  // }
 }
 
 .resort-name {
@@ -63,6 +63,10 @@
   img {
     position: relative;
     margin-left: -18px;
+  }
+
+  .avatar {
+    border: 3px solid white;
   }
 }
 
@@ -161,7 +165,7 @@
 .skivent-date{
   position: absolute;
     right: 16px;
-    top: 160px;
+    top: 180px;
 }
 
 

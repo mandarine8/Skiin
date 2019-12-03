@@ -12,7 +12,6 @@ class User < ApplicationRecord
   has_many :saved_skivents, through: :favorites, source: :skivent
   has_many :received_ratings, through: :skivents, source: :ratings
 
-
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
   validates :level, presence: true

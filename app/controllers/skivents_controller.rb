@@ -4,9 +4,13 @@ class SkiventsController < ApplicationController
   def index
     @navbar_transparent = true
     @resorts = Resort.geocoded
+    @query = params[:query]
+    @date = params[:date]
+    @level = params[:level]
+
     # loop if there is a query
-    if params[:query].present?
-      @skivents = Skivent.search_by_title(params[:query])
+    if @query.present?
+      @skivents = Skivent.search_by_title(@query)
       @filtered_resorts = []
       # push all resorts from queried skivents
       @skivents.each do |skivent|
@@ -33,7 +37,7 @@ class SkiventsController < ApplicationController
           infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
         }
       end
-    @skivents = Skivent.all
+      @skivents = Skivent.all
     end
   end
 
