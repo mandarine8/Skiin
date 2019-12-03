@@ -4,18 +4,19 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    raise
     @favorite = Favorite.new(
       skivent: Skivent.find(params[:skivent_id]),
       user: current_user
     )
     @favorite.save!
-    redirect_to skivents_path
+
+    redirect_back(fallback_location: skivents_path, allow_other_host: false)
   end
 
   def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
-    redirect_to skivents_path
+
+    redirect_back(fallback_location: skivents_path, allow_other_host: false)
   end
 end

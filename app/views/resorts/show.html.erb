@@ -32,94 +32,92 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-5">
-      <!-- Affichage du descriptif de la station  -->
-      <div class="card card-resort w-100">
-        <div class="card-body">
-          <h4 class="card-title">Description</h4>
-          <p class="card-text">Description of the resort. Some lines about the station</p>
-          <h6 class="card-subtitle mb-2 text-muted">Informations about the resort</h6>
-          <p class="card-text">Icones et descriptif</p>
-          <h6 class="card-subtitle mb-2 text-muted">Weather for the 5 next days</h6>
-          <p class="card-text">Icones et descriptif</p>
-          <button type="button" class="btn btn-outline-primary">See the website</button>
-        </div>
-      </div>
+  <!-- Affichage du descriptif de la station  -->
+  <div class="card card-resort w-100 mb-4">
+    <div class="card-body">
+      <h4 class="card-title">Description</h4>
+      <h6 class="card-subtitle mb-2 text-muted">About the resort</h6>
+      <p class="card-text"><%= @resort.description %></p>
+      <h6 class="card-subtitle mb-2 text-muted">Type of the resort:</h6>
+      <p class="card-text"><%= @resort.resort_type %></p>
+      <h6 class="card-subtitle mb-2 text-muted">Informations about the resort</h6>
+      <p class="card-text">Icones et descriptif</p>
+      <h6 class="card-subtitle mb-2 text-muted">Weather for the 5 next days</h6>
+      <p class="card-text">Icones et descriptif</p>
+      <button type="button" class="btn btn-outline-primary">See the website</button>
+
+      <!-- <div class="d-flex justify-content-center mt-3"> -->
+        <%= link_to "Back to all the Skivents", @previous_url || skivents_path, class: "btn btn-primary" %>
+      <!-- </div> -->
     </div>
-    <div class="col">
-      <!-- Affichage des skivents de la station  -->
-      <div class="row">
-        <% @skivents.each do |skivent| %>
-          <div class="col-7">
-            <%= render "skivents/card", skivent: skivent %>
+  </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="skivent-<%= skivent.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-skiin" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
+  <!-- Affichage des skivents de la station  -->
+  <div class="row">
+    <% @skivents.each do |skivent| %>
+      <div class="col-4 mb-4">
+        <%= render "skivents/card", skivent: skivent %>
 
-                  <!-- corps -->
-                  <div class="modal-body">
+        <!-- Modal -->
+        <div class="modal fade" id="skivent-<%= skivent.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-skiin" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
 
+              <!-- corps -->
+              <div class="modal-body">
+
+                <!-- container externe -->
+                <div class="content row">
+                  <div class="card-skievent-details col-sm-12 col-md-7">
                     <!-- container externe -->
-                    <div class="content row">
-                      <div class="card-skievent-details col-sm-12 col-md-7">
-                        <!-- container externe -->
-                        <div class="card-pictos">
-                          <!-- event infos -->
-                          <div class="card-skivent-info">
-                            <h3>Event information</h3>
-                            <p> PICTOS</p>
-                          </div>
-
-                          <!-- resort infos -->
-                          <div class="card-skivent-info">
-                            <h3>About <%= skivent.resort.name %> </h3>
-                            <p> PICTOS</p>
-                          </div>
-                        </div>
-
-                        <!-- description event -->
-                        <div class="card-skivent-description">
-                          <h3>Event description</h3>
-                          <p> <%= skivent.description %></p>
-                        </div>
+                    <div class="card-pictos">
+                      <!-- event infos -->
+                      <div class="card-skivent-info">
+                        <h3>Event information</h3>
+                        <p> PICTOS</p>
                       </div>
 
-                      <!-- description profil -->
-                      <div class="card-skivent-host col-sm-12 col-md-5">
-                        <h3>Event posted by:</h3>
-                        <%= link_to image_tag(skivent.user.picture, class: "avatar"), skivents_path %>
-                        <%= skivent.user.name %>
-                        <h3>About <%= skivent.user.name %></h3>
-                        <p> <%= skivent.user.description %></p>
+                      <!-- resort infos -->
+                      <div class="card-skivent-info">
+                        <h3>About <%= skivent.resort.name %> </h3>
+                        <p> PICTOS</p>
                       </div>
                     </div>
 
+                    <!-- description event -->
+                    <div class="card-skivent-description">
+                      <h3>Event description</h3>
+                      <p> <%= skivent.description %></p>
+                    </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-secondary">Book now!</button>
-                    <button type="button" class="btn btn-primary">Contact the host</button>
+
+                  <!-- description profil -->
+                  <div class="card-skivent-host col-sm-12 col-md-5">
+                    <h3>Event posted by:</h3>
+                    <%= link_to image_tag(skivent.user.picture, class: "avatar"), skivents_path %>
+                    <%= skivent.user.name %>
+                    <h3>About <%= skivent.user.name %></h3>
+                    <p> <%= skivent.user.description %></p>
                   </div>
                 </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary">Book now!</button>
+                <button type="button" class="btn btn-primary">Contact the host</button>
               </div>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
-
-      <div class="d-flex justify-content-center mt-3">
-        <%= link_to "Back to all the Skivents", @previous_url || skivents_path, class: "btn btn-primary" %>
-      </div>
-    </div>
+    <% end %>
   </div>
 
 

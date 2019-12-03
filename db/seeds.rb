@@ -27,7 +27,7 @@ puts "Creating the resorts"
 r1 = Resort.create!(
   name: "Mont-Tremblant",
   number_of_slopes: 102,
-  resort_type: "adventurous",
+  resort_type: "adventurous 🏔️",
   address: "1000 Chemin des Voyageurs, Mont-Tremblant, QC J8E 1T1, Canada",
   latitude: 46.2098453,
   longitude: -74.5874801,
@@ -39,7 +39,7 @@ r1 = Resort.create!(
 r2 = Resort.create!(
   name: "Saint-Bruno",
   number_of_slopes: 18,
-  resort_type: "kids friendly",
+  resort_type: "kids friendly 🐣",
   address: "550 Rang des Vingt Cinq E, Saint-Bruno-de-Montarville, QC J3V 0G6, Canada",
   latitude: 45.5587079,
   longitude: -73.3369257,
@@ -51,7 +51,7 @@ r2 = Resort.create!(
 r3 = Resort.create!(
   name: "Bromont",
   number_of_slopes: 141,
-  resort_type: "adventurous",
+  resort_type: "adventurous 🏔️",
   address: "150 rue Champlain, Bromont, QC J2L 1A2, Canada",
   latitude: 45.3039268,
   longitude: -72.640933,
@@ -63,7 +63,7 @@ r3 = Resort.create!(
 r4 = Resort.create!(
   name: "Saint-Sauveur",
   number_of_slopes: 40,
-  resort_type: "chill",
+  resort_type: "chill ⛄",
   address: "350 Avenue Saint-Denis, Saint-Sauveur, QC J0R 1R3, Canada",
   latitude: 45.8815261,
   longitude: -74.1529596,
@@ -75,7 +75,7 @@ r4 = Resort.create!(
 r5 = Resort.create!(
   name: "Sutton",
   number_of_slopes: 60,
-  resort_type: "chill",
+  resort_type: "chill ⛄",
   address: "671 Rue Maple, Sutton, QC J0E 2K0, Canada",
   latitude: 45.1047107,
   longitude: -72.5640799,
@@ -87,7 +87,7 @@ r5 = Resort.create!(
 r6 = Resort.create!(
   name: "Mont Orford",
   number_of_slopes: 44,
-  resort_type: "expert",
+  resort_type: "expert ⛷️",
   address: "58 Rue des Floralies, Austin, QC J0B 1B0, Canada",
   latitude: 45.2855645,
   longitude: -72.2492733,
@@ -99,7 +99,7 @@ r6 = Resort.create!(
 r7 = Resort.create!(
   name: "Le Massif de Charlevoix",
   number_of_slopes: 53,
-  resort_type: "chill",
+  resort_type: "chill ⛄",
   address: "185 Chemin du Massif, Petite-Rivière-Saint-François, QC G0A 2L0, Canada",
   latitude: 47.2793799,
   longitude: -70.6112265,
@@ -219,65 +219,6 @@ s10 = Skivent.create!(
   resort: r1,
   user: u2
 )
-
-s22 = Skivent.create!(
-  title: "Sports day in Mont Orford",
-  date: Date.new(2019,12,21),
-  level: "expert",
-  number_of_place: 1,
-  car: true,
-  description: "Sports day, few breaks but the opportunity to enjoy the outdoors.",
-  resort: r6,
-  user: u3
-)
-
-s23 = Skivent.create!(
-  title: "A slalom in Sutton",
-  date: Date.new(2019,12,22),
-  level: "expert",
-  number_of_place: 3,
-  car: true,
-  description: "Who wants to join me and organize a slalom? We will have so much fun! ",
-  resort: r5,
-  user: u1
-)
-
-s24 = Skivent.create!(
-  title: "Skiing and taking pictures in Mont-Tremblant",
-  date: Date.new(2019,12,8),
-  level: "intermediate",
-  number_of_place: 3,
-  car: false,
-  description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
-  resort: r1,
-  user: u2
- )
-
-s25 = Skivent.create!(
-  title: "Improving my ski level in Bromont",
-  date: Date.new(2019,12,7),
-  level: "beginner",
-  number_of_place: 2,
-  car: true,
-  description: "I haven't been skiing since a long time, I want this feeling back! Join me if you want to ski and laugh!",
-  resort: r1,
-  user: u5
-)
-
- s26 = Skivent.create!(
-  title: "Snowboarding in Saint-Sauveur ",
-  date: Date.new(2019,12,12),
-  level: "Intermediate",
-  number_of_place: 0,
-  car: false,
-  description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
-  resort: r4,
-  user: u5
-   )
-
-puts "Looping looping"
-
-
 
 s11 = Skivent.create!(
   title: "Ski with view",
@@ -423,16 +364,16 @@ s23 = Skivent.create!(
   user: u1
 )
 
-# s24 = Skivent.create!(
-#   title: "Skiing and taking pictures in Mont-Tremblant",
-#   date: Date.new(2019,12,8),
-#   level: "intermediate",
-#   number_of_place: 3,
-#   car: false,
-#   description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
-#   resort: r1,
-#   user: u2
-# )
+s24 = Skivent.create!(
+  title: "Skiing and taking pictures in Mont-Tremblant",
+  date: Date.new(2019,12,8),
+  level: "intermediate",
+  number_of_place: 3,
+  car: false,
+  description: "I want to ski and to take pictures all day long, I could take long break to have the perfect picture. Let's try to find the perfect spot",
+  resort: r1,
+  user: u2
+ )
 
 s25 = Skivent.create!(
   title: "Improving my ski level in Bromont",
@@ -441,21 +382,21 @@ s25 = Skivent.create!(
   number_of_place: 2,
   car: true,
   description: "I haven't been skiing since a long time, I want this feeling back! Join me if you want to ski and laugh!",
-  resort: r1,
+  resort: r3,
   user: u5
 )
 
-
-s26 = Skivent.create!(
+ s26 = Skivent.create!(
   title: "Snowboarding in Saint-Sauveur ",
   date: Date.new(2019,12,12),
-  level: "Intermediate",
-  number_of_place: 2,
+  level: "intermediate",
+  number_of_place: 0,
   car: false,
-  description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers",
+  description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
   resort: r4,
   user: u5
    )
+
 
 puts "Creating the ratings"
 
