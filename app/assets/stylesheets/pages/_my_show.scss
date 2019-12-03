@@ -1,8 +1,21 @@
 .level_content_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  .inputs {
+    flex-grow: 1;
+  }
+  #ski-level-input {
     width: 100%;
-    input {
-      width: 100%;
-    }
+  }
+
+  .edit_user input[type="submit"]{
+    border: none;
+    background: none;
+    color: white;
+
+  }
 }
 
 .level-content {
@@ -37,4 +50,26 @@
 .nav-tabs .nav-link.active {
   color: #1A3853;
   border-bottom: 3px solid #1A3853;
+}
+
+
+.input-group-text-car {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+
+  input {
+    -webkit-appearance: none;
+  }
+
+  .checked-input {
+    background-color: $skiin-yellow;
+    width: 24px;
+    height: 24px;
+  }
 }
