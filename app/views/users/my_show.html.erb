@@ -27,52 +27,45 @@
 
         <!-- ski level -->
         <div class="level_content_container">
-          <div class="level-content">
-            <p>Beginner</p>
-            <p>Intermediate</p>
-            <p>Expert</p>
+          <div class="inputs">
+
+            <div class="level-content">
+              <p>Beginner</p>
+              <p>Intermediate</p>
+              <p>Expert</p>
+            </div>
+            <input
+              id="ski-level-input"
+              type="range"
+              min="1"
+              max="3"
+              step="1"
+              value="<%= @level %>"
+            >
+
           </div>
-          <input
-            type="range"
-            min="1"
-            max="3"
-            step="1"
-          >
+
+
+
         </div>
         <!-- hobbies -->
-        <div class="drinving_hobbies d-flex">
+        <div class="drinving_hobbies d-flex flex-column align-items-center justify-content-center">
 
-          <!-- driving cards -->
-          <div class="card-driving">
-            <h5> Drinving Information </h5>
-            <div class="pl-0 card-car col-12">
-
-              <!-- not sure what this HTML is doing? -->
-              <div class="input-group mb-3 d-flex">
-                <div class="car input-group-prepend d-flex">
-                  <div class="input-group-text d-flex">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
-                  </div>
-                </div>
-                <div class="card-number_of_place d-flex">
-                  <% if @user.car == true %>
-                  <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="I have a car">
-                  <% end %>
-                </div>
+          <h5> Driving Information </h5>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text-car" id="input-for-car">
+                <input type="checkbox" aria-label="Checkbox for following text input" <%= @user.car ? 'checked' : '' %> >
               </div>
-
-              <div class="card-no-car d-flex">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                  </div>
-                  <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="I don't have a car">
-                </div>
-              </div>
+              <label for="">I have a car</label>
             </div>
           </div>
+
+
+
+
+
+
 
           <div class="card-hobbies-content">
             <h5> My Hobbies </h5>
@@ -94,6 +87,11 @@
             <% end %>
           </div>
         </div>
+        <%= simple_form_for(@user) do |f| %>
+          <%= f.input :level, as: :hidden %>
+          <%= f.input :car, as: :hidden %>
+          <%= f.submit "update profile", class: "btn-white" %>
+        <% end %>
 
         <%= link_to "Add an event", new_skivent_path, class:"btn btn-secondary btn-add-event" %>
       </div>
@@ -179,7 +177,7 @@
         <div class="card-skivent-user-show tab-pane fade" id="nav-booked-skivents" role="tabpanel" aria-labelledby="nav-booked-skivents-tab">
           <!-- pending requests for events that I organized -->
           <% @incoming_bookings.each do |booking| %>
-          
+
               <div class="card-picture-skivent-user-show border m-3">
               <%= cl_image_tag booking.skivent.photo, class: "card-img-left" %>
               <div class="card-skivent-infos p-2">
@@ -205,6 +203,8 @@
             </div>
           <% end %>
 
+          <h5>requested booking</h5>
+
           <!-- pending requests that people I sent for events that somebody else organized -->
           <% @requested_bookings.each do |booking| %>
             <div class="card-picture-skivent-user-show border  m-3">
@@ -214,7 +214,7 @@
                 <h2 class="card-skivent-host"></h2>
                 <p><%= booking.skivent.description %></p>
                 <img src="<%= booking.skivent.user.picture %>" alt="" class="avatar-bordered">
-                <%= link_to booking.skivent.user.name %>
+                <%= link_to booking.skivent.user.name, user_path(booking.skivent.user) %>
               </div>
             </div>
           <% end %>
@@ -223,3 +223,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag "rangeslider" %>
