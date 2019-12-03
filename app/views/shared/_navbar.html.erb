@@ -1,12 +1,11 @@
 <div class="navbar navbar-absolute navbar-expand-sm navbar-light navbar <%= @navbar_transparent ? 'background-transparent' : '' %>">
-  <%= link_to "/", class: "navbar-brand" do %>
+  <%= link_to "/", class: "navbar-brand", id: "ski" do %>
     <h3>Ski in</h3>
-    <% end %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -39,4 +38,3 @@
     </ul>
   </div>
 </div>
-
