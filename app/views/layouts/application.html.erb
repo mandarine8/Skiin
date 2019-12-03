@@ -10,15 +10,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <meta name="description" content="Create your perfect Ski day !"/>
-    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
-    <%= audio_tag "ski.mp3", id: "sound", autoplay: true %>
-    <script>
-      function setVolume() {
-        mySound = document.getElementById("sound");
-        mySound.volume=0.03;
-      }
-      window.onload=setVolume;
-    </script>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />    
   </head>
   <body>
     <%= render 'shared/navbar' %>

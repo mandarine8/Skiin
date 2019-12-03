@@ -1,10 +1,15 @@
 
     <div class="col-10 col-lg-5 background-content ">
+
+        <div class="picto-arrow">
+            <%= link_to skivents_path do  %>
+             <i class="fas fa-arrow-left"></i>
+            <% end %>
+        </div>
+
         <div class="content-name">
             <div class="card-user-name-rating">
-                    <div class="picto-arrow">
-                    <i class="fas fa-arrow-left"></i>
-                    </div>
+
                     <img class="img-circle avatar-big" src="<%= @user.picture %>" width="100px">
                     <div>
                         <h4 class="card-color"><%= @user.name %></h4>

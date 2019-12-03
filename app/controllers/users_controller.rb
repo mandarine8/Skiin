@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @requested_bookings = @user.bookings
     @booked_skivents = @user.booked_skivents.last(3)
     @incoming_bookings = []
-    @average_rating = compute_average
+    @average_rating = @user.average_rating
     @skivents.each do |skivent|
       skivent.bookings.each do |booking|
         @incoming_bookings << booking
@@ -24,15 +24,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path(@user)
   end
-
-  def compute_average
-    @average = []
-    @user.received_ratings.each do |rating|
-      @average << rating.rating
-    end
-    (@average.sum) / @average.size
-  end
-
+  
   private
 
   def dish_params

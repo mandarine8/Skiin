@@ -18,13 +18,13 @@ class User < ApplicationRecord
   validates :picture, presence: true
 
 
-    def average_rating
+  def average_rating
     return 0 if self.received_ratings.count == 0
-
     average = []
     self.received_ratings.each do |rating|
       average << rating.rating
     end
     (average.sum) / average.size
+
   end
 end
