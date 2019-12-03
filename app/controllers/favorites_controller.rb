@@ -4,6 +4,7 @@ class FavoritesController < ApplicationController
   end
 
   def create
+    raise
     @favorite = Favorite.new(
       skivent: Skivent.find(params[:skivent_id]),
       user: current_user
