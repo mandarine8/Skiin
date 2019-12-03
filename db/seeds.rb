@@ -403,7 +403,7 @@ s25 = Skivent.create!(
   description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
   resort: r4,
   user: u5
-   )
+  )
 
 
 puts "Creating the ratings"
