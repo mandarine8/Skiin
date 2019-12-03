@@ -12,9 +12,8 @@
     </div>
 
     <div class="form-group">
-      <div class="title mb-3">
-        <label for="exampleFormControlInput1"></label>
-      </div>
+
+        <label for="exampleFormControlInput1"> <h6>Choose a picture</h6></label>
         <input type="file" name="skivent[photo]" class="form-control" id="photo-skivent" placeholder="Skivent's name">
     </div>
 
@@ -72,6 +71,7 @@
 
   <div class="mb-2">
       <input type="submit" class="btn-yellow" value="Create a skivent">
+      <%= link_to "Back to all the Skivents", @previous_url || skivents_path, class: "btn btn-outline-primary" %>
   </div>
 </form>
 
