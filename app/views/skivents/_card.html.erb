@@ -34,16 +34,23 @@
 
     <div class="card-avatars">
       <div class="card-avatars-booked">
-
         <% if skivent.photo %>
-          <%= image_tag skivent.user.picture, class: "avatar"  %>
+          <%# image_tag skivent.user.picture, class: "avatar"  %>
+          <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
         <% end %>
+         
+        <div>
+          <p class="avatar-name"><%= skivent.user.name %></p>
+          <div class="avatar-rating">
+            <% skivent.user.average_rating.times do %>
+              <i class="picto-snow far fa-snowflake"></i>
+            <% end %>
+          </div>
+        </div>
 
-        <p class="avatar-name"><%= skivent.user.name %></p>
       </div>
 
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-
       <div class="card-skivent-host">
         <% skivent.bookings.each do |booking| %>
           <%= link_to image_tag(booking.user.picture, class: "avatar"), user_path(booking.user) %>
