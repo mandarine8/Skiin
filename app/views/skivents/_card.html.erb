@@ -6,7 +6,7 @@
 
     <!-- Button trigger modal -->
 
-    <% if current_user.saved_skivents.include?(skivent) %>
+    <% if !current_user.nil? && current_user.saved_skivents.include?(skivent) %>
       <%= link_to favorite_path(current_user.favorites.find_by(skivent_id: skivent.id)), method: :delete do %>
         <i class="fas fa-heart card-heart red"></i>
       <% end %>
@@ -25,7 +25,9 @@
     <div class="card-avatars">
       <div class="card-avatars-booked">
         <%#= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
-        <%= cl_image_tag skivent.photo if skivent.photo  %>
+        <% if skivent.photo %>
+          <%= image_tag skivent.user.picture, class: "avatar"  %>
+        <% end %>
         <p class="avatar-name"><%= skivent.user.name %></p>
       </div>
 
