@@ -24,7 +24,8 @@
 
     <div class="card-avatars">
       <div class="card-avatars-booked">
-        <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
+        <%#= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
+        <%= cl_image_tag skivent.photo if skivent.photo  %>
         <p class="avatar-name"><%= skivent.user.name %></p>
       </div>
 
