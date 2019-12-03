@@ -90,6 +90,6 @@ class SkiventsController < ApplicationController
   private
 
   def skivent_params
-    params.require(:skivent).permit(:title, :date, :description, :level, :number_of_place, :car, :resort_id, :user_id)
+    params.require(:skivent).permit(:title, :date, :description, :level, :number_of_place, :car, :resort_id, :user_id, :photo)
   end
 end

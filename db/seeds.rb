@@ -144,7 +144,8 @@ s2 = Skivent.create!(
   car: true,
   description: "Let's discover this moutain together close to Montreal! Would like to try the new restaurant of the resort for the lunch.",
   resort: r2,
-  user: u2
+  user: u2,
+  remote_photo_url: "", 
 )
 
 s3 =  Skivent.create!(
