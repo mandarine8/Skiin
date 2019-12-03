@@ -43,7 +43,7 @@
 
             <% @booked_skivents.each do |booked_skivent| %>
               <div class="card-picture-skivent-user-show border  m-3">
-                <img src="https://source.unsplash.com/random" class="img-skivent" alt="">
+                 <%= cl_image_tag booked_skivent.photo, class: "card-img-left" %>
                 <div class="card-skivent-infos">
                   <div>
                     <strong><%= link_to booked_skivent.title %></strong>
@@ -65,7 +65,7 @@
             <% @requested_bookings.each do |booking| %>
               <div class="card-picture-skivent-user-show border m-3">
 
-                <img src="https://source.unsplash.com/random" class="img-skivent" alt="">
+                <%= cl_image_tag booking.skivent.photo, class: "card-img-left" %>
                
                 <div class="card-skivent-infos">
                   <strong> <%= booking.skivent.title %></strong>

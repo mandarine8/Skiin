@@ -19,10 +19,12 @@ class User < ApplicationRecord
 
 
     def average_rating
-    average = []
-    self.received_ratings.each do |rating|
-      average << rating.rating
-    end
-    (average.sum) / average.size
+      if self.received_ratings.size > 0
+        average = []
+        self.received_ratings.each do |rating|
+          average << rating.rating || 0
+        end
+        (average.sum) / average.size
+      end
   end
 end
