@@ -32,10 +32,11 @@ r1 = Resort.create!(
   address: "1000 Chemin des Voyageurs, Mont-Tremblant, QC J8E 1T1, Canada",
   latitude: 46.2098453,
   longitude: -74.5874801,
-  description: "Tremblant welcomes you with newly updated mountain facilities and a European-style pedestrian village with world-class lodging and amenities, restaurants, boutiques and things to do.",
+  description: "Tremblant welcomes you with newly updated mountain facilities and a European-style pedestrian village with world-class lodging and amenities, restaurants, boutiques and things to do.Tremblant sits at 875 meters and offers a breathtaking view on the Laurentians. Its ski area covers 305 hectares and includes 102 ski trails on 4 distinct slopes for skiers and snowboarders of all levels.",
   pictures: ["tremblant-village.jpg", "tremblant-ski.jpg", "tremblant-gondola.jpg"],
   url: 'https://www.tremblant.ca/',
-  price: 3,
+  meteo: 'tremblant-meteo.jpg',
+  price: 3
 )
 
 r2 = Resort.create!(
@@ -45,10 +46,11 @@ r2 = Resort.create!(
   address: "550 Rang des Vingt Cinq E, Saint-Bruno-de-Montarville, QC J3V 0G6, Canada",
   latitude: 45.5587079,
   longitude: -73.3369257,
-  description: "Geographically located in the heart of the Montérégie, this small ski center, a real incubator for skiers and snowboarders, allows the entire population of Montreal to enjoy the pleasures of skiing.",
+  description: "Geographically located in the heart of the Montérégie, this small ski center, a real incubator for skiers and snowboarders, allows the entire population of Montreal to enjoy the pleasures of skiing. Since 1965, Ski Saint-Bruno has excelled at creating skiers. The ski area is in constant evolution and continually searching for the latest innovations to offer you the best service and ski conditions possible.",
   pictures: ["saint-bruno-village.jpg", "saint-bruno-ski.jpg", "saint-bruno-gondola.jpg"],
   url: 'https://www.skisaintbruno.ca/',
-  price: 1,
+  meteo: 'saint-bruno-meteo.jpg',
+  price: 1
 )
 
 r3 = Resort.create!(
@@ -61,7 +63,8 @@ r3 = Resort.create!(
   description: "Bromont Mountain Experience is known for its largest ski area in North America and its 450-acre skiable terrain. Spread over 7 slopes, 141 trails of which 101 are lit and 32 undergrowth are accessible within 45 minutes of Montreal.",
   pictures: ["bromont-village.jpg", "bromont-ski.jpg", "bromont-gondola.jpg"],
   url: 'https://www.skibromont.com/',
-  price: 3,
+  meteo: 'bromont-meteo.jpg',
+  price: 3
 )
 
 r4 = Resort.create!(
@@ -74,7 +77,8 @@ r4 = Resort.create!(
   description: "Sommet Saint-Sauveur and its versant Avila offer you 40 trails, from the bunny hill to those dedicated to experts, mogul enthusiasts and set up fanatics. Enjoy!" ,
   pictures: ["saint-sauveur-village.jpg", "saint-sauveur-ski.jpg", "saint-sauveur-gondola.jpg"],
   url: 'https://www.sommets.com/fr/montagne-de-ski/sommet-saint-sauveur/',
-  price: 1,
+  meteo: 'saint-sauveur-meteo.jpg',
+  price: 1
 )
 
 r5 = Resort.create!(
@@ -87,7 +91,8 @@ r5 = Resort.create!(
   description: "Mont SUTTON has a unique concept of glades for every category of skiers. With 45% of its skiable domain being glades, ski in an environment made of an omnipresent nature. Have fun creating your own path at every descent: thanks to our 204 junctions. Discover all the technical aspects of Mont SUTTON." ,
   pictures: ["sutton-village.jpg", "sutton-ski.jpg", "sutton-gondola.jpg"],
   url: 'https://montsutton.com/',
-  price: 1,
+  meteo: 'sutton-meteo.jpg',
+  price: 1
 )
 
 r6 = Resort.create!(
@@ -100,7 +105,8 @@ r6 = Resort.create!(
   description: "Mont-Orford stands 850 meters tall in the heart of the National Park, overlooking the cities of Magog, Orford and Eastman, and offers stunning panoramic views of the many surrounding lakes, mountains and natural landscapes. Easy to access, 5 minutes from Highway 10; 20 minutes from Sherbrooke; and only 1 hour from Montreal. Come discover, or rediscover, Mont-Orford’s beautiful and cozy winter scenery." ,
   pictures: ["orford-village.jpg", "orford-ski.jpg", "orford-gondola.jpg"],
   url: 'https://montorford.com/',
-  price: 2,
+  meteo: 'orford-meteo.jpg',
+  price: 2
 )
 
 r7 = Resort.create!(
@@ -113,14 +119,15 @@ r7 = Resort.create!(
   description: "Le Massif de Charlevoix is ​​the highest vertical drop east of the Rockies, a spectacular view of the river and mountains, and powdery snow for as far as the eye can see. An authentic mountain where nature is respected. A place to get away from the hectic schedules and concrete. Le Massif is the simple pleasure, without artifice. Pure, raw fun." ,
   pictures: ["massif-village.jpg", "massif-ski.jpg", "massif-gondola.jpg"],
   url: 'https://www.lemassif.com/',
-  price: 3,
+  meteo: 'massif-meteo.jpg',
+  price: 3
 )
 
 puts "Creating the Skivents"
 
 s1 = Skivent.create!(
   title: "Sport day in Mont-Tremblant",
-  date: Date.new(2019,12,1),
+  date: Date.new(2019,12,7),
   level: "expert",
   number_of_place: 3,
   car: true,
@@ -131,11 +138,11 @@ s1 = Skivent.create!(
 
 s2 = Skivent.create!(
   title: "Enjoying the slopes in Saint-Bruno",
-  date: Date.new(2019,11,30),
+  date: Date.new(2019,12,8),
   level: "intermediate",
   number_of_place: 2,
   car: true,
-  description: "Let's discover this moutain together close to Monteal! Would like to try the new restaurant of the resort for the lunch.",
+  description: "Let's discover this moutain together close to Montreal! Would like to try the new restaurant of the resort for the lunch.",
   resort: r2,
   user: u2,
   remote_photo_url: "", 
@@ -143,7 +150,7 @@ s2 = Skivent.create!(
 
 s3 =  Skivent.create!(
   title: "Off-track skiing in Bromont",
-  date: Date.new(2019,11,23),
+  date: Date.new(2019,12,22),
   level: "expert",
   number_of_place: 2,
   car: true,
@@ -154,7 +161,7 @@ s3 =  Skivent.create!(
 
 s4 = Skivent.create!(
   title: "Cool day in Saint-Sauveur",
-  date: Date.new(2019,12,1),
+  date: Date.new(2019,12,21),
   level: "intermediate",
   number_of_place: 3,
   car: true,
@@ -165,13 +172,13 @@ s4 = Skivent.create!(
 
 s5 = Skivent.create!(
   title: "Lets try the spa!",
-  date: Date.new(2019,11,24),
+  date: Date.new(2019,12,28),
   level: "beginner",
   number_of_place: 3,
   car: true,
   description: "I love the mountain and the snow, but even more wine and cocooning! Come chill with me!",
   resort: r1,
-  user: u5
+  user: u7
 )
 
 s6 = Skivent.create!(
@@ -180,9 +187,9 @@ s6 = Skivent.create!(
   level: "intermediate",
   number_of_place: 2,
   car: true,
-  description: "After work on the slopes, and maybe a beer together. Departure at Laurier Station at 5pm, return at 11pm.",
+  description: "After work on the slopes, and maybe a beer together. Departure at Laurier Station ( Montreal ) at 5pm, return at 11pm.",
   resort: r3,
-  user: u6
+  user: u1
 )
 
 s7 = Skivent.create!(
@@ -193,12 +200,12 @@ s7 = Skivent.create!(
   car: true,
   description: "Bring your cat, we will test the snowboard with them!.",
   resort: r5,
-  user: u7
+  user: u5
 )
 
 s8 = Skivent.create!(
   title: "Ski for devs",
-  date: Date.new(2019,12,7),
+  date: Date.new(2019,12,8),
   level: "intermediate",
   number_of_place: 3,
   car: true,
@@ -231,7 +238,7 @@ s10 = Skivent.create!(
 
 s11 = Skivent.create!(
   title: "Ski with view",
-  date: Date.new(2019,12,14),
+  date: Date.new(2019,01,11),
   level: "chill",
   number_of_place: 3,
   car: true,
@@ -275,7 +282,7 @@ s14 = Skivent.create!(
 
 s15 = Skivent.create!(
   title: "Ski & fun",
-  date: Date.new(2019,12,17),
+  date: Date.new(2019,12,1),
   level: "chill",
   number_of_place: 2,
   car: true,
@@ -290,7 +297,7 @@ s16 = Skivent.create!(
   level: "beginner",
   number_of_place: 3,
   car: true,
-  description: "Not really a great rider, can someone help me improve my style?",
+  description: "Living in Montreal, I am not really a great rider, can someone help me improve my style?",
   resort: r4,
   user: u2
 )
@@ -298,18 +305,18 @@ s16 = Skivent.create!(
 
 s17 = Skivent.create!(
   title: "Come with me in Saint-Sauveur resort",
-  date: Date.new(2020,01,16),
+  date: Date.new(2020,11,30),
   level: "beginner",
   number_of_place: 1,
   car: true,
-  description: "I love skiing but I would love meet someone who want teach me to be more confident when I am skiing ",
+  description: "I love skiing but I would love meet someone around Montreal who want teach me to be more confident when I am skiing ",
   resort: r4,
   user: u4
 )
 
 s18 = Skivent.create!(
   title: "A great day in Mont Orford",
-  date: Date.new(2020,01,16),
+  date: Date.new(2020,11,16),
   level: "expert",
   number_of_place: 2,
   car: true,
@@ -320,7 +327,7 @@ s18 = Skivent.create!(
 
 s19 = Skivent.create!(
   title: "Discover Sutton resort with me",
-  date: Date.new(2020,01,16),
+  date: Date.new(2020,11,16),
   level: "intermediate",
   number_of_place: 1,
   car: true,
@@ -331,22 +338,22 @@ s19 = Skivent.create!(
 
 s20 = Skivent.create!(
   title: "Bromont by night with fun!",
-  date: Date.new(2020,01,16),
+  date: Date.new(2020,11,16),
   level: "expert",
   number_of_place: 1,
   car: true,
-  description: " I love skiing. It is freedom on all fronts - physical, mental and emotional. I want meet people like me to enjoy this night in Bromont",
+  description: " I love skiing. It is freedom on all fronts - physical, mental and emotional. I want meet people like me to enjoy this night in Bromont. Back in Montreal at 23pm",
   resort: r3,
-  user: u1
+  user: u6
 )
 
 s21 = Skivent.create!(
   title: "Saint Bruno will not have secrets anymore for you!",
-  date: Date.new(2020,01,16),
+  date: Date.new(2020,11,16),
   level: "expert",
   number_of_place: 1,
   car: true,
-  description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. ",
+  description: "Skiing is one of my favorite things to do in this whole world. You won't regret it if you join me. (Near to Montreal) ",
   resort: r2,
   user: u5
 )
@@ -364,7 +371,7 @@ s22 = Skivent.create!(
 
 s23 = Skivent.create!(
   title: "A slalom in Sutton",
-  date: Date.new(2019,12,22),
+  date: Date.new(2019,11,22),
   level: "expert",
   number_of_place: 3,
   car: true,
@@ -386,13 +393,13 @@ s24 = Skivent.create!(
 
 s25 = Skivent.create!(
   title: "Improving my ski level in Bromont",
-  date: Date.new(2019,12,7),
+  date: Date.new(2019,11,7),
   level: "beginner",
   number_of_place: 2,
   car: true,
-  description: "I haven't been skiing since a long time, I want this feeling back! Join me if you want to ski and laugh!",
+  description: "I haven't been skiing since a long time (since I live in Montreal actually), I want this feeling back! Join me if you want to ski and laugh!",
   resort: r3,
-  user: u5
+  user: u7
 )
 
  s26 = Skivent.create!(
@@ -401,7 +408,7 @@ s25 = Skivent.create!(
   level: "intermediate",
   number_of_place: 0,
   car: false,
-  description: "I want to discover Saint-Sauveur's slops! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
+  description: "I want to discover Saint-Sauveur's slopes! Just to let you know, I am a snowborder but I am totally open to have fin with skiers! Departure from Montreal.",
   resort: r4,
   user: u5
   )
@@ -412,37 +419,37 @@ puts "Creating the ratings"
 
 Rating.create!(
   user: u2,
-  skivent: s1,
+  skivent: s23,
   rating: 5,
   review: "Amandine is very nice, she show me how to ski on one foot. I would love to have another day with her")
 Rating.create!(
   user: u1,
-  skivent: s2,
+  skivent: s18,
   rating: 4,
   review: "I had a amazing day with Chloe, we laughed so much! She is nice and punctual")
 Rating.create!(
   user: u4,
-  skivent: s3,
+  skivent: s19,
   rating: 5,
   review: " Ryan is a very good teacher, patient and diplomat. He had a professional level but he is happy to share his knowledge")
 Rating.create!(
   user: u5,
-  skivent: s4,
+  skivent: s17,
   rating: 4,
   review: "Charlotte is so fun! The day with her was really rythmed by sport time and fun time.")
 Rating.create!(
-  user: u6,
-  skivent: s5,
+  user: u7,
+  skivent: s21,
   rating: 4,
   review: "I went to Mont-Tremblant with Camille and we had a perfect day. She was happy to take my advices.")
 Rating.create!(
   user: u7,
-  skivent: s6,
+  skivent: s17,
   rating: 5,
-  review: "Stephane is a very enthusiastic guy! We discovered the resort together, it was a chill day.")
+  review: "Charlotte is a very enthusiastic girl! We discovered the resort together, it was a chill day.")
 Rating.create!(
   user: u1,
-  skivent: s7,
+  skivent: s15,
   rating: 4,
   review: "So great")
 
@@ -450,104 +457,103 @@ puts "Booking booking"
 
 b1 = Booking.create!(
   user: u3,
-  skivent: s10,
-  status: "accepted"
-)
-
-b2 = Booking.create!(
-  user: u3,
   skivent: s2,
   status: "accepted"
 )
 
-b3 = Booking.create!(
+b2 = Booking.create!(
   user: u4,
-  skivent: s10,
+  skivent: s5,
+  status: "accepted"
+)
+
+b3 = Booking.create!(
+  user: u7,
+  skivent: s8,
   status: "declined"
 )
 
 b4 = Booking.create!(
   user: u2,
-  skivent: s11,
+  skivent: s8,
   status: "declined"
 )
 
 b5 = Booking.create!(
-  user: u6,
-  skivent: s2,
-  status: "accepted"
-)
-
-b6 = Booking.create!(
-  user: u7,
-  skivent: s2,
-  status: "accepted"
-)
-
-b7 = Booking.create!(
-  user: u5,
-  skivent: s9,
-  status: "accepted"
-)
-
-b8 = Booking.create!(
-  user: u6,
+  user: u1,
   skivent: s8,
   status: "accepted"
 )
 
-b9 = Booking.create!(
-  user: u1,
-  skivent: s9,
+b6 = Booking.create!(
+  user: u4,
+  skivent: s10,
   status: "accepted"
 )
 
-b10 = Booking.create!(
-  user: u5,
-  skivent: s6,
-  status: "accepted"
-)
-
-b11 = Booking.create!(
+b7 = Booking.create!(
   user: u6,
   skivent: s13,
   status: "accepted"
 )
 
-b12 = Booking.create!(
-  user: u3,
+b8 = Booking.create!(
+  user: u1,
+  skivent: s15,
+  status: "accepted"
+)
+
+b9 = Booking.create!(
+  user: u5,
+  skivent: s17,
+  status: "accepted"
+)
+
+b10 = Booking.create!(
+  user: u7,
+  skivent: s17,
+  status: "accepted"
+)
+
+b11 = Booking.create!(
+  user: u1,
   skivent: s18,
   status: "accepted"
 )
 
+b12 = Booking.create!(
+  user: u4,
+  skivent: s19,
+  status: "accepted"
+)
 
 b13 = Booking.create!(
-  user: u5,
-  skivent: s1,
+  user: u7,
+  skivent: s21,
   status: "accepted"
 )
 
 b14 = Booking.create!(
   user: u2,
-  skivent: s1,
+  skivent: s23,
   status: "accepted"
 )
 
 b15 = Booking.create!(
-  user: u1,
-  skivent: s5,
+  user: u7,
+  skivent: s9,
   status: "accepted"
 )
 
 b16 = Booking.create!(
   user: u2,
-  skivent: s5,
+  skivent: s11,
   status: "accepted"
 )
 
 b17 = Booking.create!(
-  user: u5,
-  skivent: s8,
+  user: u1,
+  skivent: s7,
   status: "accepted"
 )
 
@@ -570,7 +576,7 @@ f3 = Favorite.create!(
 
 f4 = Favorite.create!(
   user: u6,
-  skivent: s8,
+  skivent: s6,
 )
 
 f5 = Favorite.create!(

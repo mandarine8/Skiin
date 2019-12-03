@@ -16,4 +16,13 @@ class User < ApplicationRecord
   validates :description, presence: true
   validates :level, presence: true
   validates :picture, presence: true
+
+
+    def average_rating
+    average = []
+    self.received_ratings.each do |rating|
+      average << rating.rating
+    end
+    (average.sum) / average.size
+  end
 end

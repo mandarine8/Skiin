@@ -1,0 +1,29 @@
+.modal-header {
+  text-align: center;
+}
+
+.card-skivent-host {
+  display: flex;
+}
+
+.card-avatar-popup {
+  display: flex;
+}
+
+.card-description-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-skivent-details {
+  background-color: $skiin-lightgray;
+  border-radius: 3px;
+}
+
+.content-popup {
+  display: flex;
+}
+
+i {
+  font-size: 16px;
+}
