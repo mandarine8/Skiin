@@ -1,4 +1,4 @@
-<div class="container-new margin-top" style="margin-left: 20px">
+<div class="container-new margin-top p-4" style="background-color: #FAFAFA;">
     <h2>My favorites skivents</h2>
     <div class="row">
         <div class="col-lg-7 col-sm-12">
@@ -13,3 +13,7 @@
     </div>
      <%= link_to "Back to the skivents", skivents_path, class:"btn-yellow" %>
 </div>
+
+<% @skivents.each do |skivent| %>
+  <%= render "skivents/skivent_modal", skivent: skivent, average_rating: @average_rating %>
+<% end %>
