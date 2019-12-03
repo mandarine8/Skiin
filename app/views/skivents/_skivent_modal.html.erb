@@ -7,6 +7,14 @@
         <div class="">
           <h3 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h3>
         </div>
+        <div class="skivent_infos d-flex justify-content-space-between">
+          <div>
+            <p class="resort-name d-flex justify-content-space-between"><%= link_to skivent.resort.name, resort_path(skivent.resort) %></p>
+          </div>
+          <div>
+            <p class="skivent-date d-flex justify-content-space-between"><%= skivent.date %></p>
+          </div>
+        </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -28,17 +36,15 @@
                     </div>
                     <div class="card-name-picto ml-3">
                       <h4> <%= skivent.user.name %> </h4>
-                      
+
                       <% if average_rating %>
                         <% average_rating.times do %>
                           <i class="picto-snow far fa-snowflake"></i>
                         <% end %>
                       <% else %>
-
-                      <p>no ratings yet</p>
-                        
+                        <p>no ratings yet</p>
                       <% end %>
-                      
+
 
                     </div>
                   </div>
@@ -56,6 +62,20 @@
             <!-- card-pictos -->
             <div class="card-pictos">
 
+              <!-- resort infos -->
+              <div class="card-skivent-info pb-4">
+               <div class="card-picto-price">
+                <h4>About <%= skivent.resort.name %> </h4>
+                <div class="d-flex">
+                  <% skivent.resort.price.times do %>
+                    <i class="fas fa-dollar-sign"></i>
+                  <% end %>
+                  <i class="fas fa-mountain ml-3" data-toggle="tooltip" data-placement="top m-2" title="Number of slopes"><%= skivent.resort.number_of_slopes %></i>
+                </div>
+               </div>
+              </div>
+              <!-- end of resort infos -->
+
               <!-- event infos -->
               <div class="card-skivent-info pb-4">
                 <h4>Event information</h4>
@@ -72,19 +92,6 @@
               </div>
               <!-- end of event infos -->
 
-              <!-- resort infos -->
-              <div class="card-skivent-info pb-4">
-               <div class="card-picto-price">
-                <h4>About <%= skivent.resort.name %> </h4>
-                <div class="d-flex">
-                  <% skivent.resort.price.times do %>
-                    <i class="fas fa-dollar-sign"></i>
-                  <% end %>
-                  <i class="fas fa-mountain ml-3" data-toggle="tooltip" data-placement="top m-2" title="Number of slops"><%= skivent.resort.number_of_slopes %></i>
-                </div>
-               </div>
-              </div>
-              <!-- end of resort infos -->
 
               <!-- description event -->
               <div class="card-skivent-description">
