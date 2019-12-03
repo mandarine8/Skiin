@@ -5,17 +5,25 @@
     <source src="https://res.cloudinary.com/mandarine8/video/upload/v1574890189/ocsqjst8mb2r6vyqepz7.mp4" type="video/mp4">
   </video>
 
-  <div class="card ml-4">
+  <div class="card-home ml-4">
     <div class="card-body p-5">
       <h3 class="mb-4">Create your perfect ski journey</h3>
 
       <%= form_tag skivents_path, method: :get do %>
         <div class="form-group">
-          <input class="form-control" type="text" name="query" id="search_query" placeholder="Enter a resort name" />
+          <input class="form-control" type="text" name="query" id="search_query" placeholder="Enter the departure city" />
+        </div>
+        <div class="form-group">
+          <select class="form-control" name="Distance" id="search_level">
+            <option value="">Choose the distance from your city</option>
+            <option value="beginner">Less than 70km</option>
+            <option value="intermediate">Less than 130km</option>
+            <option value="expert">Less than 170km</option>
+          </select>
         </div>
         <div class="form-group">
           <select class="form-control" name="level" id="search_level">
-            <option value="">Choose your level</option>
+            <option value="">Choose your ski level</option>
             <option value="beginner">Beginner</option>
             <option value="intermediate">Intermediate</option>
             <option value="expert">Expert</option>
@@ -31,4 +39,16 @@
       <% end %>
     </div>
   </div>
+
 </div>
+
+<!-- <script>
+  function playHappy() {
+    var happy = new Audio('ski.mp3');
+    happy.play();
+  }
+  document.getElementById('ski').addEventListener('click', playHappy());
+</script> -->
+
+</div>
+
