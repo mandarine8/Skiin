@@ -111,9 +111,13 @@
   background-color: $primary;
   display: flex;
   flex-direction: column;
-  padding-left: 36px;
-  padding-right: 36px;
-  // height: 100vh;
+  padding: 36px;
+  position: relative;
+  .btn-add-event {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
 }
 
 .card-user-name-rating {

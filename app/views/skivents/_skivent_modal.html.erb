@@ -18,6 +18,28 @@
 
             <div class="card-skievent-details col-sm-12 col-md-7">
 
+            <div class="card-skivent-host col-sm-12 col-md-5">
+              <div class="rating">
+                <p>
+                  <% ((@user.rating.reduce(0) { |sum, val| val.note + sum } / @user.rating.count) rescue 0).times do %>
+                    <i class="picto-snow far fa-snowflake"></i>
+                  <% end %>
+                </p>
+                  <% if @user != current_user %>
+                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+                  rating <%= skivent.user.name %>
+                </button>
+                <% end %>
+              </div>
+
+              <h3>Event posted by:</h3>
+              <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
+              <%= skivent.user.name %>
+              <h3>About <%= skivent.user.name %></h3>
+              <p> <%= skivent.user.description %></p>
+            </div>
+            </div>
+
               <!-- card-pictos -->
               <div class="card-pictos">
 
@@ -46,33 +68,12 @@
               <!-- end of description event -->
 
 
-            </div>
-
-            <!-- description profil -->
-            <div class="card-skivent-host col-sm-12 col-md-5">
-              <div class="rating">
-                <p>
-                  <% ((@user.rating.reduce(0) { |sum, val| val.note + sum } / @user.rating.count) rescue 0).times do %>
-                    <i class="picto-snow far fa-snowflake"></i>
-                  <% end %>
-                </p>
-                  <% if @user != current_user %>
-                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
-                  rating <%= skivent.user.name %>
-                </button>
-                <% end %>
               </div>
 
-              <h3>Event posted by:</h3>
-              <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
-              <%= skivent.user.name %>
-              <h3>About <%= skivent.user.name %></h3>
-              <p> <%= skivent.user.description %></p>
-            </div>
+            <!-- description profil -->
 
             <!-- end of description profil -->
 
-          </div>
           <!-- end of container externe -->
 
         </div>
@@ -88,5 +89,5 @@
         </div>
 
      </div>
-     </div>
-     </div>
+    </div>
+  </div>

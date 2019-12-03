@@ -35,7 +35,8 @@ r1 = Resort.create!(
   description: "Tremblant welcomes you with newly updated mountain facilities and a European-style pedestrian village with world-class lodging and amenities, restaurants, boutiques and things to do.Tremblant sits at 875 meters and offers a breathtaking view on the Laurentians. Its ski area covers 305 hectares and includes 102 ski trails on 4 distinct slopes for skiers and snowboarders of all levels.",
   pictures: ["tremblant-village.jpg", "tremblant-ski.jpg", "tremblant-gondola.jpg"],
   url: 'https://www.tremblant.ca/',
-  meteo: 'tremblant-meteo.jpg'
+  meteo: 'tremblant-meteo.jpg',
+  price: 3
 )
 
 r2 = Resort.create!(
@@ -48,7 +49,8 @@ r2 = Resort.create!(
   description: "Geographically located in the heart of the Montérégie, this small ski center, a real incubator for skiers and snowboarders, allows the entire population of Montreal to enjoy the pleasures of skiing. Since 1965, Ski Saint-Bruno has excelled at creating skiers. The ski area is in constant evolution and continually searching for the latest innovations to offer you the best service and ski conditions possible.",
   pictures: ["saint-bruno-village.jpg", "saint-bruno-ski.jpg", "saint-bruno-gondola.jpg"],
   url: 'https://www.skisaintbruno.ca/',
-  meteo: 'saint-bruno-meteo.jpg'
+  meteo: 'saint-bruno-meteo.jpg',
+  price: 1
 )
 
 r3 = Resort.create!(
@@ -61,7 +63,8 @@ r3 = Resort.create!(
   description: "Bromont Mountain Experience is known for its largest ski area in North America and its 450-acre skiable terrain. Spread over 7 slopes, 141 trails of which 101 are lit and 32 undergrowth are accessible within 45 minutes of Montreal.",
   pictures: ["bromont-village.jpg", "bromont-ski.jpg", "bromont-gondola.jpg"],
   url: 'https://www.skibromont.com/',
-  meteo: 'bromont-meteo.jpg'
+  meteo: 'bromont-meteo.jpg',
+  price: 3
 )
 
 r4 = Resort.create!(
@@ -74,7 +77,8 @@ r4 = Resort.create!(
   description: "Sommet Saint-Sauveur and its versant Avila offer you 40 trails, from the bunny hill to those dedicated to experts, mogul enthusiasts and set up fanatics. Enjoy!" ,
   pictures: ["saint-sauveur-village.jpg", "saint-sauveur-ski.jpg", "saint-sauveur-gondola.jpg"],
   url: 'https://www.sommets.com/fr/montagne-de-ski/sommet-saint-sauveur/',
-  meteo: 'saint-sauveur-meteo.jpg'
+  meteo: 'saint-sauveur-meteo.jpg',
+  price: 1
 )
 
 r5 = Resort.create!(
@@ -87,7 +91,8 @@ r5 = Resort.create!(
   description: "Mont SUTTON has a unique concept of glades for every category of skiers. With 45% of its skiable domain being glades, ski in an environment made of an omnipresent nature. Have fun creating your own path at every descent: thanks to our 204 junctions. Discover all the technical aspects of Mont SUTTON." ,
   pictures: ["sutton-village.jpg", "sutton-ski.jpg", "sutton-gondola.jpg"],
   url: 'https://montsutton.com/',
-  meteo: 'sutton-meteo.jpg'
+  meteo: 'sutton-meteo.jpg',
+  price: 1
 )
 
 r6 = Resort.create!(
@@ -100,7 +105,8 @@ r6 = Resort.create!(
   description: "Mont-Orford stands 850 meters tall in the heart of the National Park, overlooking the cities of Magog, Orford and Eastman, and offers stunning panoramic views of the many surrounding lakes, mountains and natural landscapes. Easy to access, 5 minutes from Highway 10; 20 minutes from Sherbrooke; and only 1 hour from Montreal. Come discover, or rediscover, Mont-Orford’s beautiful and cozy winter scenery." ,
   pictures: ["orford-village.jpg", "orford-ski.jpg", "orford-gondola.jpg"],
   url: 'https://montorford.com/',
-  meteo: 'orford-meteo.jpg'
+  meteo: 'orford-meteo.jpg',
+  price: 2
 )
 
 r7 = Resort.create!(
@@ -113,7 +119,8 @@ r7 = Resort.create!(
   description: "Le Massif de Charlevoix is ​​the highest vertical drop east of the Rockies, a spectacular view of the river and mountains, and powdery snow for as far as the eye can see. An authentic mountain where nature is respected. A place to get away from the hectic schedules and concrete. Le Massif is the simple pleasure, without artifice. Pure, raw fun." ,
   pictures: ["massif-village.jpg", "massif-ski.jpg", "massif-gondola.jpg"],
   url: 'https://www.lemassif.com/',
-  meteo: 'massif-meteo.jpg'
+  meteo: 'massif-meteo.jpg',
+  price: 3
 )
 
 puts "Creating the Skivents"
@@ -135,7 +142,7 @@ s2 = Skivent.create!(
   level: "intermediate",
   number_of_place: 2,
   car: true,
-  description: "Let's discover this moutain together! Would like to try the new restaurant of the resort for the lunch.",
+  description: "Let's discover this moutain together close to Monteal! Would like to try the new restaurant of the resort for the lunch.",
   resort: r2,
   user: u2
 )
@@ -146,7 +153,7 @@ s3 =  Skivent.create!(
   level: "expert",
   number_of_place: 2,
   car: true,
-  description: "I would like to test the Off-tracks next Sunday. Come with me if you like challenges and adventures",
+  description: "I would like to test the Off-tracks next Sunday. Come with me if you like challenges and adventures close to Montreal!",
   resort: r3,
   user: u3
 )
@@ -157,7 +164,7 @@ s4 = Skivent.create!(
   level: "intermediate",
   number_of_place: 3,
   car: true,
-  description: "If you like the perfect balance between skiing and chilling, this trip is for you .",
+  description: "If you like the perfect balance between skiing and chilling near Montreal, this trip is for you .",
   resort: r4,
   user: u4
 )
@@ -403,7 +410,7 @@ s25 = Skivent.create!(
   description: "I want to discover Saint-Sauveur's slopes! Just to let you know, I am a snowborder but I am totally open to have fin with skiers!",
   resort: r4,
   user: u5
-   )
+  )
 
 
 puts "Creating the ratings"
