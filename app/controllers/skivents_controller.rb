@@ -44,6 +44,19 @@ class SkiventsController < ApplicationController
       end
     # loop if there is no query
     else
+      if @date
+        @skivents = Skivent.all.select do |skivent|
+          skivent.date == @date
+        end
+        @resorts = []
+        # push all resorts from queried skivents
+        @skivents.each do |skivent|
+          @resorts.push(skivent.resort)
+        end
+      else
+        @skivents = Skivent.all
+      end
+
       @markers = @resorts.map do |resort|
         {
           lat: resort.latitude,
@@ -53,7 +66,6 @@ class SkiventsController < ApplicationController
           infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
         }
       end
-      @skivents = Skivent.all
     end
   end
 
