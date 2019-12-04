@@ -165,29 +165,35 @@
           <h5>past skivents</h5>
 
           <!-- past skivents -->
-          <% @booked_skivents.each do |booked_skivent| %>
-            <div class="card-picture-skivent-user-show border  m-3">
-              <%= cl_image_tag booked_skivent.photo, class: "card-img-left" %>
-              <div class="card-skivent-infos p-2">
-                <div>
-                  <strong><%= link_to booked_skivent.title %></strong>
-                  <div class="card-skivent-host">
-                    <p><%= booked_skivent.description %></p>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <img src="<%= booked_skivent.user.picture %>" alt="" class="avatar-bordered">
-                      <%= link_to booked_skivent.user.name %>
+          <% if @past_skivents.size > 0 %>
+
+            <% @past_skivents.each do |past_skivent| %>
+              <div class="card-picture-skivent-user-show border  m-3">
+                <%= cl_image_tag past_skivent.photo, class: "card-img-left" %>
+                <div class="card-skivent-infos p-2">
+                  <div>
+                    <strong><%= link_to past_skivent.title %></strong>
+                    <div class="card-skivent-host">
+                      <p><%= past_skivent.description %></p>
                     </div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= booked_skivent.id %> ">
-                      add a review
-                    </button>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <img src="<%= past_skivent.user.picture %>" alt="" class="avatar-bordered">
+                        <%= link_to past_skivent.user.name %>
+                      </div>
+                      <% if past_skivent.user != @user %>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= past_skivent.id %> ">
+                          add a review
+                        </button>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
+
           <% @booked_skivents.each do |booked_skivent| %> <!-- modals for the booked skivents -->
             <%= render "users/ratings_modal", booked_skivent: booked_skivent %>
           <% end %>
@@ -242,21 +248,33 @@
 
 
         <div class="card-skivent-user-show tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
+
+        <% @ratings.each do |rating| %>
+
           <div class="card-picture-skivent-user-show border flex-column m-3">
+            <p>review left by : <%= rating.user.name %> </p>
             <div class="card-resort-date d-flex justify-content-between p-2">
-              <p>RESORT NAME</p>
-              <p>DATE</p>
+              <p><%= rating.skivent.resort.name %></p>
+              <p><%= rating.skivent.date %></p>
             </div>
             <div class="card-title-rating d-flex justify-content-between p-2">
-              <p>TITLE DU SKIVENT A ECRIRE</p>
-              <p>RATING LAISSÉ</p>
+              <p><%= rating.skivent.title %></p>
+              <p><%= rating.rating %></p>
             </div>
             <div class="card-review d-flex justify-content-between p-2">
-              <p>Ici se trouve la review laissée par le user, merci beaucoup!</p>
+              <p>"<%= rating.review %>"</p>
             </div>
 
           </div>
+
+        <% end %>
+
+
+
+
         </div>
+        <!-- enf of tab for reviews -->
+
       </div>
     </div>
   </div>
