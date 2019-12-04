@@ -120,7 +120,12 @@
       <div class="modal-footer">
         <% if skivent.user != current_user %>
           <%= link_to "book now", skivent_bookings_path(skivent), method: :post, class: 'btn btn-secondary'  %>
-          <button type="button" class="btn btn-primary">Contact the host</button>
+
+          <!-- Button trigger modal_message -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#messageModal">
+          Contact me
+          </button>
+
         <% else %>
           <p>This is your Skivent</p>
         <% end %>
