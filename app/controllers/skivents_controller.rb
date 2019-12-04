@@ -6,12 +6,19 @@ class SkiventsController < ApplicationController
     @resorts = Resort.geocoded
 
     @query = params[:query]
-    @date = params[:date]
     @level = params[:level]
+
+    d = params[:date].split("/")
+    @date = Date.new(d[2].to_i, d[0].to_i, d[1].to_i)
 
     # loop if there is a query
     if @query.present?
-      @skivents = Skivent.search_by_title(@query)
+      @all_skivents = Skivent.search_by_title(@query)
+
+      @skivents = @all_skivents.select do |skivent|
+        skivent.date == @date
+      end
+
       @filtered_resorts = []
       # push all resorts from queried skivents
       @skivents.each do |skivent|
