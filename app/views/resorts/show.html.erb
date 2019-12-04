@@ -31,16 +31,21 @@
   <!-- Affichage du descriptif de la station  -->
   <div class="card card-resort w-100 mb-4">
     <div class="card-body">
-      <h3 class="card-title mb-3">Description</h3>
-      <h4 class="card-subtitle mb-2 text-muted">About the resort</h4>
-      <p class="card-text"><%= @resort.description %></p>
-      <div class="row mb-4 mt-5">
-        <div class="card-column col-4">
-          <h4 class="card-subtitle mb-2 text-muted">Type of the resort:</h4>
-          <p class="card-text h5 mt-4"><%= @resort.resort_type %></p>
+      <div class="row d-flex mb-2">
+        <div class="card-resort-description col">
+          <h4 class="card-subtitle d-flex mb-2 text-muted">About the resort</h4>
+          <p class="card-text"><%= @resort.description %></p>
+          <div class="row m-1">
+            <%= link_to "See the website", @resort.url, class: "btn btn-primary" %>
+
+            <!-- <div class="d-flex justify-content-center mt-3"> -->
+              <%= link_to "Back to all the Skivents", @previous_url || skivents_path, class: "btn btn-outline-primary" %>
+            <!-- </div> -->
+          </div>
         </div>
-        <div class="card-column col-4">
-          <h4 class="card-subtitle mb-2 text-muted">Informations about the resort</h4>
+        <div class="card-column col">
+          <h4 class="card-subtitle d-flex mb-2 text-muted">Informations about the resort</h4>
+            <p class="card-text h5 mt-4"><%= @resort.resort_type %></p>
           <div class="card-skivent-info pt-3 pb-4">
             <div class="card-picto-price">
               <div class="d-flex h4">
@@ -49,22 +54,16 @@
                 <% end %>
                 <i class="fas fa-mountain ml-3 h4" data-toggle="tooltip" data-placement="top m-2" title="Number of slopes"></i>
                 <%= @resort.number_of_slopes %>
+                <i class="fas fa-hot-tub ml-3 h4" data-toggle="tooltip" data-placement="top m-2" title="Spa"></i>
+                <i class="fas fa-utensils ml-3 h4" data-toggle="tooltip" data-placement="top m-2" title="Spa"></i>
               </div>
            </div>
           </div>
+          <div class="card-column">
+            <h4 class="card-subtitle mb-2 text-muted">Weather for the 5 next days</h4>
+            <%= image_tag @resort.meteo %>
+          </div>
         </div>
-        <div class="card-column col-4">
-          <h4 class="card-subtitle mb-2 text-muted">Weather for the 5 next days</h4>
-          <%= image_tag @resort.meteo %>
-        </div>
-      </div>
-
-      <div class="row justify-content-center m-4">
-        <%= link_to "See the website", @resort.url, class: "btn btn-primary" %>
-
-        <!-- <div class="d-flex justify-content-center mt-3"> -->
-          <%= link_to "Back to all the Skivents", @previous_url || skivents_path, class: "btn btn-outline-primary" %>
-        <!-- </div> -->
       </div>
     </div>
   </div>
