@@ -9,7 +9,7 @@
         <div class="card-name-picto">
           <h4> <%= @user.name %> </h4>
           <% @average_rating.times do %>
-          <i class="picto-snow far fa-snowflake"></i>
+            <i class="picto-snow far fa-snowflake"></i>
           <% end %>
         </div>
       </div>
@@ -66,7 +66,7 @@
 
           </div>
 
-          <div class="drinving_hobbies d-flex flex-column align-items-center justify-content-center">
+          <div class="driving_hobbies d-flex flex-column align-items-center justify-content-center">
 
             <div class="card-hobbies-content">
               <h5> My Hobbies </h5>
@@ -95,7 +95,7 @@
         <%= simple_form_for(@user) do |f| %>
           <%= f.input :level, as: :hidden %>
           <%= f.input :car, as: :hidden %>
-          <%= f.submit "update profile", class: "btn-white" %>
+          <%= f.submit "update profile", class: "btn-yellow" %>
         <% end %>
 
         <%= link_to "Add an event", new_skivent_path, class:"btn btn-secondary btn-add-event" %>
@@ -125,6 +125,15 @@
             aria-selected="false">
             Pending requests
           </a>
+          <a class="nav-item nav-link"
+            id="nav-reviews-tab"
+            data-toggle="tab"
+            href="#nav-reviews"
+            role="tab"
+            aria-controls="nav-reviews"
+            aria-selected="false">
+            Reviews
+          </a>
         </div>
       </nav>
 
@@ -135,14 +144,20 @@
           <!-- my incoming skivents that i organized myself -->
           <% @skivents.each do | skivent | %>
             <% next if skivent.user.nil? %>
-              <div class="card-picture-skivent-user-show border m-3">
+              <div class="card-picture-skivent-user-show border m-2">
                 <%= cl_image_tag skivent.photo, class: "card-img-left" %>
-                <div class="card-skivent-infos p-2">
-                  <strong> <%= link_to skivent.title %> </strong>
-                  <h2 class="card-skivent-host"></h2>
-                  <p><%= skivent.description %></p>
-                  <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
-                  <%= link_to skivent.user.name %>
+                <div class="card-skivent-my-show d-flex flex-column">
+                  <div class="card-resort-title d-flex justify-content-between">
+                    <p><%= skivent.resort.name %></p>
+                    <%= skivent.date %>
+                  </div>
+                  <div class="card-skivent-infos pt-2 pl-2 pr-2">
+                    <strong> <%= link_to skivent.title %> </strong>
+                    <h2 class="card-skivent-host"></h2>
+                    <p><%= skivent.description %></p>
+                    <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
+                    <%= link_to skivent.user.name %>
+                  </div>
                 </div>
               </div>
           <% end %>
@@ -223,6 +238,24 @@
               </div>
             </div>
           <% end %>
+        </div>
+
+
+        <div class="card-skivent-user-show tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
+          <div class="card-picture-skivent-user-show border flex-column m-3">
+            <div class="card-resort-date d-flex justify-content-between p-2">
+              <p>RESORT NAME</p>
+              <p>DATE</p>
+            </div>
+            <div class="card-title-rating d-flex justify-content-between p-2">
+              <p>TITLE DU SKIVENT A ECRIRE</p>
+              <p>RATING LAISSÉ</p>
+            </div>
+            <div class="card-review d-flex justify-content-between p-2">
+              <p>Ici se trouve la review laissée par le user, merci beaucoup!</p>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

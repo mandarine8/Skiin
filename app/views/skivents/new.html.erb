@@ -14,7 +14,14 @@
     <div class="form-group">
 
         <label for="exampleFormControlInput1"> <h6>Choose a picture</h6></label>
-        <input type="file" name="skivent[photo]" class="form-control" id="photo-skivent" placeholder="Skivent's name">
+
+
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input type="file" name="skivent[photo]" class="custom-file-input" id="photo-skivent" placeholder="Skivent's name">
+            <label class="custom-file-label" for="photo-skivent"></label>
+          </div>
+        </div>
     </div>
 
 
@@ -40,7 +47,7 @@
       <select name="skivent[level]"class="form-control" id="exampleFormControlSelect1">
       <option>Beginner</option>
       <option>Intermediate</option>
-      <option>expert</option>
+      <option>Expert</option>
       </select>
   </div>
 

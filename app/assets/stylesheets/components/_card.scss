@@ -41,13 +41,16 @@
 
 .card-picture-skivent-user-show {
   display: flex;
+  img {
+  object-fit: cover;
+  }
 }
 
 
 .card-skivent .card-title{
   cursor: pointer;
     &:hover{
-      text-decoration: underline;
+      // text-decoration: underline;
       color: $skiin-yellow;
     }
   }
@@ -71,18 +74,19 @@
 .card-avatars {
   display: flex;
   justify-content: space-between;
-  .avatar-name {
-    display: none;
-  }
- .avatar-name{
-    display:block;
-    margin-bottom: 5px;
-  }
-  .avatar-rating {
-    display: none;
-  }
-  .avatar-rating{
-    display:block;
+
+  // .avatar-name {
+    // display: none;
+  // }
+  // &:hover .avatar-name{
+  //   display:block;
+    // margin-bottom: 5px;
+  // }
+  //.avatar-rating {
+    // display: none;
+  // }
+  // &:hover .avatar-rating{
+
     color: #F5C54A;
   }
 }
@@ -171,5 +175,24 @@
 .card-img-left {
   width: 25%;
   object-fit: cover;
+}
+
+.card-resort-title {
+  margin-left: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  p {
+    background: $skiin-darkblue;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 2px;
+    font-size: 12px;
+    width: 35%;
+  }
+}
+
+.card-skivent-my-show {
+  padding: 8px;
 }
 

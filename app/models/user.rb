@@ -17,14 +17,13 @@ class User < ApplicationRecord
   validates :level, presence: true
   validates :picture, presence: true
 
-
   def average_rating
-    return 0 if self.received_ratings.count == 0
+    return 0 if received_ratings.count.zero?
+
     average = []
-    self.received_ratings.each do |rating|
+    received_ratings.each do |rating|
       average << rating.rating
     end
-    (average.sum) / average.size
-
+    (average.sum / average.size).to_i
   end
 end
