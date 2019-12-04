@@ -43,6 +43,9 @@
 
 .card-picture-skivent-user-show {
   display: flex;
+  img {
+  object-fit: cover;
+  }
 }
 
 
@@ -173,3 +176,23 @@
   width: 25%;
   object-fit: cover;
 }
+
+.card-resort-title {
+  margin-left: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  p {
+    background: $skiin-darkblue;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 2px;
+    font-size: 12px;
+    width: 35%;
+  }
+}
+
+.card-skivent-my-show {
+  padding: 8px;
+}
+
