@@ -49,7 +49,7 @@
 .card-skivent .card-title{
   cursor: pointer;
     &:hover{
-      text-decoration: underline;
+      // text-decoration: underline;
       color: $skiin-yellow;
     }
   }
@@ -73,18 +73,17 @@
 .card-avatars {
   display: flex;
   justify-content: space-between;
-  .avatar-name {
-    display: none;
-  }
-  &:hover .avatar-name{
-    display:block;
-    margin-bottom: 5px;
-  }
+  // .avatar-name {
+    // display: none;
+  // }
+  // &:hover .avatar-name{
+  //   display:block;
+    // margin-bottom: 5px;
+  // }
   .avatar-rating {
-    display: none;
-  }
-  &:hover .avatar-rating{
-    display:block;
+    // display: none;
+  // }
+  // &:hover .avatar-rating{
     color: #F5C54A;
   }
 }
@@ -174,4 +173,3 @@
   width: 25%;
   object-fit: cover;
 }
-

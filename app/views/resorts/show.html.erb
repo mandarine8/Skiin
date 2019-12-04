@@ -35,26 +35,36 @@
   <!-- Affichage du descriptif de la station  -->
   <div class="card card-resort w-100 mb-4">
     <div class="card-body">
-      <h4 class="card-title">Description</h4>
-      <h6 class="card-subtitle mb-2 text-muted">About the resort</h6>
+      <h3 class="card-title mb-3">Description</h3>
+      <h4 class="card-subtitle mb-2 text-muted">About the resort</h4>
       <p class="card-text"><%= @resort.description %></p>
-      <div class="row mb-4 mt-4">
+      <div class="row mb-4 mt-5">
         <div class="card-column col-4">
-          <h6 class="card-subtitle mb-2 text-muted">Type of the resort:</h6>
-          <p class="card-text"><%= @resort.resort_type %></p>
+          <h4 class="card-subtitle mb-2 text-muted">Type of the resort:</h4>
+          <p class="card-text h5 mt-4"><%= @resort.resort_type %></p>
         </div>
         <div class="card-column col-4">
-          <h6 class="card-subtitle mb-2 text-muted">Informations about the resort</h6>
-          <p class="card-text">Icones et descriptif</p>
+          <h4 class="card-subtitle mb-2 text-muted">Informations about the resort</h4>
+          <div class="card-skivent-info pt-3 pb-4">
+            <div class="card-picto-price">
+              <div class="d-flex h4">
+                <% @resort.price.times do %>
+                  <i class="fas fa-dollar-sign h4" data-toggle="tooltip" data-placement="top m-2" title="Level Price"></i>
+                <% end %>
+                <i class="fas fa-mountain ml-3 h4" data-toggle="tooltip" data-placement="top m-2" title="Number of slopes"></i>
+                <%= @resort.number_of_slopes %>
+              </div>
+           </div>
+          </div>
         </div>
         <div class="card-column col-4">
-          <h6 class="card-subtitle mb-2 text-muted">Weather for the 5 next days</h6>
+          <h4 class="card-subtitle mb-2 text-muted">Weather for the 5 next days</h4>
           <%= image_tag @resort.meteo %>
         </div>
       </div>
 
       <div class="row justify-content-center m-4">
-        <button type="button" class="btn btn-primary">See the website</button>
+        <%= link_to "See the website", @resort.url, class: "btn btn-primary" %>
 
         <!-- <div class="d-flex justify-content-center mt-3"> -->
           <%= link_to "Back to all the Skivents", @previous_url || skivents_path, class: "btn btn-outline-primary" %>
