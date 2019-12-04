@@ -1,0 +1,42 @@
+  <div class="card-picture-skivent-user-show border m-2">
+                <%= cl_image_tag skivent.photo, class: "card-img-left" %>
+                <div class="card-skivent-my-show d-flex flex-column">
+                  <div class="card-title d-flex justify-content-between">
+                    <strong style="padding-left: 16px;"> <%= link_to skivent.title %> </strong>
+                   
+                    <%= skivent.date %>
+                  </div>
+
+                  <% if pending %>
+
+
+                    <div class="card-skivent-infos pt-2 pl-2 pr-2">
+                    <h2 class="card-skivent-host"></h2>
+                    <p><%= skivent.description %></p>
+                    <div style="display:flex; justify-content: space-between;"> 
+                        <div>
+                            <img src="<%= booking.user.picture %>" alt="" class="avatar-bordered">
+                            <%= link_to booking.user.name %>
+                        </div>
+                        <div class="mr-3">
+                            <!-- <%= booking.status %> -->
+                            <%= link_to booking_path(booking, { booking: { status:"accepted"} }), method: :patch do %>
+                            <i class="fas fa-check pr-1"></i>
+                            <% end %>
+                            <%= link_to booking_path(booking, { booking: { status:"declined"} }), method: :patch do %>
+                            <i class="fas fa-times"></i>
+                            <% end %>
+                        </div>
+                    </div>
+                   
+                    </div>
+                 <% else %>
+                    <div class="card-skivent-infos pt-2 pl-2 pr-2">
+                    <h2 class="card-skivent-host"></h2>
+                    <p><%= skivent.description %></p>
+                    <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
+                    <%= link_to skivent.user.name %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>

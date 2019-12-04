@@ -37,10 +37,16 @@
 
 .card-skivent-infos {
   margin-left: 8px;
+  margin-top: -15px!important;
 }
 
 .card-picture-skivent-user-show {
+  width: 650px;
   display: flex;
+  .card-img-left {
+    width: 175px;
+    height: 175px;
+  }
   img {
   object-fit: cover;
   }

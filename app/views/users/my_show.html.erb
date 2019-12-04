@@ -144,22 +144,7 @@
           <!-- my incoming skivents that i organized myself -->
           <% @skivents.each do | skivent | %>
             <% next if skivent.user.nil? %>
-              <div class="card-picture-skivent-user-show border m-2">
-                <%= cl_image_tag skivent.photo, class: "card-img-left" %>
-                <div class="card-skivent-my-show d-flex flex-column">
-                  <div class="card-resort-title d-flex justify-content-between">
-                    <p><%= skivent.resort.name %></p>
-                    <%= skivent.date %>
-                  </div>
-                  <div class="card-skivent-infos pt-2 pl-2 pr-2">
-                    <strong> <%= link_to skivent.title %> </strong>
-                    <h2 class="card-skivent-host"></h2>
-                    <p><%= skivent.description %></p>
-                    <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
-                    <%= link_to skivent.user.name %>
-                  </div>
-                </div>
-              </div>
+             <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
           <% end %>
 
           <h5>past skivents</h5>
@@ -203,46 +188,14 @@
         <div class="card-skivent-user-show tab-pane fade" id="nav-booked-skivents" role="tabpanel" aria-labelledby="nav-booked-skivents-tab">
           <!-- pending requests for events that I organized -->
           <% @incoming_bookings.each do |booking| %>
-
-              <div class="card-picture-skivent-user-show border m-3">
-              <%= cl_image_tag booking.skivent.photo, class: "card-img-left" %>
-              <div class="card-skivent-infos p-2">
-                <strong> <%= booking.skivent.title %></strong>
-                <h2 class="card-skivent-host"></h2>
-                <p><%= booking.skivent.description %></p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <img src="<%= booking.user.picture %>" alt="" class="avatar-bordered">
-                    <%= link_to booking.user.name, user_path(booking.user) %>
-                  </div>
-                  <div class="mr-3">
-                    <!-- <%= booking.status %> -->
-                    <%= link_to booking_path(booking, { booking: { status:"accepted"} }), method: :patch do %>
-                      <i class="fas fa-check pr-1"></i>
-                    <% end %>
-                    <%= link_to booking_path(booking, { booking: { status:"declined"} }), method: :patch do %>
-                      <i class="fas fa-times"></i>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            </div>
+             <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
           <% end %>
 
           <h5>requested booking</h5>
 
           <!-- pending requests that people I sent for events that somebody else organized -->
           <% @requested_bookings.each do |booking| %>
-            <div class="card-picture-skivent-user-show border  m-3">
-            <%= cl_image_tag booking.skivent.photo, class: "card-img-left" %>
-              <div class="card-skivent-infos p-2">
-                <strong> <%= booking.skivent.title %></strong>
-                <h2 class="card-skivent-host"></h2>
-                <p><%= booking.skivent.description %></p>
-                <img src="<%= booking.skivent.user.picture %>" alt="" class="avatar-bordered">
-                <%= link_to booking.skivent.user.name, user_path(booking.skivent.user) %>
-              </div>
-            </div>
+            <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
           <% end %>
         </div>
 
