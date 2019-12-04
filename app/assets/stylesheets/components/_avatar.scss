@@ -21,8 +21,20 @@
   border: white 2px solid;
 }
 
+.avatar-floating {
+  position: relative;
+  top: -43px;
+ }
+
 .avatar-show {
   width: 160px;
+}
+
+.avatar-medium {
+  width: 75px;
+  height:75px;
+  border-radius: 50%;
+
 }
 
 .avatar-big {
