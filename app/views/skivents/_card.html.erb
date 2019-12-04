@@ -6,7 +6,7 @@
   <%= cl_image_tag skivent.photo, class: "card-img-top"  %>
 <% end %>
 
- 
+
   <div class="card-body">
 
     <!-- Button trigger modal -->
@@ -25,7 +25,7 @@
 
       <p class="resort-name"><%= link_to skivent.resort.name, resort_path(skivent.resort) %></p>
       <p class="skivent-date"><%= skivent.date %></p>
-    
+
     </div>
 
 
@@ -38,7 +38,7 @@
           <%# image_tag skivent.user.picture, class: "avatar"  %>
           <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
         <% end %>
-         
+
         <div>
           <p class="avatar-name"><%= skivent.user.name %></p>
           <div class="avatar-rating">
