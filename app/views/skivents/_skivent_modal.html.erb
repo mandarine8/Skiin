@@ -24,7 +24,8 @@
         <!-- container externe -->
         <div class="content row p-3">
 
-          <div class="card-skivent-details col-sm-12 col-lg-4 pl-5 pr-5 pb-5">
+          <div class="card-skivent-details col-sm-12 col-lg-4 pl-5 pr-5 pb-5"
+            style="border-right: 1px solid lightgrey;">
             <div class="card-skivent-host">
               <div class="card-user-name-rating d-flex">
                 <div class="d-flex flex-column">
@@ -58,7 +59,7 @@
 
           <div class="col-sm-12 col-lg-8">
             <!-- card-pictos -->
-            <div class="card-pictos">
+            <div class="card-pictos pl-5">
               <div class="d-flex justify-content-between" style="width: 70%">
                 <!-- event infos -->
                 <div class="card-skivent-info pb-4">
@@ -121,7 +122,7 @@
           <%= link_to "book now", skivent_bookings_path(skivent), method: :post, class: 'btn btn-secondary'  %>
           <button type="button" class="btn btn-primary">Contact the host</button>
         <% else %>
-          <p>petit farceur, tu es l'auteur-ice de ce skivent !</p>
+          <p>This is your Skivent</p>
         <% end %>
       </div>
       <!-- end of nodal footer-->
