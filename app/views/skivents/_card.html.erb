@@ -6,8 +6,27 @@
   <%= cl_image_tag skivent.photo, class: "card-img-top"  %>
 <% end %>
 
+<div class="card-avatars">
+   
 
   <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+        <%= link_to image_tag(skivent.user.picture, class: "avatar-medium avatar-floating"), user_path(skivent.user) %>
+        <div>
+          <div class="avatar-name"><%= skivent.user.name %></div>
+          <div class="avatar-rating d-flex">
+            <% skivent.user.average_rating.times do %>
+              <i class="picto-snow far fa-snowflake"></i>
+            <% end %>
+          </div> 
+        </div>
+      </div>
+      <div > 
+        <p class="resort-name" ><%= link_to skivent.resort.name, resort_path(skivent.resort) %></p>
+            <p class="skivent-date" style="text-align: right;"><%= skivent.date %></p>    
+      </div>
+    </div>
 
     <!-- Button trigger modal -->
 
@@ -21,39 +40,20 @@
       <% end %>
     <% end %>
 
-    <div class="skivent_infos d-flex justify-content-between align-items-center">
+    <strong><h5 class="card-title" data-toggle="modal" data-target="#skivent-<%= skivent.id %>"><%= skivent.title %></h5></strong>
 
-      <p class="resort-name"><%= link_to skivent.resort.name, resort_path(skivent.resort) %></p>
-      <p class="skivent-date"><%= skivent.date %></p>
-
-    </div>
-
-
-
-    <h5 class="card-title" data-toggle="modal" data-target="#skivent-<%= skivent.id %>"><%= skivent.title %></h5>
-
-    <div class="card-avatars">
-      <div class="card-avatars-booked">
-        <% if skivent.photo %>
-          <%# image_tag skivent.user.picture, class: "avatar"  %>
-          <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
-        <% end %>
-
-        <div>
-          <div class="avatar-name"><%= skivent.user.name %></div>
-          <div class="avatar-rating">
-            <% skivent.user.average_rating.times do %>
-              <i class="picto-snow far fa-snowflake"></i>
-            <% end %>
-          </div>
-        </div>
-
-      </div>
+ 
 
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
       <div class="card-skivent-host">
+      <% if skivent.bookings.count > 0 %>
+       <p class="card-booking-subtitle">ALREADY BOOKED BY:</p>
+      <% end %>
+
+      <% offset = 0 %>
         <% skivent.bookings.each do |booking| %>
-          <%= link_to image_tag(booking.user.picture, class: "avatar"), user_path(booking.user) %>
+          <%= link_to image_tag(booking.user.picture, class: "avatar"), user_path(booking.user), { style: "left: #{offset}px;position: absolute;" } %>
+          <% offset = offset + 20 %>
         <% end %>
 
       </div>
