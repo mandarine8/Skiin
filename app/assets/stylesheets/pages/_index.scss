@@ -3,6 +3,7 @@
 @import "my_show";
 @import "other_user_show";
 @import "skivent_modal";
+@import "resort";
 //@import "show_user";
 
 @import "new_skivent";
@@ -10,6 +11,7 @@
 // .background-show {
 //   color: white;
 // }
+
 .modal {
     color: $skiin-darkgray;
   h4 {
@@ -18,4 +20,8 @@
   h5 {
     color: $skiin-darkblue;
   }
+}
+
+.content {
+  background-color: $skiin-whitegray;
 }

@@ -37,7 +37,10 @@ h5 {
 }
 
 .content-name {
-    margin: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 36px;
+  position: relative;
 }
 
 .content-description{
@@ -80,4 +83,3 @@ h5 {
     width: 200px;
   }
 
-  

@@ -2,21 +2,29 @@ class SkiventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+
     @navbar_transparent = true
     @resorts = Resort.geocoded
+
+    if params[:date] != ""
+      d = params[:date].split("/")
+      @date = Date.new(d[2].to_i, d[0].to_i, d[1].to_i)
+    end
 
     @query = params[:query]
     @level = params[:level]
 
-    d = params[:date].split("/")
-    @date = Date.new(d[2].to_i, d[0].to_i, d[1].to_i)
 
     # loop if there is a query
     if @query.present?
       @all_skivents = Skivent.search_by_title(@query)
 
-      @skivents = @all_skivents.select do |skivent|
-        skivent.date == @date
+      if @date
+        @skivents = @all_skivents.select do |skivent|
+          skivent.date == @date
+        end
+      else
+        @skivents = all_skivents
       end
 
       @filtered_resorts = []
@@ -36,6 +44,19 @@ class SkiventsController < ApplicationController
       end
     # loop if there is no query
     else
+      if @date
+        @skivents = Skivent.all.select do |skivent|
+          skivent.date == @date
+        end
+        @resorts = []
+        # push all resorts from queried skivents
+        @skivents.each do |skivent|
+          @resorts.push(skivent.resort)
+        end
+      else
+        @skivents = Skivent.all
+      end
+
       @markers = @resorts.map do |resort|
         {
           lat: resort.latitude,
@@ -45,7 +66,6 @@ class SkiventsController < ApplicationController
           infoWindow: render_to_string(partial: "shared/map_info", locals: { resort: resort })
         }
       end
-      @skivents = Skivent.all
     end
   end
 

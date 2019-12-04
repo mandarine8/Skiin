@@ -1,2 +1,3 @@
-<p><%= link_to resort.name, resort_path(resort) %></p>
-<p><%= resort.skivents.count %></p>
+<div class="mapboxgl-popup-number"><span class="mapboxgl-popup-number-text"><%= resort.skivents.count %></span></div>
+<div class="mapboxgl-popup-content"><strong class="mapboxgl-popup-content-text"><%= link_to resort.name, resort_path(resort) %></strong></p>
+
