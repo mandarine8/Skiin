@@ -73,3 +73,30 @@
     height: 24px;
   }
 }
+
+.btn-add-event{
+  font-size: 17px;
+}
+
+.card-simpleform-btn {
+  .btn-yellow{
+    font-size: 18px;
+    border: 2px solid $skiin-yellow;
+    width: 130px;
+    color: $skiin-yellow;
+    background-color: $skiin-darkblue;
+    &:hover {
+        color: $skiin-darkblue;
+        background-color: white;
+        text-decoration: none;
+        border: 2px solid $skiin-mediumgray;
+    }
+  }
+}
+
+.fa-arrow-left {
+  color: $skiin-yellow;
+  display: flex;
+  margin-top: 25px;
+  position: space-between;
+}

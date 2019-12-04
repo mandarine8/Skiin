@@ -1,8 +1,8 @@
-<div class="background-show margin-top container pl-5 pr-5">
+<div class="background-show content pr-5">
   <div class="row flex-nowrap">
 
     <!-- Left: User Information -->
-    <div class="card-profile col-lg-5 position-sticky sticky-top">
+    <div class="card-profile col-lg-5 position-sticky sticky-top" style="min-height: 100vh;">
       <!-- user avatar -->
       <div class="card-user-name-rating">
         <img class="avatar-show img-circle avatar-bordered" src="<%= @user.picture %>" width="100px">
@@ -12,6 +12,7 @@
             <i class="picto-snow far fa-snowflake"></i>
           <% end %>
         </div>
+
       </div>
 
       <!-- user description -->
@@ -42,11 +43,7 @@
               step="1"
               value="<%= @level %>"
             >
-
           </div>
-
-
-
         </div>
         <!-- hobbies -->
 
@@ -55,7 +52,7 @@
 
             <h5> Driving Information </h5>
             <div class="input-group mb-3">
-              <div class="input-group-prepend">
+              <div class="input-group-prepend mt-2">
                 <div class="input-group-text-car" id="input-for-car">
                   <input type="checkbox" aria-label="Checkbox for following text input" <%= @user.car ? 'checked' : '' %> >
                 </div>
@@ -90,20 +87,24 @@
           </div>
         </div>
 
+        <div class="card-simpleform-btn d-flex mt-2">
+          <div class="card-simple-form-show">
+            <%= simple_form_for(@user) do |f| %>
+              <%= f.input :level, as: :hidden %>
+              <%= f.input :car, as: :hidden %>
+              <%= f.submit "Update profile", class: "btn-yellow" %>
+            <% end %>
+          </div>
+          <div class="card-show-btn-add-event mt-3 ml-1">
+            <%= link_to "Add an event", new_skivent_path, class: "btn-yellow" %>
+          </div>
+        </div>
 
-
-        <%= simple_form_for(@user) do |f| %>
-          <%= f.input :level, as: :hidden %>
-          <%= f.input :car, as: :hidden %>
-          <%= f.submit "update profile", class: "btn-yellow" %>
-        <% end %>
-
-        <%= link_to "Add an event", new_skivent_path, class:"btn btn-secondary btn-add-event" %>
       </div>
     </div>
 
     <!-- Right: User Skivents -->
-    <div class="col-12 col-lg-7 mt-4">
+    <div class="col-12 col-lg-7 mt-5 pt-2">
       <!-- Tabs Navigation -->
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -142,61 +143,79 @@
         <!-- 1st tab: incoming skivents -->
         <div class="card-skivent-user-show tab-pane fade show active" id="nav-My-skivents" role="tabpanel" aria-labelledby="nav-My-skivents-tab">
           <!-- my incoming skivents that i organized myself -->
-          <% @skivents.each do | skivent | %>
-            <% next if skivent.user.nil? %>
-             <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
-          <% end %>
+          <div class="card-Incoming-skivent">
+            <div class="card-incoming-skivent-title mt-3">
+              <h5>Incoming Skivents</h5>
+            </div>
+            <% @skivents.each do | skivent | %>
+              <% next if skivent.user.nil? %>
+               <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
+            <% end %>
+          </div>
 
-          <h5>past skivents</h5>
+          <div class="card-Past-Skivent">
+            <div class="card-past-skivent-title ml-2 mt-4">
+              <h5>Past Skivents</h5>
+            </div>
 
-          <!-- past skivents -->
-          <% if @past_skivents.size > 0 %>
+            <!-- past skivents -->
+            <% if @past_skivents.size > 0 %>
 
-            <% @past_skivents.each do |past_skivent| %>
-              <div class="card-picture-skivent-user-show border  m-3">
-                <%= cl_image_tag past_skivent.photo, class: "card-img-left" %>
-                <div class="card-skivent-infos p-2">
-                  <div>
-                    <strong><%= link_to past_skivent.title %></strong>
-                    <div class="card-skivent-host">
-                      <p><%= past_skivent.description %></p>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div>
-                        <img src="<%= past_skivent.user.picture %>" alt="" class="avatar-bordered">
-                        <%= link_to past_skivent.user.name %>
+              <% @past_skivents.each do |past_skivent| %>
+                <div class="card-picture-skivent-user-show border  m-3">
+                  <%= cl_image_tag past_skivent.photo, class: "card-img-left" %>
+                  <div class="card-skivent-infos p-2">
+                    <div>
+                      <strong><%= link_to past_skivent.title %></strong>
+                      <div class="card-skivent-host">
+                        <p><%= past_skivent.description %></p>
                       </div>
-                      <% if past_skivent.user != @user %>
-                        <!-- Button trigger modal_review -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= past_skivent.id %> ">
-                          Add a review
-                        </button>
-                      <% end %>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <img src="<%= past_skivent.user.picture %>" alt="" class="avatar-bordered">
+                          <%= link_to past_skivent.user.name %>
+                        </div>
+                        <% if past_skivent.user != @user %>
+                          <!-- Button trigger modal_review -->
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= past_skivent.id %> ">
+                            Add a review
+                          </button>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
-          <% end %>
 
-          <% @booked_skivents.each do |booked_skivent| %> <!-- modals for the booked skivents -->
-            <%= render "users/ratings_modal", booked_skivent: booked_skivent %>
-          <% end %>
+            <% @booked_skivents.each do |booked_skivent| %> <!-- modals for the booked skivents -->
+              <%= render "users/ratings_modal", booked_skivent: booked_skivent %>
+            <% end %>
+          </div>
         </div>
 
         <!-- 2nd tab: pending requests -->
         <div class="card-skivent-user-show tab-pane fade" id="nav-booked-skivents" role="tabpanel" aria-labelledby="nav-booked-skivents-tab">
           <!-- pending requests for events that I organized -->
-          <% @incoming_bookings.each do |booking| %>
-             <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
-          <% end %>
+          <div class="card-pending-requests ml-2 mt-4">
+            <div class="card-pending-requests-title ml-2">
+              <h5>Pending requests</h5>
+            </div>
+            <% @incoming_bookings.each do |booking| %>
+               <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
+            <% end %>
+          </div>
 
-          <h5>requested booking</h5>
+          <div class="card-requested-bookings ml-2 mt-4">
+            <div class="card-requested-bookings-title ml-2">
+              <h5>Requested bookings</h5>
+            </div>
 
-          <!-- pending requests that people I sent for events that somebody else organized -->
-          <% @requested_bookings.each do |booking| %>
-            <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
-          <% end %>
+            <!-- pending requests that people I sent for events that somebody else organized -->
+            <% @requested_bookings.each do |booking| %>
+              <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
+            <% end %>
+          </div>
         </div>
 
 
