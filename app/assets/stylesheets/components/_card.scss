@@ -121,13 +121,12 @@
 }
 
 .card-profile {
-  background-color: $primary;
+  background-color: $skiin-darkblue;
   display: flex;
   flex-direction: column;
   padding: 36px;
   position: relative;
   .btn-add-event {
-    position: absolute;
     top: 10px;
     left: 10px;
   }

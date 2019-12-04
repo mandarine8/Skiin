@@ -11,6 +11,7 @@
 // .background-show {
 //   color: white;
 // }
+
 .modal {
     color: $skiin-darkgray;
   h4 {
@@ -19,4 +20,8 @@
   h5 {
     color: $skiin-darkblue;
   }
+}
+
+.content {
+  background-color: $skiin-whitegray;
 }
