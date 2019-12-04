@@ -4,6 +4,7 @@ class SkiventsController < ApplicationController
   def index
     @navbar_transparent = true
     @resorts = Resort.geocoded
+
     @query = params[:query]
     @date = params[:date]
     @level = params[:level]

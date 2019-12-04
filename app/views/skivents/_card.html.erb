@@ -13,11 +13,11 @@
 
     <% if !current_user.nil? && current_user.saved_skivents.include?(skivent) %>
       <%= link_to favorite_path(current_user.favorites.find_by(skivent_id: skivent.id)), method: :delete do %>
-        <i class="fas fa-heart card-heart red"></i>
+        <i class="fas fa-heart card-heart red h4"></i>
       <% end %>
     <% else %>
       <%= link_to favorites_path(skivent_id: skivent.id), method: :post do %>
-        <i class="far fa-heart card-heart red"></i>
+        <i class="far fa-heart card-heart red h4"></i>
       <% end %>
     <% end %>
 
@@ -40,7 +40,7 @@
         <% end %>
 
         <div>
-          <p class="avatar-name"><%= skivent.user.name %></p>
+          <div class="avatar-name"><%= skivent.user.name %></div>
           <div class="avatar-rating">
             <% skivent.user.average_rating.times do %>
               <i class="picto-snow far fa-snowflake"></i>

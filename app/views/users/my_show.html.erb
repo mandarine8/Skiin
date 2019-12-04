@@ -9,7 +9,7 @@
         <div class="card-name-picto">
           <h4> <%= @user.name %> </h4>
           <% @average_rating.times do %>
-          <i class="picto-snow far fa-snowflake"></i>
+            <i class="picto-snow far fa-snowflake"></i>
           <% end %>
         </div>
       </div>
@@ -66,7 +66,7 @@
 
           </div>
 
-          <div class="drinving_hobbies d-flex flex-column align-items-center justify-content-center">
+          <div class="driving_hobbies d-flex flex-column align-items-center justify-content-center">
 
             <div class="card-hobbies-content">
               <h5> My Hobbies </h5>
@@ -95,7 +95,7 @@
         <%= simple_form_for(@user) do |f| %>
           <%= f.input :level, as: :hidden %>
           <%= f.input :car, as: :hidden %>
-          <%= f.submit "update profile", class: "btn-white" %>
+          <%= f.submit "update profile", class: "btn-yellow" %>
         <% end %>
 
         <%= link_to "Add an event", new_skivent_path, class:"btn btn-secondary btn-add-event" %>
