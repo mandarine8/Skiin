@@ -74,6 +74,16 @@ canvas.mapboxgl-canvas {
   display: none;
 }
 
-.mapboxgl-popup-content-text {
+
+.error {
+  margin-left: 40px;
+   color: #1A3853;
+   padding: 10px;
+   line-height: 36px;
 
 }
+
+.error-message {
+  height: 70vh;
+}
+
