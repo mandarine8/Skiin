@@ -29,29 +29,47 @@
          <!-- end of .card-user-description -->
 
          
-        <div class="content-info">
+       <div class="content-info">
             <div class="card-user-info">
                 <h3> My Skiin informations</h3>
                 <div class="level_content_container">
                     <h5> My ski Level </h5>
                         <div class="level-content">
-                            <p><%= @user.level %></p>
                         </div>
                 </div>
+                <p><%= @user.level %></p>
             </div class="content-drive-hobbies">
                 <div class="content-drive">
                     <h5> My driving Information </h5>
-                            <% if @user.car == true %>
-                            <%= "I have a car" %>
-                            <% else %>
-                            <%="I don't have a car"%>
-                            <% end %>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text-car" id="input-for-car">
+                            <input type="checkbox" aria-label="Checkbox for following text input" <%= @user.car ? 'checked' : '' %> >
+                            </div>
+                            <label for=""> <%=  @user.car ? 'I have a car' : 'I do not have a car'  %></label>
+                        </div>
+                    </div>
                 </div>
                 <div class="hobbies-info">
                     <h5> My hobbies </h5>
-                        <p><%= @user.hobbies %></p>
+                    <div class="card-hobbies d-flex">
+                        <% @user.hobbies.split(", ").each do |hobbie| %>
+                            <div class="card-hobbie d-flex mr-2">
+                                <div class="p-2"> 
+                                    <%= hobbie %> 
+                                </div>
+                                <div class="card-hobbies-cross p-2">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                        
+                         
                 </div>
-            </div>-->
+            </div> 
+        
+        
          <!-- end of .card-user-infos -->
             <div class="content_btn mb-4">
             <% unless @user == current_user %>
