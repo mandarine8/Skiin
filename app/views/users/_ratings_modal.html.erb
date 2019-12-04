@@ -1,4 +1,4 @@
- <!-- Modal -->
+ <!-- Modal review-->
 <div class="modal fade"
   id="add-review-<%= booked_skivent.id %>"
   tabindex="-1"
@@ -6,39 +6,28 @@
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-skiin" role="document">
+  <div class="modal-dialog modal-skiin" role="document" style="width: 550px; padding: 30px;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> <%= booked_skivent.user.name %></h5>
+        <h5 class="modal-title" id="exampleModalLabel"> Your review to <%= booked_skivent.user.name %> for the Skivent <%= booked_skivent.title %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
       <!-- corps -->
       <div class="modal-body">
-        <!-- container externe -->
-        <div class="content row">
-          <div class="card-ratings-details col-sm-12 col-md-7">
-            <!-- event infos -->
-            <div class="card-skivent-info">
-              <div class="form-inline">
-
-                <h6>Leave a rating for <%= booked_skivent.title %></h6>
-                <%= simple_form_for([current_user, @rating]) do |f| %>
-                  <%= f.input :rating, collection: (1..5).to_a %>
-                  <%= f.input :skivent, as: :hidden, input_html: {value: booked_skivent.id} %>
-                  <%= f.input :review %>
-                  <%= f.submit "submit review" %>
-                <% end %>
-
-              </div>
-            </div>
-
+          <!-- event infos -->
+          <div class="card-skivent-info">
+              <%= simple_form_for([current_user, @rating]) do |f| %>
+                <%= f.input :rating, collection: (1..5).to_a %>
+                <%= f.input :skivent, as: :hidden, input_html: {value: booked_skivent.id} %>
+                <textarea id="subject" name="subject" placeholder="Your review" rows="5" cols="55" m-4 ></textarea>
+              <% end %>
           </div>
-        </div>
-
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Send your review", user_path(current_user), class: 'btn btn-primary'  %>
       </div>
     </div>
   </div>
- </div>
+</div>
