@@ -160,8 +160,9 @@
 
 
 .card-hobbies-cross {
-  background-color: white;
-  color: $skiin-darkblue;
+  background-color: $skiin-darkblue;
+  color: white;
+  border-radius: 10px;
   &:hover {
     cursor: pointer;
   }
