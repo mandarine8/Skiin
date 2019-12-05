@@ -2,18 +2,16 @@ class SkiventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-
     @navbar_transparent = true
     @resorts = Resort.geocoded
 
-    if params[:date] != ""
+    if params[:date].present?
       d = params[:date].split("/")
       @date = Date.new(d[2].to_i, d[0].to_i, d[1].to_i)
     end
 
     @query = params[:query]
     @level = params[:level]
-
 
     # loop if there is a query
     if @query.present?
@@ -24,7 +22,7 @@ class SkiventsController < ApplicationController
           skivent.date == @date
         end
       else
-        @skivents = all_skivents
+        @skivents = @all_skivents
       end
 
       @filtered_resorts = []

@@ -3,7 +3,7 @@
                 <div class="card-skivent-my-show d-flex flex-column">
                   <div class="card-title d-flex justify-content-between">
                     <strong style="padding-left: 16px;"> <%= link_to skivent.title %> </strong>
-                   
+
                     <%= skivent.date %>
                   </div>
 
@@ -11,9 +11,8 @@
 
 
                     <div class="card-skivent-infos pt-2 pl-2 pr-2">
-                    <h2 class="card-skivent-host"></h2>
                     <p><%= skivent.description %></p>
-                    <div style="display:flex; justify-content: space-between;"> 
+                    <div style="display:flex; justify-content: space-between;">
                         <div>
                             <img src="<%= booking.user.picture %>" alt="" class="avatar-bordered">
                             <%= link_to booking.user.name %>
@@ -28,11 +27,10 @@
                             <% end %>
                         </div>
                     </div>
-                   
+
                     </div>
                  <% else %>
                     <div class="card-skivent-infos pt-2 pl-2 pr-2">
-                    <h2 class="card-skivent-host"></h2>
                     <p><%= skivent.description %></p>
                     <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
                     <%= link_to skivent.user.name %>
