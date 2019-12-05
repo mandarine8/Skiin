@@ -8,13 +8,13 @@ h5 {
 }
 
 .card-profile-other-user {
+  padding-left: 30px;
   h5, h6 {
     color: $skiin-darkblue;
     text-transform: uppercase;
   }
   p {
     color: $skiin-darkgray;
-    text-transform: capitalize;
   }
   h4 {
     color: $skiin-darkblue;
@@ -121,6 +121,23 @@ h5 {
 }
 
 .input-group-text-car-user {
-  background-color: $skiin-darkblue;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #1A3853;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-right: 8px;
+
+  input {
+    -webkit-appearance: none;
+    background-color: #1A3853;
+    width: 24px;
+    height: 24px;
+  }
 }
 

@@ -22,6 +22,11 @@
   object-fit: cover;
 }
 
+.card-skivent-date {
+  font-size: 16px;
+  flex: none;
+}
+
 .resort-name {
   font-size: 12px;
   text-transform: uppercase;
@@ -57,11 +62,10 @@
 
 .card-picture-skivent-user-show {
   background: white;
-  width: 650px;
+  max-width: 650px;
   display: flex;
   .card-img-left {
-    width: 175px;
-    height: 175px;
+    width: 30%;
   }
   img {
     object-fit: cover;
@@ -158,6 +162,13 @@
   border: 2px white solid;
 }
 
+.card-hobby-cross-user {
+  border-radius: 5px;
+  border: 2px $skiin-darkblue solid;
+  background-color: $skiin-darkblue;
+  color: #ffffffcf;
+}
+
 
 .card-hobbies-cross-user {
   background-color: $skiin-darkblue;
@@ -191,9 +202,6 @@
   }
   h5, h6 {
     text-transform: uppercase;
-  }
-  p {
-    text-transform: capitalize;
   }
 }
 

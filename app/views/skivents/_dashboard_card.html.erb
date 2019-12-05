@@ -31,19 +31,21 @@
     <% else %>
       <div class="card-skivent-infos pt-2 pl-2 pr-2">
       <p><%= skivent.description %></p>
-      <%= link_to user_path(skivent.user) do %>
+      <%= link_to user_path(skivent.user), class: "d-flex" do %>
         <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
-        <span><%= skivent.user.name %></span>
-      <% end %>
-      <div class="avatar-rating-card d-flex">
-          <% skivent.user.average_rating.times do %>
-            <i class="picto-snow far fa-snowflake" style="font-size: 12px;"></i>
-          <% end %>
+        <div class="ml-1">
+          <span><%= skivent.user.name %></span>
+          <div class="avatar-rating-card d-flex">
+            <% skivent.user.average_rating.times do %>
+              <i class="picto-snow far fa-snowflake" style="font-size: 12px;"></i>
+            <% end %>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
-  
+
 </div>
 
 <%= render "skivents/skivent_modal", skivent: skivent, average_rating: skivent.user.average_rating %>
