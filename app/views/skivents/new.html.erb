@@ -1,85 +1,52 @@
 <div class="container-new margin-top">
+<div class="form-center">
 
-<form class="form-center" action="/skivents" method= "post">
+<h3>Create your skivent</h3>
 
-  <%= hidden_field_tag :photo_cache %>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <div class="form-group">
-      <div class="title mb-3">
-        <label for="exampleFormControlInput1"><h4> Describe you Skivent </h4></label>
-      </div>
-        <input type="text" name="skivent[title]" class="form-control" id="exampleFormControlInput1" placeholder="Skivent's name">
-    </div>
+<%= simple_form_for(@skivent) do |f| %>
+  <%= f.input :title, label: "Title of your skivent", required: false, label_html: { class: 'label-skivent' } %>
 
-    <div class="form-group">
-
-        <label for="exampleFormControlInput1"> <h6>Choose a picture</h6></label>
-
-
-        <div class="input-group mb-3">
-          <div class="custom-file">
-            <input type="file" name="skivent[photo]" class="custom-file-input" id="photo-skivent" placeholder="Skivent's name">
-            <label class="custom-file-label" for="photo-skivent"></label>
-          </div>
-        </div>
-    </div>
-
-
-  <div class="row mt-4">
+  <div class="form-row">
     <div class="col-md-6">
       <div class="form-group">
-          <label for="exampleFormControlInput1"> <h6>Choose a date</h6></label>
-          <input name="skivent[date]" type="date" class="form-control" id="exampleFormControlInput1" placeholder="choose a date">
+        <label for="skivent-date" class="label-skivent">Choose a date</label>
+        <input name="skivent[date]" type="date" class="form-control select" id="skivent-date" placeholder="choose a date">
       </div>
     </div>
     <div class="col-md-6">
-      <div class="form-group">
-          <label for="exampleFormControlInput1"> <h6>Choose a resort</h6></label>
-          <select name="skivent[resort_id]" class="form-control" id="exampleFormControlSelect1">
-              <%= options_for_select(Resort.pluck(:name, :id)) %>
-          </select>
-      </div>
+      <%= f.input :resort, collection: Resort.all, label: "Resort", required: false, label_html: { class: 'label-skivent' } %>
     </div>
   </div>
 
-  <div class="form-group">
-      <label for="exampleFormControlSelect1"> <h6>Level of the skivent</h6></label>
-      <select name="skivent[level]"class="form-control" id="exampleFormControlSelect1">
-      <option>Beginner</option>
-      <option>Intermediate</option>
-      <option>Expert</option>
-      </select>
+ <label class="label-skivent">Choose a photo</label>
+
+  <div class="input-group mb-3">
+   
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="skivent-photo" name="skivent[photo]">
+      <label class="custom-file-label" for="skivent-photo"></label>
+    </div>
   </div>
 
-  <div class="form-group">
-      <label for="exampleFormControlSelect1"> <h6>Do you have a car ?</h6></label>
-      <select name="skivent[car]"class="form-control" id="exampleFormControlSelect1">
-      <option value="true">Yes</option>
-      <option value="false">No</option>
-      </select>
-  </div>
-
-
-  <div class="form-inline">
-  <label class="my-1 mr-2" for="inlineFormCustomSelectPref"> <h6>How many available seats do you have ?</h6> </label>
-  <select name="skivent[number_of_place]" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-      <option selected>Choose...</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-  </select>
-  </div>
-
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.input :level, collection: ["beginner", "intermediate", "expert"], label: "Choose the level of your skivent", required: false, label_html: { class: 'label-skivent' } %>
+  <%= f.input :car, label: "I have a car", input_html: {class: "form-check-input"} %>
 
   <div class="form-group">
-      <label for="exampleFormControlTextarea1"> <h6>Event description</h6></label>
-      <textarea name="skivent[description]" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="skivent-description" class="label-skivent">Event description</label>
+    <textarea name="skivent[description]" class="form-control" id="skivent-description" rows="3"></textarea>
   </div>
 
-  <div class="mb-2">
-      <input type="submit" class="btn-yellow" value="Create a skivent">
-      <%= link_to "Back to all the Skivents", @previous_url || skivents_path, class: "btn btn-outline-primary" %>
-  </div>
-</form>
+  
+  <%= f.submit "create skivent", class: "btn-yellow" %>
+<% end %>
+
+
+</div>
+
+
+
+
+
 
 </div>
