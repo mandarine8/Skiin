@@ -162,13 +162,13 @@ s3 =  Skivent.create!(
 )
 
 s4 = Skivent.create!(
-  title: "Cool day in Saint-Sauveur",
+  title: "Cool day in Charlevoix",
   date: Date.new(2019,12,7),
   level: "intermediate",
   number_of_place: 3,
   car: true,
   description: "If you like the perfect balance between skiing and chilling near Montreal, this trip is for you .",
-  resort: r4,
+  resort: r7,
   user: u4,
   remote_photo_url:"https://images.unsplash.com/photo-1542222774-b411b47e88d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
 )
@@ -379,7 +379,7 @@ s21 = Skivent.create!(
 )
 
 s22 = Skivent.create!(
-  title: "Sports day in Mont Orford",
+  title: "Sport day in Mont Orford",
   date: Date.new(2019,12,21),
   level: "expert",
   number_of_place: 1,
