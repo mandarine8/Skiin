@@ -18,18 +18,20 @@
       </div>
 
       <!-- user description -->
-      <div class="card-user-description">
-        <h3> Who I am </h3>
+      <div class="card-user-description mt-5">
+        <h5> Who I am </h5>
         <p><%= @user.description %></p>
       </div>
 
       <!-- User info -->
       <div class="card-user-info">
-        <h3> My Skiin info</h3>
-        <h5> Ski Level </h5>
+        <h5> My Skiin info</h5>
+        <div class="title-ski mt-4">
+          <h6> Ski Level </h6>
+        </div>
 
         <!-- ski level -->
-        <div class="level_content_container">
+        <div class="level_content_container mt-3">
           <div class="inputs">
 
             <div class="level-content">
@@ -49,10 +51,10 @@
         </div>
 
         <!-- hobbies -->
-        <div class="d-flex justify-content-between align-items-start mt-3">
+        <div class="d-flex justify-content-between align-items-start mt-5">
           <div class="driving-box">
 
-            <h5> Driving Information </h5>
+            <h6> Driving Information </h6>
             <div class="input-group mb-3">
               <div class="input-group-prepend mt-2">
                 <div class="input-group-text-car" id="input-for-car">
@@ -68,7 +70,7 @@
           <div class="driving_hobbies d-flex flex-column align-items-center justify-content-center">
 
             <div class="card-hobbies-content">
-              <h5> My Hobbies </h5>
+              <h6> My Hobbies </h6>
               <% if @user.hobbies == "" %>
                 <div class="card-hobbie d-flex mr-2">
                   <div class="p-2"> No Hobbies </div>
@@ -89,7 +91,7 @@
           </div>
         </div>
 
-        <div class="card-simpleform-btn d-flex mt-2">
+        <div class="card-simpleform-btn d-flex mt-4">
           <div class="card-simple-form-show">
             <%= simple_form_for(@user) do |f| %>
               <%= f.input :level, as: :hidden %>

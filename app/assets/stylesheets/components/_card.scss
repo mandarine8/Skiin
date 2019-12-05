@@ -159,7 +159,7 @@
 }
 
 
-.card-hobbies-cross {
+.card-hobbies-cross-user {
   background-color: $skiin-darkblue;
   color: white;
   border-radius: 10px;
@@ -188,6 +188,12 @@
   &.card-profile-other {
     background-color: #EDF2F7;
     color: black;
+  }
+  h5, h6 {
+    text-transform: uppercase;
+  }
+  p {
+    text-transform: capitalize;
   }
 }
 
@@ -233,6 +239,14 @@
     position: absolute;
     right: 16px;
     top: 15px;
+}
+
+.card-hobbie-user {
+  background-color: $skiin-darkblue;
+
+  .card-tex-hobbies {
+    color: white;
+  }
 }
 
 .card-img-left {
