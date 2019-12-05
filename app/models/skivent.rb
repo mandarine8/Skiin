@@ -17,6 +17,6 @@ class Skivent < ApplicationRecord
   validates :date, presence: true
   validates :description, presence: true
   validates :level, presence: true
-  validates :number_of_place, presence: true
+      # validates :number_of_place, presence: true
   mount_uploader :photo, PhotoUploader
 end

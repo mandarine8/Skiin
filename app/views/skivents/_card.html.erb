@@ -1,63 +1,56 @@
 <!-- bootstrap card -->
 
 <div class="card card-skivent">
+  <% if skivent.photo %>
+    <%= cl_image_tag skivent.photo, class: "card-img-top"  %>
+  <% end %>
 
-<% if skivent.photo %>
-  <%= cl_image_tag skivent.photo, class: "card-img-top"  %>
-<% end %>
-
+  <% if !current_user.nil? && current_user.saved_skivents.include?(skivent) %>
+    <%= link_to favorite_path(current_user.favorites.find_by(skivent_id: skivent.id)), method: :delete do %>
+      <i class="fas fa-heart card-heart red h4"></i>
+    <% end %>
+  <% else %>
+    <%= link_to favorites_path(skivent_id: skivent.id), method: :post do %>
+      <i class="far fa-heart card-heart red h4"></i>
+    <% end %>
+  <% end %>
 
   <div class="card-body">
+    <div class="d-flex align-items-end avatar-floating">
+      <%= link_to image_tag(skivent.user.picture, class: "avatar-medium"), user_path(skivent.user) %>
+      <div class="pl-2">
+        <div class="avatar-name"><%= skivent.user.name %></div>
+        <div class="avatar-rating d-flex">
+          <% skivent.user.average_rating.times do %>
+            <i class="picto-snow far fa-snowflake"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-right mb-2">
+      <div class="resort-name mb-1" ><%= link_to skivent.resort.name, resort_path(skivent.resort) %></div>
+      <div class="skivent-date" style="text-align: right;"><%= skivent.date %></div>
+    </div>
 
     <!-- Button trigger modal -->
 
-    <% if !current_user.nil? && current_user.saved_skivents.include?(skivent) %>
-      <%= link_to favorite_path(current_user.favorites.find_by(skivent_id: skivent.id)), method: :delete do %>
-        <i class="fas fa-heart card-heart red h4"></i>
-      <% end %>
-    <% else %>
-      <%= link_to favorites_path(skivent_id: skivent.id), method: :post do %>
-        <i class="far fa-heart card-heart red h4"></i>
-      <% end %>
-    <% end %>
-
-    <div class="skivent_infos d-flex justify-content-between align-items-center">
-
-      <p class="resort-name"><%= link_to skivent.resort.name, resort_path(skivent.resort) %></p>
-      <p class="skivent-date"><%= skivent.date %></p>
-
-    </div>
-
-
-
     <h5 class="card-title" data-toggle="modal" data-target="#skivent-<%= skivent.id %>"><%= skivent.title %></h5>
 
-    <div class="card-avatars">
-      <div class="card-avatars-booked">
-        <% if skivent.photo %>
-          <%# image_tag skivent.user.picture, class: "avatar"  %>
-          <%= link_to image_tag(skivent.user.picture, class: "avatar"), user_path(skivent.user) %>
-        <% end %>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <div class="card-skivent-host">
+      <% if skivent.bookings.count > 0 %>
+        <div class="card-booking-subtitle">ALREADY BOOKED BY:</div>
 
-        <div>
-          <div class="avatar-name"><%= skivent.user.name %></div>
-          <div class="avatar-rating">
-            <% skivent.user.average_rating.times do %>
-              <i class="picto-snow far fa-snowflake"></i>
-            <% end %>
-          </div>
+        <div class="stacked-avatars">
+          <% skivent.bookings.each do |booking| %>
+            <%= link_to image_tag(booking.user.picture, class: "avatar"), user_path(booking.user) %>
+          <% end %>
         </div>
-
-      </div>
-
-      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-      <div class="card-skivent-host">
-        <% skivent.bookings.each do |booking| %>
-          <%= link_to image_tag(booking.user.picture, class: "avatar"), user_path(booking.user) %>
-        <% end %>
-
-      </div>
-
+      <% else %>
+        <div class="card-booking-subtitle mt-4">BOOK IT NOW!</div>
+      <% end %>
     </div>
+
   </div>
 </div>

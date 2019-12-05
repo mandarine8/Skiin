@@ -26,4 +26,9 @@ class User < ApplicationRecord
     end
     (average.sum / average.size).to_i
   end
+
+  def pending_bookings
+    Booking.joins(:skivent)
+           .where(skivents: { user: self }, status: "pending")
+  end
 end

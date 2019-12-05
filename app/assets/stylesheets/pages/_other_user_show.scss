@@ -1,19 +1,34 @@
 
 .background-content {
-  background-color: #EDF2F7;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  color:black;
   padding: 15px;
-
 }
 
 h5 {
  font-weight: 500;
 }
 
-.content-other-user {
-    margin-left: 60px;
+.card-profile-other-user {
+  padding-left: 30px;
+  h5, h6 {
+    color: $skiin-darkblue;
+    text-transform: uppercase;
+  }
+  p {
+    color: $skiin-darkgray;
+  }
+  h4 {
+    color: $skiin-darkblue;
+  }
 }
+
+.fa-arrow-left {
+  color: $skiin-darkblue;
+
+}
+
+.content-other-user {
+}
+
 
 
   .content-skivent-user {
@@ -27,12 +42,22 @@ h5 {
       justify-content: center;
   }
 
-  .content_btn {
-    margin: 70px;
+  .content_btn_user {
+    margin-top: 30px;
+    color: $skiin-darkblue;
+    background-color: #EDF2F7;
+    border: 2px solid $skiin-darkblue;
+    border-radius: 10px;
+    &:hover {
+        color: $white;
+        background-color: $skiin-darkblue;
+        text-decoration: none;
+        border: 2px solid white;
+    }
+
 }
 
 .card-user-name {
-    font-family: Arial, Helvetica, sans-serif;
     color:white;
 }
 
@@ -43,31 +68,37 @@ h5 {
   position: relative;
 }
 
-.content-description{
-    margin: 40px;
+.content-description-other-user{
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
-.content-info {
-    margin: 40px;
+.content-info-other-user {
+
 }
+
 
 .content-hobby {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
-.hobbies-info {
-    margin-top: 10px;
+
+.hobbies-info-other-user {
+  margin-top: 16px;
+  margin-bottom: 16px;
 
 }
 .content-drive {
-        margin-top: -10px;
+  margin-top: -10px;
 }
 
-.level_content_container {
-    margin-top: 24px;
+.card-user-info {
+
+
 }
 
 .level-content {
-     margin-bottom: 10px;
+ margin-bottom: 10px;
+
 }
 
 .skivents-cards-grid {
@@ -81,5 +112,32 @@ h5 {
     flex-direction: column;
     align-items: flex-start;
     width: 200px;
+
+
   }
+
+.card-hobbies {
+  border-radius: 10px;
+}
+
+.input-group-text-car-user {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #1A3853;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-right: 8px;
+
+  input {
+    -webkit-appearance: none;
+    background-color: #1A3853;
+    width: 24px;
+    height: 24px;
+  }
+}
 

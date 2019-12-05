@@ -1,6 +1,11 @@
 .navbar {
   justify-content: space-between;
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left:0;
+  right: 0;
+  z-index: 3000;
+  background-color: transparent;
 
   .navbar-collapse {
     flex-grow: 0;
@@ -14,22 +19,4 @@
     color: $skiin-yellow;
     font-family: $body-font;
   }
-
-  &.navbar-transparent {
-    background-color: transparent;
-  }
-
-  &.background-transparent {
-  justify-content: space-between;
-  background-color: transparent;
-  }
-
-  &.navbar-absolute {
-    position: absolute;
-    top: 0;
-    left:0;
-    right: 0;
-    z-index: 3000;
-  }
-
 }

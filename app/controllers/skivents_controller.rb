@@ -2,18 +2,16 @@ class SkiventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-
     @navbar_transparent = true
     @resorts = Resort.geocoded
 
-    if params[:date] != ""
+    if params[:date].present?
       d = params[:date].split("/")
       @date = Date.new(d[2].to_i, d[0].to_i, d[1].to_i)
     end
 
     @query = params[:query]
     @level = params[:level]
-
 
     # loop if there is a query
     if @query.present?
@@ -24,7 +22,7 @@ class SkiventsController < ApplicationController
           skivent.date == @date
         end
       else
-        @skivents = all_skivents
+        @skivents = @all_skivents
       end
 
       @filtered_resorts = []
@@ -81,6 +79,7 @@ class SkiventsController < ApplicationController
   def create
     @skivent = Skivent.new(skivent_params)
     @skivent.user = current_user
+    @skivent.resort = Resort.find(params[:skivent][:resort].to_i)
     if @skivent.save!
       redirect_to skivents_path
     else
@@ -118,6 +117,6 @@ class SkiventsController < ApplicationController
   private
 
   def skivent_params
-    params.require(:skivent).permit(:title, :date, :description, :level, :number_of_place, :car, :resort_id, :user_id, :photo)
+    params.require(:skivent).permit(:title, :date, :description, :level, :number_of_place, :car, :user_id, :photo, :photo_cache)
   end
 end

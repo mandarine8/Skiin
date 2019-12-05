@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @navbar_transparent = true
+
   end
 end

@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def show
-
+    @footer_fixed = true
     @rating = Rating.new
     @user = User.find(params[:id])
     @average_rating = @user.average_rating
 
-    @skivents = @user.skivents.last(3)
+    @skivents = @user.skivents
     today = DateTime.now.to_date
 
     @requested_bookings = @user.bookings
@@ -19,17 +19,21 @@ class UsersController < ApplicationController
       @past_skivents << booking.skivent if booking.skivent.date < today
     end
 
+    @upcoming_skivents = @user.skivents.where("date > ?", today) + @user.booked_skivents.where("date > ?", today)
 
     @booked_skivents = @user.booked_skivents.last(3)
 
     @incoming_bookings = []
 
-    @skivents.each do |skivent|
+    @user.skivents.each do |skivent|
       skivent.bookings.each do |booking|
-        @incoming_bookings << booking
+        if booking.status == "pending"
+          @incoming_bookings << booking
+        end
       end
     end
     @ratings = retrieve_ratings_for_user(@user)
+
 
     if @user == current_user
       if @user.level == "beginner"

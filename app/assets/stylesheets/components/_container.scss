@@ -1,8 +1,17 @@
+$navbar-and-footer: $navbar-height + $footer-height;
+
 .fullscreen-container {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: left;
+
+  height: 100vh;
+  margin-top: -$navbar-and-footer;
+  padding-top: $navbar-and-footer;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 

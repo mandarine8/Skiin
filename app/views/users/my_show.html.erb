@@ -2,32 +2,36 @@
   <div class="row flex-nowrap">
 
     <!-- Left: User Information -->
-    <div class="card-profile col-lg-5 position-sticky sticky-top" style="min-height: 100vh;">
+    <div class="card-profile col-lg-5">
       <!-- user avatar -->
       <div class="card-user-name-rating">
         <img class="avatar-show img-circle avatar-bordered" src="<%= @user.picture %>" width="100px">
-        <div class="card-name-picto">
+        <div class="card-name-picto m-2">
           <h4> <%= @user.name %> </h4>
-          <% @average_rating.times do %>
-            <i class="picto-snow far fa-snowflake"></i>
-          <% end %>
-        </div>
+          <div class="picto-name-user">
+            <% @average_rating.times do %>
+              <i class="picto-snow far fa-snowflake"></i>
+            <% end %>
 
+          </div>
+        </div>
       </div>
 
       <!-- user description -->
-      <div class="card-user-description">
-        <h3> Who I am </h3>
+      <div class="card-user-description mt-5">
+        <h5> Who I am </h5>
         <p><%= @user.description %></p>
       </div>
 
       <!-- User info -->
       <div class="card-user-info">
-        <h3> My Skiin info</h3>
-        <h5> Ski Level </h5>
+        <h5> My Skiin info</h5>
+        <div class="title-ski mt-4">
+          <h6> Ski Level </h6>
+        </div>
 
         <!-- ski level -->
-        <div class="level_content_container">
+        <div class="level_content_container mt-3">
           <div class="inputs">
 
             <div class="level-content">
@@ -45,12 +49,12 @@
             >
           </div>
         </div>
-        <!-- hobbies -->
 
-        <div class="d-flex justify-content-between align-items-start mt-3">
+        <!-- hobbies -->
+        <div class="d-flex justify-content-between align-items-start mt-5">
           <div class="driving-box">
 
-            <h5> Driving Information </h5>
+            <h6> Driving Information </h6>
             <div class="input-group mb-3">
               <div class="input-group-prepend mt-2">
                 <div class="input-group-text-car" id="input-for-car">
@@ -66,7 +70,7 @@
           <div class="driving_hobbies d-flex flex-column align-items-center justify-content-center">
 
             <div class="card-hobbies-content">
-              <h5> My Hobbies </h5>
+              <h6> My Hobbies </h6>
               <% if @user.hobbies == "" %>
                 <div class="card-hobbie d-flex mr-2">
                   <div class="p-2"> No Hobbies </div>
@@ -87,7 +91,7 @@
           </div>
         </div>
 
-        <div class="card-simpleform-btn d-flex mt-2">
+        <div class="card-simpleform-btn d-flex mt-4">
           <div class="card-simple-form-show">
             <%= simple_form_for(@user) do |f| %>
               <%= f.input :level, as: :hidden %>
@@ -104,7 +108,7 @@
     </div>
 
     <!-- Right: User Skivents -->
-    <div class="col-12 col-lg-7 mt-5 pt-2">
+    <div class="col-12 col-lg-7 mt-2">
       <!-- Tabs Navigation -->
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -145,11 +149,11 @@
           <!-- my incoming skivents that i organized myself -->
           <div class="card-Incoming-skivent">
             <div class="card-incoming-skivent-title mt-3">
-              <h5>Incoming Skivents</h5>
+              <h5>Upcoming Skivents</h5>
             </div>
-            <% @skivents.each do | skivent | %>
+            <% @upcoming_skivents.each do | skivent | %>
               <% next if skivent.user.nil? %>
-               <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
+              <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
             <% end %>
           </div>
 
@@ -162,29 +166,7 @@
             <% if @past_skivents.size > 0 %>
 
               <% @past_skivents.each do |past_skivent| %>
-                <div class="card-picture-skivent-user-show border  m-3">
-                  <%= cl_image_tag past_skivent.photo, class: "card-img-left" %>
-                  <div class="card-skivent-infos p-2">
-                    <div>
-                      <strong><%= link_to past_skivent.title %></strong>
-                      <div class="card-skivent-host">
-                        <p><%= past_skivent.description %></p>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                          <img src="<%= past_skivent.user.picture %>" alt="" class="avatar-bordered">
-                          <%= link_to past_skivent.user.name %>
-                        </div>
-                        <% if past_skivent.user != @user %>
-                          <!-- Button trigger modal_review -->
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= past_skivent.id %> ">
-                            Add a review
-                          </button>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <%= render 'skivents/dashboard_card', { skivent: past_skivent, pending: false } %>
               <% end %>
             <% end %>
 
@@ -196,14 +178,17 @@
 
         <!-- 2nd tab: pending requests -->
         <div class="card-skivent-user-show tab-pane fade" id="nav-booked-skivents" role="tabpanel" aria-labelledby="nav-booked-skivents-tab">
+
           <!-- pending requests for events that I organized -->
           <div class="card-pending-requests ml-2 mt-4">
             <div class="card-pending-requests-title ml-2">
               <h5>Pending requests</h5>
             </div>
+
             <% @incoming_bookings.each do |booking| %>
                <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
             <% end %>
+
           </div>
 
           <div class="card-requested-bookings ml-2 mt-4">
@@ -213,42 +198,28 @@
 
             <!-- pending requests that people I sent for events that somebody else organized -->
             <% @requested_bookings.each do |booking| %>
-              <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
+              <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: false, booking: booking } %>
             <% end %>
           </div>
+
         </div>
 
 
-        <div class="card-skivent-user-show tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
-
-        <% @ratings.each do |rating| %>
-
-          <div class="card-picture-skivent-user-show border flex-column m-3">
-            <p>review left by : <%= rating.user.name %> </p>
-            <div class="card-resort-date d-flex justify-content-between p-2">
-              <p><%= rating.skivent.resort.name %></p>
-              <p><%= rating.skivent.date %></p>
-            </div>
-            <div class="card-title-rating d-flex justify-content-between p-2">
-              <p><%= rating.skivent.title %></p>
-              <p><%= rating.rating %></p>
-            </div>
-            <div class="card-review d-flex justify-content-between p-2">
-              <p>"<%= rating.review %>"</p>
-            </div>
-
-          </div>
-
-        <% end %>
+        <div class="card-skivent-review-show tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
 
 
+          <% @ratings.each do |rating| %>
 
+            <%= render 'shared/card_reviews', { rating: rating } %>
 
+          <% end %>
         </div>
         <!-- enf of tab for reviews -->
 
       </div>
     </div>
+
+
   </div>
 </div>
 

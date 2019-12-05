@@ -1,13 +1,17 @@
 .footer {
+  position: absolute;
+  bottom: 0;
   text-align: right;
-  padding: 30px 50px;
+  padding: 18px 25px;
+  background: transparent;
   color: rgba(0,0,0,0.3);
-  width: 100vw;
-  height: 60px;
-    a:hover{
-      color: $skiin-yellow;
-      text-decoration: none;
-    }
+  width: 100%;
+  height: $footer-height;
+
+  a:hover{
+    color: $skiin-yellow;
+    text-decoration: none;
+  }
 }
 
 .footer-links {
@@ -25,13 +29,4 @@
 
 .footer-links a:hover {
   opacity: 1;
-}
-
-.footer .fa-heart {
-  color: #D23333;
-    a{
-      color: rgba(0,0,0,0.3);
-      text-decoration: none;
-      font-size: 24px;
-    }
 }

@@ -1,12 +1,30 @@
 .card-skivent {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  border-radius: 5px;
+  min-height: 422px;
+}
+
+.card-skivent .card-body  {
+  position: relative;
+
+  .avatar-floating {
+    position: absolute;
+    top: -30px;
+
+    .avatar-medium {
+      border: 3px solid white;
+    }
+  }
 }
 
 .card-img-top {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
+}
+
+.card-skivent-date {
+  font-size: 16px;
+  flex: none;
 }
 
 .resort-name {
@@ -19,11 +37,13 @@
     padding: 3px 6px;
     border-radius: 2px;
     font-size: 12px;
+    min-width: 86px;
   }
 }
 
 .card-title {
   color: $skiin-darkblue;
+  font-size: 150% ;
 }
 
 .card-text {
@@ -41,14 +61,29 @@
 }
 
 .card-picture-skivent-user-show {
-  width: 650px;
+  background: white;
+  max-width: 650px;
   display: flex;
   .card-img-left {
-    width: 175px;
-    height: 175px;
+    width: 30%;
   }
   img {
-  object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+.card-picture-skivent-review-show {
+  width: 650px;
+  display: flex;
+  border: 5px solid;
+  border-radius: 15px 35px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  .review_left_by {
+    margin-left:8px;
+    margin-top: 8px;
+    p{
+      font-weight: bold;
+    }
   }
 }
 
@@ -66,38 +101,55 @@
   object-fit: cover;
 }
 
+.card-booking-subtitle {
+  color: grey;
+  font-size: 12px;
+}
+
+
 .card-skivent-host {
+  position: relative;
   img {
-    position: relative;
-    margin-left: -18px;
+    //position: relative;
+    //margin-left: -186px;
   }
 
   .avatar {
     border: 3px solid white;
+    left: 6px;
+    // position: absolute;
+    top: 20px;
+
   }
+
+
+}
+
+.picto-snow {
+  margin-right: 5px;
+  color: $skiin-yellow;
+}
+
+.picto-snow-review {
+  margin-right: 5px;
+  color: $skiin-yellow;
+}
+
+.card-review-content {
+ color: $skiin-darkgray;
 }
 
 .card-avatars {
   display: flex;
   justify-content: space-between;
-
-  // .avatar-name {
-    // display: none;
-  // }
-  // &:hover .avatar-name{
-  //   display:block;
-    // margin-bottom: 5px;
-  // }
-  .avatar-rating {
-    // display: none;
-  // }
-  // &:hover .avatar-rating{
-    color: #F5C54A;
-  }
 }
 .card-avatars-booked {
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  left: 24px;
+  top: 226px;
+  width: 40px;
 }
 
 .card-avatars-booked a {
@@ -111,10 +163,18 @@
   border: 2px white solid;
 }
 
+.card-hobby-cross-user {
+  border-radius: 5px;
+  border: 2px $skiin-darkblue solid;
+  background-color: $skiin-darkblue;
+  color: #ffffffcf;
+}
 
-.card-hobbies-cross {
-  background-color: white;
-  color: $skiin-darkblue;
+
+.card-hobbies-cross-user {
+  background-color: $skiin-darkblue;
+  color: white;
+  border-radius: 10px;
   &:hover {
     cursor: pointer;
   }
@@ -122,13 +182,27 @@
 
 .card-profile {
   background-color: $skiin-darkblue;
+  color: white;
   display: flex;
   flex-direction: column;
   padding: 36px;
   position: relative;
+
+  margin-top: -$navbar-height;
+  padding-top: $navbar-height;
+  margin-bottom: -$footer-height;
+
   .btn-add-event {
     top: 10px;
     left: 10px;
+  }
+
+  &.card-profile-other {
+    background-color: #EDF2F7;
+    color: black;
+  }
+  h5, h6 {
+    text-transform: uppercase;
   }
 }
 
@@ -176,6 +250,14 @@
     top: 15px;
 }
 
+.card-hobbie-user {
+  background-color: $skiin-darkblue;
+
+  .card-tex-hobbies {
+    color: white;
+  }
+}
+
 .card-img-left {
   width: 25%;
   object-fit: cover;
@@ -195,6 +277,8 @@
     width: 35%;
   }
 }
+
+
 
 .card-skivent-my-show {
   padding: 8px;
