@@ -454,7 +454,7 @@ Rating.create!(
   review: "I had a amazing day with Chloe, we laughed so much! She is nice and punctual")
 Rating.create!(
   user: u5,
-  skivent: s18,MMMMMMM
+  skivent: s18,
   rating: 4,
   review: "Really good style, but don't forget to indent your foot!")
 Rating.create!(
