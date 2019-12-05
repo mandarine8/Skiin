@@ -54,6 +54,21 @@
   }
 }
 
+.card-picture-skivent-review-show {
+  width: 650px;
+  display: flex;
+  border: 5px solid;
+  border-color: red;
+  border-radius: 15px 35px;
+  .review_left_by {
+    margin-left:8px;
+    margin-top: 8px;
+    p{
+      font-weight: bold;
+    }
+  }
+}
+
 
 .card-skivent .card-title{
   cursor: pointer;
@@ -85,7 +100,7 @@ p.card-booking-subtitle {
     left: 6px;
     position: absolute;
     top: 20px;
-        
+
   }
 
 
@@ -215,6 +230,8 @@ p.card-booking-subtitle {
     width: 35%;
   }
 }
+
+
 
 .card-skivent-my-show {
   padding: 8px;
