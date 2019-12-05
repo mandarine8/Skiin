@@ -1,51 +1,88 @@
-  <div class="card-picture-skivent-user-show border m-2">
+<div class="card-picture-skivent-user-show border m-2">
+
+
   <%= cl_image_tag skivent.photo, class: "card-img-left" %>
+
+
   <div class="card-skivent-my-show d-flex flex-column">
-    <div class="card-title d-flex justify-content-between">
+
+
+    <div class="card-title d-flex justify-content-between" >
       <strong style="padding-left: 16px;"> <%= link_to skivent.title, skivent_path(skivent), data: { target: "#skivent-#{skivent.id}", toggle: "modal" } %></strong>
       <span class="card-skivent-date"><%= skivent.date %></span>
     </div>
+    <!-- end of card-title d-flex justify-content-between -->
 
     <% if pending %>
 
 
       <div class="card-skivent-infos pt-2 pl-2 pr-2">
-      <p><%= skivent.description %></p>
-      <div style="display:flex; justify-content: space-between;">
-          <div>
-              <img src="<%= booking.user.picture %>" alt="" class="avatar-bordered">
-              <%= link_to booking.user.name %>
-          </div>
+        <p><%= skivent.description %></p>
+
+
+
+        <div style="display:flex; justify-content: space-between;">
+
+          <%= link_to user_path(skivent.user), class: "d-flex" do %>
+            <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
+
+            <div class="ml-1">
+              <span><%= skivent.user.name %></span>
+              <div class="avatar-rating-card d-flex">
+                <% skivent.user.average_rating.times do %>
+                  <i class="picto-snow far fa-snowflake" style="font-size: 12px;"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
           <div class="mr-3">
-              <!-- <%= booking.status %> -->
-              <%= link_to booking_path(booking, { booking: { status:"accepted"} }), method: :patch do %>
+            <!-- <%= booking.status %> -->
+            <%= link_to booking_path(booking, { booking: { status:"accepted"} }), method: :patch do %>
               <i class="fas fa-check pr-1"></i>
-              <% end %>
-              <%= link_to booking_path(booking, { booking: { status:"declined"} }), method: :patch do %>
+            <% end %>
+            <%= link_to booking_path(booking, { booking: { status:"declined"} }), method: :patch do %>
               <i class="fas fa-times"></i>
-              <% end %>
+            <% end %>
           </div>
-      </div>
+          <!-- end of mr-3 -->
+
+        </div>
+        <!-- end of div without class but with style -->
 
       </div>
+      <!-- end of card-skivent-infos -->
+
+
     <% else %>
-      <div class="card-skivent-infos pt-2 pl-2 pr-2">
-      <p><%= skivent.description %></p>
-      <%= link_to user_path(skivent.user), class: "d-flex" do %>
-        <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
-        <div class="ml-1">
-          <span><%= skivent.user.name %></span>
-          <div class="avatar-rating-card d-flex">
-            <% skivent.user.average_rating.times do %>
-              <i class="picto-snow far fa-snowflake" style="font-size: 12px;"></i>
-            <% end %>
+
+      <div class="card-skivent-infos pt-2 pl-2 pr-2" >
+        <p><%= skivent.description %></p>
+
+        <%= link_to user_path(skivent.user), class: "d-flex" do %>
+          <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
+
+          <div class="ml-1">
+            <span><%= skivent.user.name %></span>
+
+            <div class="avatar-rating-card d-flex">
+              <% skivent.user.average_rating.times do %>
+                <i class="picto-snow far fa-snowflake" style="font-size: 12px;"></i>
+              <% end %>
             </div>
+
           </div>
-        </div>
-      <% end %>
+        <% end %>
+
+      </div>
+
     <% end %>
+
   </div>
 
+
+
 </div>
+<!-- end of card-picture-skivent-user-show border m-2 -->
 
 <%= render "skivents/skivent_modal", skivent: skivent, average_rating: skivent.user.average_rating %>

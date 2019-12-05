@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
     @incoming_bookings = []
 
-    @skivents.each do |skivent|
+    @user.skivents.each do |skivent|
       skivent.bookings.each do |booking|
         if booking.status == "pending"
           @incoming_bookings << booking
@@ -33,6 +33,7 @@ class UsersController < ApplicationController
       end
     end
     @ratings = retrieve_ratings_for_user(@user)
+
 
     if @user == current_user
       if @user.level == "beginner"

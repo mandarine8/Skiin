@@ -153,7 +153,7 @@
             </div>
             <% @skivents.each do | skivent | %>
               <% next if skivent.user.nil? %>
-               <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
+              <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
             <% end %>
           </div>
 
@@ -178,14 +178,17 @@
 
         <!-- 2nd tab: pending requests -->
         <div class="card-skivent-user-show tab-pane fade" id="nav-booked-skivents" role="tabpanel" aria-labelledby="nav-booked-skivents-tab">
+
           <!-- pending requests for events that I organized -->
           <div class="card-pending-requests ml-2 mt-4">
             <div class="card-pending-requests-title ml-2">
               <h5>Pending requests</h5>
             </div>
+
             <% @incoming_bookings.each do |booking| %>
                <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
             <% end %>
+
           </div>
 
           <div class="card-requested-bookings ml-2 mt-4">
@@ -198,23 +201,25 @@
               <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: false, booking: booking } %>
             <% end %>
           </div>
+
         </div>
 
 
         <div class="card-skivent-review-show tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
 
-        <% @ratings.each do |rating| %>
 
+          <% @ratings.each do |rating| %>
 
-          <%= render 'shared/card_reviews', { rating: rating } %>
+            <%= render 'shared/card_reviews', { rating: rating } %>
 
-
-        <% end %>
+          <% end %>
         </div>
         <!-- enf of tab for reviews -->
 
       </div>
     </div>
+
+
   </div>
 </div>
 
