@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @average_rating = @user.average_rating
 
-    @skivents = @user.skivents.last(3)
+    @skivents = @user.skivents
     today = DateTime.now.to_date
 
     @requested_bookings = @user.bookings

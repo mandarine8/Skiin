@@ -149,9 +149,9 @@
           <!-- my incoming skivents that i organized myself -->
           <div class="card-Incoming-skivent">
             <div class="card-incoming-skivent-title mt-3">
-              <h5>Incoming Skivents</h5>
+              <h5>Upcoming Skivents</h5>
             </div>
-            <% @skivents.each do | skivent | %>
+            <% @upcoming_skivents.each do | skivent | %>
               <% next if skivent.user.nil? %>
               <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
             <% end %>
