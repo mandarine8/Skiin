@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-
+    @footer_fixed = true
     @rating = Rating.new
     @user = User.find(params[:id])
     @average_rating = @user.average_rating
