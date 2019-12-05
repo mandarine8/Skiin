@@ -14,7 +14,7 @@ Resort.destroy_all
 
 puts "Creating the users"
 
-u1 = User.create! name: "Amandine", description: "I started skiing when I was 2 years old, I really enjoy the snow and the winter", hobbies: "skiing, knitting", car: true, level: "expert", email: "caramandine@gmail.com", password: "password123", picture: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/rdw8huo8s0zfs5wvdzcl.jpg"
+u1 = User.create! name: "Amandine", description: "I started skiing when I was 2 years old, I really enjoy the snow and the winter", hobbies: "travelling, knitting", car: true, level: "expert", email: "caramandine@gmail.com", password: "password123", picture: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/rdw8huo8s0zfs5wvdzcl.jpg"
 u2 = User.create! name: "Chloé", description: "I love skiing and meeting people who have positive vibes!", hobbies: "cooking, travelling", level: "intermediate", car: true, email: "sauratchloe@gmail.com", password: "password123", picture: "https://avatars1.githubusercontent.com/u/55254804?v=4"
 u3 = User.create! name: "Ryan", description: "I was a professional skier when I was a teenager, I love challenge and hard slopes", hobbies: "hikking, swimming", car: true, level: "expert", email: "ryansalah0@gmail.com", password: "password123", picture: "https://media.licdn.com/dms/image/C5603AQGjh9zf54-xQA/profile-displayphoto-shrink_100_100/0?e=1579737600&v=beta&t=cq63vIyjXk8wXMWu_HftNoGS1W3MrLiPD9-yjh4ub9s"
 u4 = User.create! name: "Charlotte", description: "My perfect ski's journey: starting with a coffee, skiing, big break for a lunch skiing again and ending with a beer! ", hobbies: "running, tasting new beer", car: false, level: "intermediate", email: "charlottemontane@hotmail.com", password: "password123", picture: "https://avatars1.githubusercontent.com/u/55248679?v=4"
@@ -110,7 +110,7 @@ r6 = Resort.create!(
 )
 
 r7 = Resort.create!(
-  name: "Le Massif de Charlevoix",
+  name: "Charlevoix",
   number_of_slopes: 53,
   resort_type: "chill ⛄",
   address: "185 Chemin du Massif, Petite-Rivière-Saint-François, QC G0A 2L0, Canada",
@@ -126,8 +126,8 @@ r7 = Resort.create!(
 puts "Creating the Skivents"
 
 s1 = Skivent.create!(
-  title: "Sport day in Mont-Tremblant",
-  date: Date.new(2019,12,7),
+  title: "Sport day in Tremblant",
+  date: Date.new(2019,12,8),
   level: "expert",
   number_of_place: 3,
   car: true,
@@ -138,7 +138,7 @@ s1 = Skivent.create!(
 )
 
 s2 = Skivent.create!(
-  title: "Enjoying the slopes in Saint-Bruno",
+  title: "Enjoying the slopes together",
   date: Date.new(2019,12,8),
   level: "intermediate",
   number_of_place: 2,
@@ -146,12 +146,12 @@ s2 = Skivent.create!(
   description: "Let's discover this moutain together close to Montreal! Would like to try the new restaurant of the resort for the lunch.",
   resort: r2,
   user: u2,
-  remote_photo_url: "https://images.unsplash.com/photo-1518001055359-5a2387108626?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80", 
+  remote_photo_url: "https://images.unsplash.com/photo-1518001055359-5a2387108626?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
 )
 
 s3 =  Skivent.create!(
-  title: "Off-track skiing in Bromont",
-  date: Date.new(2019,12,22),
+  title: "Off-track skiing",
+  date: Date.new(2019,12,7),
   level: "expert",
   number_of_place: 2,
   car: true,
@@ -163,7 +163,7 @@ s3 =  Skivent.create!(
 
 s4 = Skivent.create!(
   title: "Cool day in Saint-Sauveur",
-  date: Date.new(2019,12,21),
+  date: Date.new(2019,12,7),
   level: "intermediate",
   number_of_place: 3,
   car: true,
@@ -187,7 +187,7 @@ s5 = Skivent.create!(
 
 s6 = Skivent.create!(
   title: "Bromont by night",
-  date: Date.new(2019,12,10),
+  date: Date.new(2019,12,12),
   level: "intermediate",
   number_of_place: 2,
   car: true,
@@ -198,7 +198,7 @@ s6 = Skivent.create!(
 )
 
 s7 = Skivent.create!(
-  title: "Snowboarding with my cute cat",
+  title: "Snowboard with my cute cat",
   date: Date.new(2019,12,14),
   level: "intermediate",
   number_of_place: 3,
@@ -307,7 +307,7 @@ s15 = Skivent.create!(
 
 s16 = Skivent.create!(
   title: "Discovering the ski",
-  date: Date.new(2019,12,20),
+  date: Date.new(2019,12,28),
   level: "beginner",
   number_of_place: 3,
   car: true,
@@ -319,8 +319,8 @@ s16 = Skivent.create!(
 
 
 s17 = Skivent.create!(
-  title: "Come with me in Saint-Sauveur resort",
-  date: Date.new(2020,11,30),
+  title: "Come ride with me",
+  date: Date.new(2019,11,30),
   level: "beginner",
   number_of_place: 1,
   car: true,
@@ -343,7 +343,7 @@ s18 = Skivent.create!(
 )
 
 s19 = Skivent.create!(
-  title: "Discover Sutton resort with me",
+  title: "Let's discover Sutton resort",
   date: Date.new(2020,11,16),
   level: "intermediate",
   number_of_place: 1,
@@ -355,7 +355,7 @@ s19 = Skivent.create!(
 )
 
 s20 = Skivent.create!(
-  title: "Bromont by night with fun!",
+  title: "Bromont by night & fun!",
   date: Date.new(2020,11,16),
   level: "expert",
   number_of_place: 1,
@@ -367,8 +367,8 @@ s20 = Skivent.create!(
 )
 
 s21 = Skivent.create!(
-  title: "Saint Bruno will not have secrets anymore for you!",
-  date: Date.new(2020,11,16),
+  title: "Diving in the snow",
+  date: Date.new(2020,11,18),
   level: "expert",
   number_of_place: 1,
   car: true,
@@ -403,7 +403,7 @@ s23 = Skivent.create!(
 )
 
 s24 = Skivent.create!(
-  title: "Skiing and taking pictures in Mont-Tremblant",
+  title: "Skiing and taking pictures",
   date: Date.new(2019,12,8),
   level: "intermediate",
   number_of_place: 3,
@@ -415,8 +415,8 @@ s24 = Skivent.create!(
  )
 
 s25 = Skivent.create!(
-  title: "Improving my ski level in Bromont",
-  date: Date.new(2019,11,7),
+  title: "Improving my ski level",
+  date: Date.new(2019,12,7),
   level: "beginner",
   number_of_place: 2,
   car: true,
@@ -427,7 +427,7 @@ s25 = Skivent.create!(
 )
 
  s26 = Skivent.create!(
-  title: "Snowboarding in Saint-Sauveur ",
+  title: "For Snowboard lovers ",
   date: Date.new(2019,12,12),
   level: "intermediate",
   number_of_place: 0,
@@ -448,10 +448,15 @@ Rating.create!(
   rating: 5,
   review: "Amandine is very nice, she show me how to ski on one foot. I would love to have another day with her")
 Rating.create!(
-  user: u1,
+  user: u7,
   skivent: s18,
   rating: 4,
   review: "I had a amazing day with Chloe, we laughed so much! She is nice and punctual")
+Rating.create!(
+  user: u5,
+  skivent: s18,MMMMMMM
+  rating: 4,
+  review: "Really good style, but don't forget to indent your foot!")
 Rating.create!(
   user: u4,
   skivent: s19,
@@ -541,7 +546,7 @@ b10 = Booking.create!(
 )
 
 b11 = Booking.create!(
-  user: u1,
+  user: u7,
   skivent: s18,
   status: "accepted"
 )
@@ -559,7 +564,7 @@ b13 = Booking.create!(
 )
 
 b14 = Booking.create!(
-  user: u2,
+  user: u7,
   skivent: s23,
   status: "accepted"
 )
@@ -567,18 +572,6 @@ b14 = Booking.create!(
 b15 = Booking.create!(
   user: u7,
   skivent: s9,
-  status: "accepted"
-)
-
-b16 = Booking.create!(
-  user: u2,
-  skivent: s11,
-  status: "accepted"
-)
-
-b17 = Booking.create!(
-  user: u1,
-  skivent: s7,
   status: "accepted"
 )
 
