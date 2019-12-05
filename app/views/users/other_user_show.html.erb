@@ -42,20 +42,8 @@
 
           <div class="tab-pane fade show active" id="nav-past-skivents" role="tabpanel" aria-labelledby="nav-past-skivents-tab">
 
-            <% @booked_skivents.each do |booked_skivent| %>
-              <div class="card-picture-skivent-user-show border  m-3">
-                 <%= cl_image_tag booked_skivent.photo, class: "card-img-left" %>
-                <div class="card-skivent-infos">
-                  <div>
-                    <strong><%= link_to booked_skivent.title %></strong>
-                    <div class="card-skivent-host">
-                      <p><%= booked_skivent.description %></p>
-                    </div>
-                    <img src="<%= booked_skivent.user.picture %>" alt="" class="avatar-bordered">
-                    <%= link_to booked_skivent.user.name %>
-                  </div>
-                </div>
-              </div>
+            <% @past_skivents.each do |skivent| %>
+              <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
             <% end %>
 
           </div>
@@ -63,21 +51,8 @@
 
           <div class="tab-pane fade show" id="nav-incoming-skivents" role="tabpanel" aria-labelledby="nav-past-skivents-tab">
 
-            <% @requested_bookings.each do |booking| %>
-              <div class="card-picture-skivent-user-show border m-3">
-
-                <%= cl_image_tag booking.skivent.photo, class: "card-img-left" %>
-
-                <div class="card-skivent-infos">
-                  <strong> <%= booking.skivent.title %></strong>
-                  <p><%= booking.skivent.description %></p>
-                  <img src=<%= booking.skivent.user.picture %> alt="" class="avatar-bordered">
-                  <%= link_to booking.skivent.user.name %>
-                  <div>
-                    <%= booking.status %>
-                  </div>
-                </div>
-              </div>
+            <% @upcoming_skivents.each do |skivent| %>
+              <%= render 'skivents/dashboard_card', { skivent: skivent, pending: false } %>
             <% end %>
 
           </div>
@@ -85,7 +60,10 @@
 
           <div class="tab-pane fade show" id="nav-reviews" role="tabpanel" aria-labelledby="nav-past-skivents-tab">
 
-           reviews
+            <% @ratings.each do |rating| %>
+            <%= render 'shared/card_reviews', { rating: rating } %>
+            <% end %>
+
 
           </div>
           <!-- enf of past skivents tab -->

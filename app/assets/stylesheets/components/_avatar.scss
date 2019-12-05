@@ -54,7 +54,12 @@
 .avatar-rating {
   color: #F5C54A;
 }
-
+.avatar-rating-card {
+  color: #F5C54A;
+  position: relative;
+  left: 42px;
+  top: -7px;
+}
 .stacked-avatars {
   * + * {
     margin-left: -20px;
