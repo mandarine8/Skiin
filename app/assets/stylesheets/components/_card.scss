@@ -58,8 +58,8 @@
   width: 650px;
   display: flex;
   border: 5px solid;
-  border-color: red;
   border-radius: 15px 35px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   .review_left_by {
     margin-left:8px;
     margin-top: 8px;
@@ -108,6 +108,16 @@ p.card-booking-subtitle {
 .picto-snow {
   margin-right: 5px;
 }
+
+.picto-snow-review {
+  margin-right: 5px;
+  color: $skiin-yellow;
+}
+
+.card-review-content {
+ color: $skiin-darkgray;
+}
+
 .card-avatars {
   display: flex;
   justify-content: space-between;

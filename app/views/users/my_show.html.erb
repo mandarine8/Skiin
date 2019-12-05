@@ -6,11 +6,14 @@
       <!-- user avatar -->
       <div class="card-user-name-rating">
         <img class="avatar-show img-circle avatar-bordered" src="<%= @user.picture %>" width="100px">
-        <div class="card-name-picto">
+        <div class="card-name-picto m-2">
           <h4> <%= @user.name %> </h4>
-          <% @average_rating.times do %>
-            <i class="picto-snow far fa-snowflake"></i>
-          <% end %>
+          <div class="picto-name-user">
+            <% @average_rating.times do %>
+              <i class="picto-snow far fa-snowflake"></i>
+            <% end %>
+
+          </div>
         </div>
       </div>
 
@@ -222,20 +225,28 @@
 
         <% @ratings.each do |rating| %>
 
-          <div class="card-picture-skivent-review-show border flex-column m-3">
+          <div class="card-picture-skivent-review-show border flex-column m-3 mt-4">
             <div class="review_left_by">
-              <p>Review left by : <%= rating.user.name %> </p>
+              <h5>Review left by : <%= rating.user.name %> </h5>
             </div>
-            <div class="card-resort-date d-flex justify-content-between pt-2 px-4">
-              <p><%= rating.skivent.resort.name %></p>
-              <p><%= rating.skivent.date %></p>
-            </div>
-            <div class="card-title-rating d-flex justify-content-between pt-2 px-4">
-              <p><%= rating.skivent.title %></p>
-              <p><%= rating.rating.times do %></p>
-            </div>
-            <div class="card-review d-flex justify-content-between pt-2 px-4">
-              <p>"<%= rating.review %>"</p>
+            <div class="card-review-content">
+              <div class="card-resort-date d-flex justify-content-between pt-2 px-4">
+                <p><%= rating.skivent.resort.name %></p>
+                <p><%= rating.skivent.date %></p>
+              </div>
+              <div class="card-title-and-rating d-flex justify-content-between pt-2 px-4">
+                <div class="card-title-rating d-flex">
+                  <p><%= rating.skivent.title %></p>
+                </div>
+                <div class="card-rating d-flex">
+                  <p><% rating.rating.times do %></p>
+                    <i class="picto-snow-review far fa-snowflake"></i>
+                  <% end %>
+                </div>
+              </div>
+              <div class="card-review d-flex justify-content-between pt-2 px-4">
+                <p>"<%= rating.review %>"</p>
+              </div>
             </div>
 
           </div>
