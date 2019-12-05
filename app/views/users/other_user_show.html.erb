@@ -3,6 +3,7 @@
   <div class="margin-top-user">
     <div class="row flex-nowrap">
       <%= render "users/other_user_info_card"%>
+
       <div class="col-sm-12 col-lg-6 mb-3 mt-5 pt-2">
         <!-- Tab Nav -->
         <nav>
@@ -69,7 +70,6 @@
 
                 <div class="card-skivent-infos">
                   <strong> <%= booking.skivent.title %></strong>
-                  <h2 class="card-skivent-host"></h2>
                   <p><%= booking.skivent.description %></p>
                   <img src=<%= booking.skivent.user.picture %> alt="" class="avatar-bordered">
                   <%= link_to booking.skivent.user.name %>

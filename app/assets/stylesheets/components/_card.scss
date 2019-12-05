@@ -1,11 +1,24 @@
 .card-skivent {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  min-height: 460px;
+  min-height: 422px;
+}
+
+.card-skivent .card-body  {
+  position: relative;
+
+  .avatar-floating {
+    position: absolute;
+    top: -30px;
+
+    .avatar-medium {
+      border: 3px solid white;
+    }
+  }
 }
 
 .card-img-top {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -43,6 +56,7 @@
 }
 
 .card-picture-skivent-user-show {
+  background: white;
   width: 650px;
   display: flex;
   .card-img-left {
@@ -50,7 +64,7 @@
     height: 175px;
   }
   img {
-  object-fit: cover;
+    object-fit: cover;
   }
 }
 
@@ -83,10 +97,11 @@
   object-fit: cover;
 }
 
-p.card-booking-subtitle {
+.card-booking-subtitle {
   color: grey;
   font-size: 12px;
 }
+
 
 .card-skivent-host {
   position: relative;
@@ -105,6 +120,7 @@ p.card-booking-subtitle {
 
 
 }
+
 .picto-snow {
   margin-right: 5px;
 }
@@ -121,20 +137,6 @@ p.card-booking-subtitle {
 .card-avatars {
   display: flex;
   justify-content: space-between;
-
-  // .avatar-name {
-    // display: none;
-  // }
-  // &:hover .avatar-name{
-  //   display:block;
-    // margin-bottom: 5px;
-  // }
-  .avatar-rating {
-    // display: none;
-  // }
-  // &:hover .avatar-rating{
-    color: #F5C54A;
-  }
 }
 .card-avatars-booked {
   display: flex;
@@ -167,13 +169,24 @@ p.card-booking-subtitle {
 
 .card-profile {
   background-color: $skiin-darkblue;
+  color: white;
   display: flex;
   flex-direction: column;
   padding: 36px;
   position: relative;
+
+  margin-top: -$navbar-height;
+  padding-top: $navbar-height;
+  margin-bottom: -$footer-height;
+
   .btn-add-event {
     top: 10px;
     left: 10px;
+  }
+
+  &.card-profile-other {
+    background-color: #EDF2F7;
+    color: black;
   }
 }
 
