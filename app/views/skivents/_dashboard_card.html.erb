@@ -35,9 +35,15 @@
         <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
         <span><%= skivent.user.name %></span>
       <% end %>
+      <div class="avatar-rating-card d-flex">
+          <% skivent.user.average_rating.times do %>
+            <i class="picto-snow far fa-snowflake" style="font-size: 12px;"></i>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
+  
 </div>
 
 <%= render "skivents/skivent_modal", skivent: skivent, average_rating: skivent.user.average_rating %>
