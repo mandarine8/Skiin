@@ -456,7 +456,7 @@ Rating.create!(
   user: u5,
   skivent: s18,
   rating: 4,
-  review: "Really good style, but don't forget to indent your foot!")
+  review: "Really good style in snowboard, but don't forget to indent your foot!")
 Rating.create!(
   user: u4,
   skivent: s19,
