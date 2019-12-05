@@ -7,8 +7,28 @@ h5 {
  font-weight: 500;
 }
 
+.card-profile {
+  h5, h6 {
+    color: $skiin-darkblue;
+    text-transform: uppercase;
+  }
+  p {
+    color: $skiin-darkgray;
+    text-transform: capitalize;
+  }
+  h4 {
+    color: $skiin-darkblue;
+  }
+}
+
+.fa-arrow-left {
+  color: $skiin-darkblue;
+
+}
+
 .content-other-user {
 }
+
 
 
   .content-skivent-user {
@@ -22,8 +42,19 @@ h5 {
       justify-content: center;
   }
 
-  .content_btn {
-    margin: 70px;
+  .content_btn_user {
+    margin-top: 30px;
+    color: $skiin-darkblue;
+    background-color: #EDF2F7;
+    border: 2px solid $skiin-darkblue;
+    border-radius: 10px;
+    &:hover {
+        color: $white;
+        background-color: $skiin-darkblue;
+        text-decoration: none;
+        border: 2px solid white;
+    }
+
 }
 
 .card-user-name {
@@ -66,7 +97,8 @@ h5 {
 }
 
 .level-content {
-     margin-bottom: 10px;
+ margin-bottom: 10px;
+
 }
 
 .skivents-cards-grid {
@@ -80,5 +112,23 @@ h5 {
     flex-direction: column;
     align-items: flex-start;
     width: 200px;
+
+
   }
+
+.card-hobbies {
+  border-radius: 10px;
+}
+
+.card-hobbie {
+  background-color: $skiin-darkblue;
+
+  .card-tex-hobbies {
+    color: white;
+  }
+}
+
+.input-group-text-car {
+  background-color: $skiin-darkblue;
+}
 
