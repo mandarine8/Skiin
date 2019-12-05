@@ -24,12 +24,12 @@
         <div style="display:flex; justify-content: space-between;">
 
           <%= link_to user_path(skivent.user), class: "d-flex" do %>
-            <img src="<%= skivent.user.picture %>" alt="" class="avatar-bordered">
+            <img src="<%= booking.user.picture %>" alt="" class="avatar-bordered">
 
             <div class="ml-1">
-              <span><%= skivent.user.name %></span>
+              <span><%= booking.user.name %></span>
               <div class="avatar-rating-card d-flex">
-                <% skivent.user.average_rating.times do %>
+                <% booking.user.average_rating.times do %>
                   <i class="picto-snow far fa-snowflake" style="font-size: 12px;"></i>
                 <% end %>
               </div>
