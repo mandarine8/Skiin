@@ -1,0 +1,16 @@
+<!-- card review -->
+
+<div class="card-picture-skivent-user-show border flex-column m-3">
+  <p>review left by : <%= rating.user.name %> </p>
+  <div class="card-resort-date d-flex justify-content-between p-2">
+    <p><%= rating.skivent.resort.name %></p>
+    <p><%= rating.skivent.date %></p>
+  </div>
+  <div class="card-title-rating d-flex justify-content-between p-2">
+    <p><%= rating.skivent.title %></p>
+    <p><%= rating.rating %></p>
+  </div>
+  <div class="card-review d-flex justify-content-between p-2">
+    <p><%= rating.review %></p>
+  </div>
+</div>
