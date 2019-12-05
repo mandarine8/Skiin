@@ -166,29 +166,7 @@
             <% if @past_skivents.size > 0 %>
 
               <% @past_skivents.each do |past_skivent| %>
-                <div class="card-picture-skivent-user-show border  m-3">
-                  <%= cl_image_tag past_skivent.photo, class: "card-img-left" %>
-                  <div class="card-skivent-infos p-2">
-                    <div>
-                      <strong><%= link_to past_skivent.title %></strong>
-                      <div class="card-skivent-host">
-                        <p><%= past_skivent.description %></p>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                          <img src="<%= past_skivent.user.picture %>" alt="" class="avatar-bordered">
-                          <%= link_to past_skivent.user.name %>
-                        </div>
-                        <% if past_skivent.user != @user %>
-                          <!-- Button trigger modal_review -->
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= past_skivent.id %> ">
-                            Add a review
-                          </button>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <%= render 'skivents/dashboard_card', { skivent: past_skivent, pending: false } %>
               <% end %>
             <% end %>
 
@@ -217,7 +195,7 @@
 
             <!-- pending requests that people I sent for events that somebody else organized -->
             <% @requested_bookings.each do |booking| %>
-              <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
+              <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: false, booking: booking } %>
             <% end %>
           </div>
         </div>
