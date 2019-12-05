@@ -1,4 +1,4 @@
-<div class="card-profile card-profile-other col-lg-5">
+<div class="card-profile-other-user card-profile-other col-lg-5">
     <div class="picto-arrow">
       <%= link_to skivents_path do  %>
         <i class="fas fa-arrow-left"></i>
@@ -46,7 +46,7 @@
           <h6> My driving Information </h6>
           <div class="input-group mb-3">
             <div class="input-group-prepend mt-4">
-              <div class="input-group-text-car" id="input-for-car">
+              <div class="input-group-text-car-user" id="input-for-car">
               <input type="checkbox" aria-label="Checkbox for following text input" <%= @user.car ? 'checked' : '' %> >
               </div>
               <label for=""> <%=  @user.car ? 'I have a car' : 'I do not have a car'  %></label>
@@ -62,7 +62,7 @@
               <div class="card-tex-hobbies p-2">
                 <%= hobbie %>
               </div>
-              <div class="card-hobbies-cross p-2">
+              <div class="card-hobbies-cross-user p-2">
                 <i class="fas fa-times"></i>
               </div>
             </div>
