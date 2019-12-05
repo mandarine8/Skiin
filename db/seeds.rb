@@ -589,7 +589,7 @@ b17 = Booking.create!(
 
 b18 = Booking.create!(
   user: u3,
-  skivent: s26,
+  skivent: s25,
   status: "accepted"
 )
 
