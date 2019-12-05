@@ -1,6 +1,7 @@
 .footer {
   text-align: right;
   padding: 30px 50px;
+  background: transparent;
   color: rgba(0,0,0,0.3);
   width: 100vw;
   height: 60px;
@@ -8,6 +9,10 @@
       color: $skiin-yellow;
       text-decoration: none;
     }
+}
+
+.footer.hide {
+ display: none
 }
 
 .footer-links {
