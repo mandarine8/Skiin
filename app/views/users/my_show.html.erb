@@ -18,20 +18,18 @@
       </div>
 
       <!-- user description -->
-      <div class="card-user-description mt-5">
-        <h5> Who I am </h5>
+      <div class="card-user-description">
+        <h3> Who I am </h3>
         <p><%= @user.description %></p>
       </div>
 
       <!-- User info -->
       <div class="card-user-info">
-        <h5> My Skiin info</h5>
-        <div class="title-ski mt-4">
-          <h6> Ski Level </h6>
-        </div>
+        <h3> My Skiin info</h3>
+        <h5> Ski Level </h5>
 
         <!-- ski level -->
-        <div class="level_content_container mt-3">
+        <div class="level_content_container">
           <div class="inputs">
 
             <div class="level-content">
@@ -51,10 +49,10 @@
         </div>
 
         <!-- hobbies -->
-        <div class="d-flex justify-content-between align-items-start mt-5">
+        <div class="d-flex justify-content-between align-items-start mt-3">
           <div class="driving-box">
 
-            <h6> Driving Information </h6>
+            <h5> Driving Information </h5>
             <div class="input-group mb-3">
               <div class="input-group-prepend mt-2">
                 <div class="input-group-text-car" id="input-for-car">
@@ -70,7 +68,7 @@
           <div class="driving_hobbies d-flex flex-column align-items-center justify-content-center">
 
             <div class="card-hobbies-content">
-              <h6> My Hobbies </h6>
+              <h5> My Hobbies </h5>
               <% if @user.hobbies == "" %>
                 <div class="card-hobbie d-flex mr-2">
                   <div class="p-2"> No Hobbies </div>
@@ -91,7 +89,7 @@
           </div>
         </div>
 
-        <div class="card-simpleform-btn d-flex mt-4">
+        <div class="card-simpleform-btn d-flex mt-2">
           <div class="card-simple-form-show">
             <%= simple_form_for(@user) do |f| %>
               <%= f.input :level, as: :hidden %>
@@ -166,7 +164,29 @@
             <% if @past_skivents.size > 0 %>
 
               <% @past_skivents.each do |past_skivent| %>
-                <%= render 'skivents/dashboard_card', { skivent: past_skivent, pending: false } %>
+                <div class="card-picture-skivent-user-show border  m-3">
+                  <%= cl_image_tag past_skivent.photo, class: "card-img-left" %>
+                  <div class="card-skivent-infos p-2">
+                    <div>
+                      <strong><%= link_to past_skivent.title %></strong>
+                      <div class="card-skivent-host">
+                        <p><%= past_skivent.description %></p>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <img src="<%= past_skivent.user.picture %>" alt="" class="avatar-bordered">
+                          <%= link_to past_skivent.user.name %>
+                        </div>
+                        <% if past_skivent.user != @user %>
+                          <!-- Button trigger modal_review -->
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-review-<%= past_skivent.id %> ">
+                            Add a review
+                          </button>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               <% end %>
             <% end %>
 
@@ -195,7 +215,7 @@
 
             <!-- pending requests that people I sent for events that somebody else organized -->
             <% @requested_bookings.each do |booking| %>
-              <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: false, booking: booking } %>
+              <%= render 'skivents/dashboard_card', { skivent: booking.skivent, pending: true, booking: booking } %>
             <% end %>
           </div>
         </div>

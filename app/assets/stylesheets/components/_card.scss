@@ -57,10 +57,11 @@
 
 .card-picture-skivent-user-show {
   background: white;
-  max-width: 650px;
+  width: 650px;
   display: flex;
   .card-img-left {
-    width: 30%;
+    width: 175px;
+    height: 175px;
   }
   img {
     object-fit: cover;
@@ -82,10 +83,6 @@
   }
 }
 
-.card-skivent-date {
-  font-size: 16px;
-  flex: none;
-}
 
 .card-skivent .card-title{
   cursor: pointer;
@@ -162,7 +159,7 @@
 }
 
 
-.card-hobbies-cross-user {
+.card-hobbies-cross {
   background-color: $skiin-darkblue;
   color: white;
   border-radius: 10px;
@@ -191,12 +188,6 @@
   &.card-profile-other {
     background-color: #EDF2F7;
     color: black;
-  }
-  h5, h6 {
-    text-transform: uppercase;
-  }
-  p {
-    text-transform: capitalize;
   }
 }
 
@@ -242,14 +233,6 @@
     position: absolute;
     right: 16px;
     top: 15px;
-}
-
-.card-hobbie-user {
-  background-color: $skiin-darkblue;
-
-  .card-tex-hobbies {
-    color: white;
-  }
 }
 
 .card-img-left {

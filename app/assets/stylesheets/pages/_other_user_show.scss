@@ -7,7 +7,7 @@ h5 {
  font-weight: 500;
 }
 
-.card-profile-other-user {
+.card-profile {
   h5, h6 {
     color: $skiin-darkblue;
     text-transform: uppercase;
@@ -120,7 +120,15 @@ h5 {
   border-radius: 10px;
 }
 
-.input-group-text-car-user {
+.card-hobbie {
+  background-color: $skiin-darkblue;
+
+  .card-tex-hobbies {
+    color: white;
+  }
+}
+
+.input-group-text-car {
   background-color: $skiin-darkblue;
 }
 
