@@ -81,6 +81,7 @@ class SkiventsController < ApplicationController
     @skivent.user = current_user
     @skivent.resort = Resort.find(params[:skivent][:resort].to_i)
     if @skivent.save!
+      flash[:notice] = "Your Skivent has been created!"
       redirect_to skivents_path
     else
       render :new
@@ -110,6 +111,8 @@ class SkiventsController < ApplicationController
     skivent = Skivent.find(params[:id])
     booking = Booking.new(skivent: skivent, user: current_user, status: "pending")
     booking.save
+
+    flash[:notice] = "The Skivent has been booked!"
 
     redirect_to user_path(current_user)
   end

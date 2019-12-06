@@ -15,7 +15,7 @@
         <textarea id="subject" name="subject" placeholder="Your message" rows="5" cols="55"></textarea>
       </div>
       <div class="modal-footer">
-        <%= link_to "Send your message", user_path(current_user), class: 'btn btn-primary'  %>
+        <%= link_to "Send your message", message_user_path(current_user), method: "post", class: 'btn btn-primary'  %>
       </div>
     </div>
   </div>

@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :ratings, only: [:create]
+
+    member do
+      post :message
+    end
   end
 
 end
