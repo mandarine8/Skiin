@@ -1,4 +1,4 @@
-<div class="background-show content pr-5">
+<div class="background-show content">
   <div class="row flex-nowrap">
 
     <!-- Left: User Information -->
@@ -143,12 +143,12 @@
       </nav>
 
       <!-- Tabs Content -->
-      <div class="tab-content" id="nav-tabContent">
+      <div class="tab-content pt-3" id="nav-tabContent">
         <!-- 1st tab: incoming skivents -->
         <div class="card-skivent-user-show tab-pane fade show active" id="nav-My-skivents" role="tabpanel" aria-labelledby="nav-My-skivents-tab">
           <!-- my incoming skivents that i organized myself -->
           <div class="card-Incoming-skivent">
-            <div class="card-incoming-skivent-title mt-3">
+            <div class="card-incoming-skivent-title">
               <h5>Upcoming Skivents</h5>
             </div>
             <% @upcoming_skivents.each do | skivent | %>
@@ -158,7 +158,7 @@
           </div>
 
           <div class="card-Past-Skivent">
-            <div class="card-past-skivent-title ml-2 mt-4">
+            <div class="card-past-skivent-title mt-4">
               <h5>Past Skivents</h5>
             </div>
 
@@ -180,8 +180,8 @@
         <div class="card-skivent-user-show tab-pane fade" id="nav-booked-skivents" role="tabpanel" aria-labelledby="nav-booked-skivents-tab">
 
           <!-- pending requests for events that I organized -->
-          <div class="card-pending-requests ml-2 mt-4">
-            <div class="card-pending-requests-title ml-2">
+          <div class="card-pending-requests">
+            <div class="card-pending-requests-title">
               <h5>Pending requests</h5>
             </div>
 
@@ -191,8 +191,8 @@
 
           </div>
 
-          <div class="card-requested-bookings ml-2 mt-4">
-            <div class="card-requested-bookings-title ml-2">
+          <div class="card-requested-bookings mt-4">
+            <div class="card-requested-bookings-title">
               <h5>Requested bookings</h5>
             </div>
 

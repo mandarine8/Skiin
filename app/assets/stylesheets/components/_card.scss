@@ -1,6 +1,6 @@
 .card-skivent {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  min-height: 422px;
+  min-height: 395px;
 }
 
 .card-skivent .card-body  {
@@ -12,6 +12,7 @@
 
     .avatar-medium {
       border: 3px solid white;
+      object-fit: cover;
     }
   }
 }
@@ -64,10 +65,13 @@
   background: white;
   max-width: 650px;
   display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
   .card-img-left {
     width: 30%;
-  }
-  img {
     object-fit: cover;
   }
 }
@@ -282,4 +286,5 @@
 
 .card-skivent-my-show {
   padding: 8px;
+  flex: 1;
 }
