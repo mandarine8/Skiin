@@ -15,3 +15,7 @@ $navbar-and-footer: $navbar-height + $footer-height;
   box-sizing: border-box;
 }
 
+
+.height-min {
+  min-height: 100vh;
+}
