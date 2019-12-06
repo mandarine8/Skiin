@@ -20,15 +20,29 @@
 
  <label class="label-skivent">Choose a photo</label>
 
-  <div class="input-group mb-3">
-   
+<!--   <div class="input-group mb-3">
+
     <div class="custom-file">
       <input type="file" class="custom-file-input" id="skivent-photo" name="skivent[photo]">
       <label class="custom-file-label" for="skivent-photo"></label>
     </div>
+  </div> -->
+
+  <div class="input-group mb-3">
+    <div class="custom-file">
+      <!-- <input type="file" class="custom-file-input" id="inputGroupFile02"> -->
+      <!-- <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label> -->
+      <%= f.input :photo, input_html: {class: "custom-file-input", id:"inputGroupFile02"}, label_html: {class: "custom-file-label", label: "choose a file"} %>
+      <%= f.input :photo_cache, as: :hidden %>
+    </div>
+
+    <div class="input-group-append">
+      <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+    </div>
   </div>
 
-  <%= f.input :photo_cache, as: :hidden %>
+
+
   <%= f.input :level, collection: ["beginner", "intermediate", "expert"], label: "Choose the level of your skivent", required: false, label_html: { class: 'label-skivent' } %>
   <%= f.input :car, label: "I have a car", input_html: {class: "form-check-input"} %>
 
@@ -37,7 +51,7 @@
     <textarea name="skivent[description]" class="form-control" id="skivent-description" rows="3"></textarea>
   </div>
 
-  
+
   <%= f.submit "create skivent", class: "btn-yellow" %>
 <% end %>
 
