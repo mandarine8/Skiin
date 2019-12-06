@@ -83,13 +83,27 @@
     font-size: 18px;
     border: 2px solid $skiin-yellow;
     width: 130px;
+    color: $skiin-darkblue;
+    background-color: $skiin-yellow;
+    &:hover {
+        color: $skiin-yellow;
+        background-color: $skiin-darkblue;
+        text-decoration: none;
+        border: 2px solid $skiin-yellow;
+    }
+  }
+
+  .btn-yellow.btn-border{
+    font-size: 18px;
+    border: 2px solid $skiin-yellow;
+    width: 130px;
     color: $skiin-yellow;
-    background-color: $skiin-darkblue;
+    background-color: transparent;
     &:hover {
         color: $skiin-darkblue;
-        background-color: white;
+        background-color: $skiin-yellow;
         text-decoration: none;
-        border: 2px solid $skiin-mediumgray;
+        border: 2px solid $skiin-yellow;
     }
   }
 }
