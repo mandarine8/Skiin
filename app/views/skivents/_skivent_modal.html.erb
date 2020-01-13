@@ -2,7 +2,6 @@
 <div class="modal fade modal-skivents" id="skivent-<%= skivent.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-skiin" role="document">
     <div class="modal-content">
-
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLabel"> <%= skivent.title %></h3>
         <div class="skivent_infos flex-grow-1 d-flex justify-content-end align-items-center">
@@ -21,10 +20,8 @@
 
       <!-- corps -->
       <div class="modal-body content">
-
         <!-- container externe -->
         <div class="row p-3">
-
           <div class="card-skivent-details col-sm-12 col-lg-4 pl-5 pr-5 pb-5"
             style="border-right: 1px solid lightgrey;">
             <div class="card-skivent-host">
@@ -75,12 +72,12 @@
                       <i class="fas fa-skiing h4"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="<%= skivent.user.level %>"></i>
+                        title="<%= skivent.user.level %>">
+                      </i>
                     </div>
                   </div>
                 </div>
                 <!-- end of event infos -->
-
                 <!-- resort infos -->
                 <div class="card-skivent-info pb-4">
                  <div class="card-picto-price">
@@ -121,21 +118,15 @@
       <div class="modal-footer">
         <% if skivent.user != current_user %>
           <%= link_to "book now", skivent_bookings_path(skivent), method: :post, class: 'btn btn-secondary'  %>
-
           <!-- Button trigger modal_message -->
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#messageModal">
           Contact me
           </button>
-
         <% else %>
           <p>This is your Skivent</p>
         <% end %>
-
       </div>
       <!-- end of nodal footer-->
-
-
-
     </div>
   </div>
 </div>

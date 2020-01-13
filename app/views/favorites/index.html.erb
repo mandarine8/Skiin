@@ -1,19 +1,20 @@
-<div class="container-new margin-top p-4>
-    <h2>My favorites skivents</h2>
-    <div class="row">
-        <div class="col-lg-7 col-sm-12">
-            <div class="row" >
-                <% @favorites.each do |favorite|%>
-                    <div class="col-sm-12 col-lg-6 pr-4 pb-4">
-                    <%= render 'skivents/card', {skivent: favorite.skivent, query: params[:query] || ""} %>
-                    </div>
-                <% end %>
-            </div>
-        </div>
+<div class="container-new" margin-top p-4>
+  <h2>My favorites skivents</h2>
+  <div class="row">
+    <div class="col-lg-7 col-sm-12">
+      <div class="row" >
+        <% @favorites.each do |favorite|%>
+          <div class="col-sm-12 col-lg-6 pr-4 pb-4">
+          <%= render 'skivents/card', {skivent: favorite.skivent, query: params[:query] || ""} %>
+          </div>
+        <% end %>
+      </div>
     </div>
-     <%= link_to "Back to the skivents", skivents_path, class:"btn-yellow" %>
+  </div>
+  <%= link_to "Back to the skivents", skivents_path, class:"btn-yellow" %>
 </div>
 
 <% @skivents.each do |skivent| %>
   <%= render "skivents/skivent_modal", skivent: skivent, average_rating: @average_rating %>
 <% end %>
+

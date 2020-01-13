@@ -1,6 +1,5 @@
 
 <div class="fullscreen-container pl-5">
-
   <video id="VideoBackground" poster="https://res.cloudinary.com/mandarine8/image/upload/v1574890386/o8fxl4kkhix3yvmnj898.jpg" autoplay muted loop>
     <source src="https://res.cloudinary.com/mandarine8/video/upload/v1574890189/ocsqjst8mb2r6vyqepz7.mp4" type="video/mp4">
   </video>
@@ -8,7 +7,6 @@
   <div class="card-home ml-4">
     <div class="card-body p-5">
       <h3 class="mb-4">Create your perfect ski journey</h3>
-
       <%= form_tag skivents_path, method: :get do %>
         <div class="form-group">
           <input class="form-control" type="text" name="query" id="search_query" placeholder="Enter the departure city" />
@@ -33,7 +31,7 @@
           <input class="form-control" name="date" id="search_date" placeholder="mm/jj/aaaa" data-provide="datepicker" />
         </div>
         <div class="d-flex justify-content-end">
-           <button type="submit" class="btn btn-primary">Search a Skivent</button>
+          <button type="submit" class="btn btn-primary">Search a Skivent</button>
         </div>
         <!-- <%= link_to "See all the Skivents", skivents_path, class: "btn btn-outline-primary" %> -->
       <% end %>

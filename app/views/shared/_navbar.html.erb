@@ -15,7 +15,6 @@
         </li> -->
         <% pending_bookings = current_user.pending_bookings.count %>
         <% badge_class = pending_bookings.zero? ? "" : "badge-count" %>
-
         <li class="nav-item dropdown <%= badge_class %>" data-count="<%= pending_bookings %>">
           <img
             src="<%= current_user.picture ? current_user.picture : 'test' %>"

@@ -41,7 +41,6 @@
     <div class="card-skivent-host">
       <% if skivent.bookings.count > 0 %>
         <div class="card-booking-subtitle">ALREADY BOOKED BY:</div>
-
         <div class="stacked-avatars">
           <% skivent.bookings.each do |booking| %>
             <%= link_to image_tag(booking.user.picture, class: "avatar"), user_path(booking.user) %>
@@ -51,6 +50,5 @@
         <div class="card-booking-subtitle mt-4">BOOK IT NOW!</div>
       <% end %>
     </div>
-
   </div>
 </div>
