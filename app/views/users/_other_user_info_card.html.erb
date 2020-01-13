@@ -1,92 +1,87 @@
 <div class="card-profile card-profile-other col-lg-5">
-    <div class="picto-arrow">
-      <%= link_to skivents_path do  %>
-        <i class="fas fa-arrow-left"></i>
-        <% end %>
-    </div>
-    <div class="card-user-name-rating">
-      <img class="img-circle avatar-show avatar-bordered" src="<%= @user.picture %>" width="1500px">
-      <div>
-        <h4 class="card-color"><%= @user.name %></h4>
-        <% @user.average_rating.times do %>
-          <i class="picto-snow far fa-snowflake"></i>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="content-description-other-user">
-      <div class="card-user-description">
-        <h5> Who I am </h5>
-        <p><%= @user.description %></p>
-      </div>
-    </div>
-
-   <div class="content-info">
-      <div class="card-user-info">
-        <h5> My Skiin informations</h5>
-
-        <div class="level_content_container_user mt-4">
-          <div class="level-title">
-            <h6> My ski Level </h6>
-          </div>
-          <div class="all-level-info d-flex">
-            <div class="level-content">
-              <p><%= @user.level %></p>
-            </div>
-            <div class="level-content-picto ml-3">
-              <i class="fas fa-skiing"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hobbies-and-driving d-flex">
-
-        <div class="content-drive-other-user mr-5 mt-3">
-          <h6> My driving Information </h6>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend mt-4">
-              <div class="input-group-text-car-user" id="input-for-car">
-              <input type="checkbox" aria-label="Checkbox for following text input" <%= @user.car ? 'checked' : '' %> >
-              </div>
-              <label for=""> <%=  @user.car ? 'I have a car' : 'I do not have a car'  %></label>
-            </div>
-          </div>
-        </div>
-
-        <div class="hobbies-info-other-user ml-4 mt-3">
-          <h6> My hobbies </h6>
-          <div class="card-hobbies d-flex">
-            <% @user.hobbies.split(", ").each do |hobbie| %>
-            <div class="card-hobby-cross-user d-flex mr-2">
-              <div class="card-tex-hobbies p-2">
-                <%= hobbie %>
-              </div>
-              <div class="card-hobbies-cross-user p-2">
-                <i class="fas fa-times"></i>
-              </div>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="content_btn mb-4">
-      <% unless @user == current_user %>
-        <div class="" style="">
-          <!-- <%= link_to "Contact me", skivents_path, class:"btn btn-primary" %> -->
-          <!-- Button trigger modal_message -->
-          <button class="content_btn_user" type="button" class="btn btn-primary" data-toggle="modal" data-target="#messageModal">
-          Contact me
-          </button>
-        </div>
+  <div class="picto-arrow">
+    <%= link_to skivents_path do  %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
+  <div class="card-user-name-rating">
+    <img class="img-circle avatar-show avatar-bordered" src="<%= @user.picture %>" width="1500px">
+    <div>
+      <h4 class="card-color"><%= @user.name %></h4>
+      <% @user.average_rating.times do %>
+        <i class="picto-snow far fa-snowflake"></i>
       <% end %>
     </div>
-    <!-- end of .card-user-name -->
-     <!-- end of .card-user-description -->
-     <!-- end of .card-user-infos -->
+  </div>
 
+  <div class="content-description-other-user">
+    <div class="card-user-description">
+      <h5> Who I am </h5>
+      <p><%= @user.description %></p>
+    </div>
+  </div>
+
+ <div class="content-info">
+    <div class="card-user-info">
+      <h5> My Skiin informations</h5>
+      <div class="level_content_container_user mt-4">
+        <div class="level-title">
+          <h6> My ski Level </h6>
+        </div>
+        <div class="all-level-info d-flex">
+          <div class="level-content">
+            <p><%= @user.level %></p>
+          </div>
+          <div class="level-content-picto ml-3">
+            <i class="fas fa-skiing"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hobbies-and-driving d-flex">
+      <div class="content-drive-other-user mr-5 mt-3">
+        <h6> My driving Information </h6>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend mt-4">
+            <div class="input-group-text-car-user" id="input-for-car">
+            <input type="checkbox" aria-label="Checkbox for following text input" <%= @user.car ? 'checked' : '' %> >
+            </div>
+            <label for=""> <%=  @user.car ? 'I have a car' : 'I do not have a car'  %></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="hobbies-info-other-user ml-4 mt-3">
+        <h6> My hobbies </h6>
+        <div class="card-hobbies d-flex">
+          <% @user.hobbies.split(", ").each do |hobbie| %>
+          <div class="card-hobby-cross-user d-flex mr-2">
+            <div class="card-tex-hobbies p-2">
+              <%= hobbie %>
+            </div>
+            <div class="card-hobbies-cross-user p-2">
+              <i class="fas fa-times"></i>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content_btn mb-4">
+    <% unless @user == current_user %>
+      <div class="" style="">
+        <!-- Button trigger modal_message -->
+        <button class="content_btn_user" type="button" data-toggle="modal" data-target="#messageModal">
+        Contact me
+        </button>
+      </div>
+    <% end %>
+  </div>
+  <!-- end of .card-user-name -->
+   <!-- end of .card-user-description -->
+   <!-- end of .card-user-infos -->
 <%= render 'shared/modal_message', {user: @user} %>
 </div>

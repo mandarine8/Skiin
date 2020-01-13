@@ -16,14 +16,14 @@
       </div>
       <!-- corps -->
       <div class="modal-body">
-          <!-- event infos -->
-          <div class="card-skivent-info">
-              <%= simple_form_for([current_user, @rating]) do |f| %>
-                <%= f.input :rating, collection: (1..5).to_a %>
-                <%= f.input :skivent, as: :hidden, input_html: {value: booked_skivent.id} %>
-                <textarea id="subject" name="subject" placeholder="Your review" rows="5" cols="55" m-4 ></textarea>
-              <% end %>
-          </div>
+        <!-- event infos -->
+        <div class="card-skivent-info">
+          <%= simple_form_for([current_user, @rating]) do |f| %>
+            <%= f.input :rating, collection: (1..5).to_a %>
+            <%= f.input :skivent, as: :hidden, input_html: {value: booked_skivent.id} %>
+            <textarea id="subject" name="subject" placeholder="Your review" rows="5" cols="55" m-4 ></textarea>
+          <% end %>
+        </div>
       </div>
       <div class="modal-footer">
         <%= link_to "Send your review", user_path(current_user), class: 'btn btn-primary'  %>
