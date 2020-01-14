@@ -1,4 +1,3 @@
-
 .background-content {
   padding: 15px;
 }
@@ -23,19 +22,14 @@ h5 {
 
 .fa-arrow-left {
   color: $skiin-darkblue;
-
 }
 
 .content-other-user {
 }
-
-
-
   .content-skivent-user {
       width: 500px;
       margin-top: 20px;
   }
-
 
   .btn-user {
       display: flexbox;
@@ -54,7 +48,6 @@ h5 {
         text-decoration: none;
         border: 2px solid white;
     }
-
 }
 
 .card-user-name {
@@ -77,7 +70,6 @@ h5 {
 
 }
 
-
 .content-hobby {
   margin-bottom: 40px;
 }
@@ -85,20 +77,17 @@ h5 {
 .hobbies-info-other-user {
   margin-top: 16px;
   margin-bottom: 16px;
-
 }
+
 .content-drive {
   margin-top: -10px;
 }
 
 .card-user-info {
-
-
 }
 
 .level-content {
  margin-bottom: 10px;
-
 }
 
 .skivents-cards-grid {
@@ -108,13 +97,11 @@ h5 {
 }
 
 .picto-arrow {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 200px;
-
-
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+}
 
 .card-hobbies {
   border-radius: 10px;
